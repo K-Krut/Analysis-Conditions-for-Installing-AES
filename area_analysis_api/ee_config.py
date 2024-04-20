@@ -1,4 +1,7 @@
 import ee
 from diploma_api import settings
 
-EE_CREDENTIALS = ee.ServiceAccountCredentials(email=settings.EE_ACCOUNT, key_file=settings.EE_PRIVATE_KEY_FILE)
+
+FILE_PATH = str(settings.BASE_DIR / 'area_analysis_api' / settings.EE_PRIVATE_KEY_FILE)
+print(FILE_PATH)
+EE_CREDENTIALS = ee.ServiceAccountCredentials(email=settings.EE_ACCOUNT, key_file=FILE_PATH)

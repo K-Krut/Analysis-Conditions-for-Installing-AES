@@ -4,6 +4,7 @@ from rest_framework.parsers import JSONParser
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from diploma_api import settings
+from .utils import get_ee_classification
 
 
 def map_view(request):
@@ -15,7 +16,12 @@ def map_view(request):
 
 class AnalyzeArea(APIView):
     def post(self, request):
+        # try:
         data = JSONParser().parse(request)
         coordinates = data.get('coordinates')
-        print(coordinates)
-        return JsonResponse({'status': 'success', 'coordinates': coordinates})
+        if not coordinates:
+            return JsonResponse({'error': 'Error getting polygon data from request'}, status=500)
+        polygon_classification = get_ee_classification(coordinates)
+        return JsonResponse({'coordinates': coordinates, 'classification': polygon_classification}, status=200)
+    # except Exception as e:
+    #     return JsonResponse({'error': 'Error analysing polygon data' + str(e)}, status=500)
