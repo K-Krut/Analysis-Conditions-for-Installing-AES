@@ -17,11 +17,12 @@ def map_view(request):
 class AnalyzeArea(APIView):
     def post(self, request):
         # try:
-        data = JSONParser().parse(request)
-        coordinates = data.get('coordinates')
-        if not coordinates:
-            return JsonResponse({'error': 'Error getting polygon data from request'}, status=500)
-        polygon_classification = get_ee_classification(coordinates)
-        return JsonResponse({'coordinates': coordinates, 'classification': polygon_classification}, status=200)
-    # except Exception as e:
-    #     return JsonResponse({'error': 'Error analysing polygon data' + str(e)}, status=500)
+            data = JSONParser().parse(request)
+            coordinates = data.get('coordinates')
+            if not coordinates:
+                return JsonResponse({'error': 'Error getting polygon data from request'}, status=500)
+            polygon_classification = get_ee_classification(coordinates)
+            return JsonResponse({'coordinates': coordinates, 'classification': polygon_classification[0],
+                                 'area': polygon_classification[1]}, status=200)
+        # except Exception as e:
+        #     return JsonResponse({'error': 'Error analysing polygon data' + str(e)}, status=500)
