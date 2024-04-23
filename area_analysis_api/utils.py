@@ -1,7 +1,6 @@
 import ee
-from shapely.geometry import Polygon
 
-from .constants import landscape_types, COPERNICUS_CROP_CLASS_ID
+from .constants import landscape_types
 from .ee_config import EE_CREDENTIALS
 
 ee.Initialize(EE_CREDENTIALS)
@@ -68,7 +67,7 @@ def get_area_classification_details(landcover, polygon, polygon_area):
 
 
 def get_connected_area(masked_landcover):
-    class_mask = masked_landcover.eq(COPERNICUS_CROP_CLASS_ID)
+    class_mask = masked_landcover.eq(40)
     connected = class_mask.connectedComponents(connectedness=ee.Kernel.plus(1), maxSize=1024)
     return connected.select('labels').connectedPixelCount(maxSize=1024)
 
@@ -106,7 +105,10 @@ def calculate_polygons_difference(initial_polygon, filtered_polygon):
     return difference.coordinates().getInfo()
 
 
-
+def get_polygon_with_max_area(polygons):
+    polygons_data = [{'coords': coords, 'area': get_polygon_area(ee.Geometry.Polygon(coords))} for coords in polygons]
+    result_polygon = max(polygons_data, key=lambda x: x['area'])
+    return result_polygon['coords'] if result_polygon else None
 
 
 def get_ee_classification(coordinates):
@@ -122,6 +124,3 @@ def get_ee_classification(coordinates):
     crop = calculate_polygons_difference(polygon, ee.Geometry.Polygon(filtered_area))
     print(crop)
     return landcover.clip(polygon).getInfo(), land_types_stats, crop
-
-
-print()
