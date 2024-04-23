@@ -121,6 +121,8 @@ def get_ee_classification(coordinates):
 
     filtered_area = get_filtered_area_coordinates(polygon, landcover)
 
-    crop = calculate_polygons_difference(polygon, ee.Geometry.Polygon(filtered_area))
-    print(crop)
+    eligible_polygons = calculate_polygons_difference(polygon, ee.Geometry.Polygon(filtered_area))
+
+    crop = get_polygon_with_max_area(eligible_polygons)
+
     return landcover.clip(polygon).getInfo(), land_types_stats, crop
