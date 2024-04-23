@@ -1,6 +1,7 @@
 import ee
+from shapely.geometry import Polygon
 
-from .constants import landscape_types
+from .constants import landscape_types, COPERNICUS_CROP_CLASS_ID
 from .ee_config import EE_CREDENTIALS
 
 ee.Initialize(EE_CREDENTIALS)
@@ -66,6 +67,48 @@ def get_area_classification_details(landcover, polygon, polygon_area):
     return get_land_types_classification_results_sorted(results)
 
 
+def get_connected_area(masked_landcover):
+    class_mask = masked_landcover.eq(COPERNICUS_CROP_CLASS_ID)
+    connected = class_mask.connectedComponents(connectedness=ee.Kernel.plus(1), maxSize=1024)
+    return connected.select('labels').connectedPixelCount(maxSize=1024)
+
+
+def get_largest_area_mask(connected_areas, polygon):
+    largest_area_label = connected_areas.reduceRegion(
+        reducer=ee.Reducer.max(),
+        geometry=polygon,
+        scale=300,
+        maxPixels=1e13
+    ).get('labels')
+
+    return connected_areas.updateMask(connected_areas.eq(ee.Number(largest_area_label)))
+
+
+def get_filtered_area_coordinates(polygon, landcover):
+    masked_landcover = landcover.clip(polygon)
+
+    connected_areas = get_connected_area(masked_landcover)
+
+    largest_area_mask = get_largest_area_mask(connected_areas, polygon)
+
+    largest_area_vector = largest_area_mask.reduceToVectors(
+        geometryType='polygon',
+        reducer=ee.Reducer.countEvery(),
+        scale=300,
+        maxPixels=1e13
+    ).geometry().simplify(5)  # ).geometry().simplify(maxError=1)
+
+    return largest_area_vector.coordinates().getInfo()
+
+
+def calculate_polygons_difference(initial_polygon, filtered_polygon):
+    difference = initial_polygon.difference(filtered_polygon, ee.ErrorMargin(1))
+    return difference.coordinates().getInfo()
+
+
+
+
+
 def get_ee_classification(coordinates):
     polygon = ee.Geometry.Polygon(coordinates)
     landcover = ee.Image("COPERNICUS/Landcover/100m/Proba-V-C3/Global/2019").select('discrete_classification')
@@ -74,4 +117,11 @@ def get_ee_classification(coordinates):
 
     land_types_stats = get_area_classification_details(landcover, polygon, polygon_area)
 
-    return landcover.clip(polygon).getInfo(), land_types_stats
+    filtered_area = get_filtered_area_coordinates(polygon, landcover)
+
+    crop = calculate_polygons_difference(polygon, ee.Geometry.Polygon(filtered_area))
+    print(crop)
+    return landcover.clip(polygon).getInfo(), land_types_stats, crop
+
+
+print()

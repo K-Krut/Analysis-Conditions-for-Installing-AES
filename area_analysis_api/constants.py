@@ -56,3 +56,5 @@ landscape_types = {
     210: 'Water bodies',
     220: 'Permanent snow and ice'
 }
+
+COPERNICUS_CROP_CLASS_ID = 40
