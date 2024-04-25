@@ -1,6 +1,6 @@
 import ee
 
-from .constants import landscape_types
+from .constants import landscape_types, COPERNICUS_CROP_CLASS_ID, FILTERING_AREAS_SCALE
 from .ee_config import EE_CREDENTIALS
 
 ee.Initialize(EE_CREDENTIALS)
@@ -59,7 +59,8 @@ def get_area_classification_details(landcover, polygon, polygon_area):
         if percentage > 0:
             results[landscape_types[land_type]] = {
                 'Area (sq km)': round(area, 2),
-                'Percentage': round(percentage, 2)
+                'Percentage': round(percentage, 2),
+                'id': land_type
             }
 
     # print(sum(value['Percentage'] for key, value in results.items() if value['Percentage'] > 0))
@@ -67,8 +68,14 @@ def get_area_classification_details(landcover, polygon, polygon_area):
 
 
 def get_connected_area(masked_landcover):
-    class_mask = masked_landcover.eq(40)
-    connected = class_mask.connectedComponents(connectedness=ee.Kernel.plus(1), maxSize=1024)
+    # class_mask = masked_landcover.eq(40)
+    # connected = class_mask.connectedComponents(connectedness=ee.Kernel.plus(1), maxSize=1024)
+    # return connected.select('labels').connectedPixelCount(maxSize=1024)
+    class_mask_40 = masked_landcover.eq(40)
+    class_mask_60 = masked_landcover.eq(60)
+    class_mask_200 = masked_landcover.eq(200)
+    combined_mask = class_mask_40.Or(class_mask_60).Or(class_mask_200)
+    connected = combined_mask.connectedComponents(connectedness=ee.Kernel.plus(1), maxSize=1024)
     return connected.select('labels').connectedPixelCount(maxSize=1024)
 
 
@@ -76,7 +83,7 @@ def get_largest_area_mask(connected_areas, polygon):
     largest_area_label = connected_areas.reduceRegion(
         reducer=ee.Reducer.max(),
         geometry=polygon,
-        scale=300,
+        scale=FILTERING_AREAS_SCALE,
         maxPixels=1e13
     ).get('labels')
 
@@ -93,7 +100,7 @@ def get_filtered_area_coordinates(polygon, landcover):
     largest_area_vector = largest_area_mask.reduceToVectors(
         geometryType='polygon',
         reducer=ee.Reducer.countEvery(),
-        scale=300,
+        scale=FILTERING_AREAS_SCALE,
         maxPixels=1e13
     ).geometry().simplify(5)  # ).geometry().simplify(maxError=1)
 
@@ -125,4 +132,4 @@ def get_ee_classification(coordinates):
 
     crop = get_polygon_with_max_area(eligible_polygons)
 
-    return landcover.clip(polygon).getInfo(), land_types_stats, crop
+    return landcover.clip(polygon).getInfo(), land_types_stats, crop, filtered_area
