@@ -83,3 +83,5 @@ landscape_types = {
 }
 
 COPERNICUS_CROP_CLASS_ID = 40
+
+FILTERING_AREAS_SCALE = 300

@@ -118,6 +118,10 @@ def get_polygon_with_max_area(polygons):
     return result_polygon['coords'] if result_polygon else None
 
 
+def check_filtered_area_occupies_most_territory(polygon_area, filtered_area):
+    return (100 * filtered_area / polygon_area) > 80
+
+
 def get_ee_classification(coordinates):
     polygon = ee.Geometry.Polygon(coordinates)
     landcover = ee.Image("COPERNICUS/Landcover/100m/Proba-V-C3/Global/2019").select('discrete_classification')
@@ -126,10 +130,44 @@ def get_ee_classification(coordinates):
 
     land_types_stats = get_area_classification_details(landcover, polygon, polygon_area)
 
-    filtered_area = get_filtered_area_coordinates(polygon, landcover)
+    filtered_polygon = get_filtered_area_coordinates(polygon, landcover)
+    print('*' * 100)
+    print(filtered_polygon)
+    print('*' * 100)
+    if check_filtered_area_occupies_most_territory(polygon_area, get_polygon_area(ee.Geometry.Polygon(filtered_polygon))):
+        crop = filtered_polygon
+    else:
+        eligible_polygons = calculate_polygons_difference(polygon, ee.Geometry.Polygon(filtered_polygon))
+        crop = get_polygon_with_max_area(eligible_polygons)
+    return landcover.clip(polygon).getInfo(), land_types_stats, crop, filtered_polygon
 
-    eligible_polygons = calculate_polygons_difference(polygon, ee.Geometry.Polygon(filtered_area))
 
-    crop = get_polygon_with_max_area(eligible_polygons)
-
-    return landcover.clip(polygon).getInfo(), land_types_stats, crop, filtered_area
+k = [
+    [
+        [26.245179340835943, 50.34248020369696], [26.245179340835943, 50.340760265673204],
+        [26.24652681376212, 50.340760265673204], [26.24652681376212, 50.339900273309624],
+        [26.24922175961448, 50.339900273309624], [26.24922175961448, 50.340760265673204],
+        [26.25056923254066, 50.340760265673204], [26.25056923254066, 50.339900273309624],
+        [26.253264178393017, 50.339900273309624], [26.253264178393017, 50.339040265369256],
+        [26.255959124245376, 50.339040265369256], [26.255959124245376, 50.33646014814133],
+        [26.258654070097734, 50.33646014814133], [26.258654070097734, 50.33473999213239],
+        [26.262696488876273, 50.33473999213239], [26.262696488876273, 50.333019773834266],
+        [26.274823745211886, 50.333019773834266], [26.274823745211886, 50.33387989076723],
+        [26.290993420326036, 50.33387989076723], [26.290993420326036, 50.339040265369256],
+        [26.288298474473677, 50.339040265369256], [26.288298474473677, 50.341620242468984],
+        [26.290993420326036, 50.341620242468984], [26.290993420326036, 50.343340149357125],
+        [26.28560352862132, 50.343340149357125], [26.28560352862132, 50.34420007944051],
+        [26.273476272285706, 50.34420007944051], [26.273476272285706, 50.34505999395609],
+        [26.262696488876273, 50.34505999395609], [26.262696488876273, 50.345919892903865],
+        [26.260001543023915, 50.345919892903865], [26.260001543023915, 50.34677977627485],
+        [26.241136922057404, 50.34677977627485], [26.241136922057404, 50.345919892903865],
+        [26.24248439498358, 50.345919892903865], [26.24248439498358, 50.34420007944051],
+        [26.243831867909762, 50.34420007944051], [26.243831867909762, 50.34248020369696],
+        [26.245179340835943, 50.34248020369696]
+    ],
+    [
+        [26.245179340835943, 50.34248020369696], [26.24652681376212, 50.34248020369696],
+        [26.24652681376212, 50.343340149357125], [26.245179340835943, 50.343340149357125],
+        [26.245179340835943, 50.34248020369696]
+    ]
+]

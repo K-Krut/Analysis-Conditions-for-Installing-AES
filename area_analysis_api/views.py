@@ -21,8 +21,10 @@ class AnalyzeArea(APIView):
             coordinates = data.get('coordinates')
             if not coordinates:
                 return JsonResponse({'error': 'Error getting polygon data from request'}, status=500)
-            polygon_classification = get_ee_classification(coordinates)
-            return JsonResponse({'coordinates': coordinates, 'classification': polygon_classification[0],
-                                 'area': polygon_classification[1], 'crop': polygon_classification[2]}, status=200)
+            res = get_ee_classification(coordinates)
+            return JsonResponse({'coordinates': coordinates, 'classification': res[0],
+                                 'area': res[1], 'crop': res[2],
+                                 'filtered_area': res[3]
+                                 }, status=200)
         # except Exception as e:
         #     return JsonResponse({'error': 'Error analysing polygon data' + str(e)}, status=500)
