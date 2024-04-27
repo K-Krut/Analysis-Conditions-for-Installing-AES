@@ -68,18 +68,27 @@ def get_area_classification_details(landcover, polygon, polygon_area):
 
 
 def get_connected_area(masked_landcover):
-    # class_mask = masked_landcover.eq(40)
-    # connected = class_mask.connectedComponents(connectedness=ee.Kernel.plus(1), maxSize=1024)
-    # return connected.select('labels').connectedPixelCount(maxSize=1024)
+    """
+    Function for filtering areas
+    :param masked_landcover:
+    :return:
+    """
     class_mask_40 = masked_landcover.eq(40)
     class_mask_60 = masked_landcover.eq(60)
+    class_mask_100 = masked_landcover.eq(100)
     class_mask_200 = masked_landcover.eq(200)
-    combined_mask = class_mask_40.Or(class_mask_60).Or(class_mask_200)
+    combined_mask = class_mask_40.Or(class_mask_60).Or(class_mask_200).Or(class_mask_100)
     connected = combined_mask.connectedComponents(connectedness=ee.Kernel.plus(1), maxSize=1024)
     return connected.select('labels').connectedPixelCount(maxSize=1024)
 
 
 def get_largest_area_mask(connected_areas, polygon):
+    """
+    Get mask of filtered area
+    :param connected_areas:
+    :param polygon:
+    :return:
+    """
     largest_area_label = connected_areas.reduceRegion(
         reducer=ee.Reducer.max(),
         geometry=polygon,
@@ -91,6 +100,12 @@ def get_largest_area_mask(connected_areas, polygon):
 
 
 def get_filtered_area_coordinates(polygon, landcover):
+    """
+    Function for defining filtered area coordinates
+    :param polygon:
+    :param landcover:
+    :return:
+    """
     masked_landcover = landcover.clip(polygon)
 
     connected_areas = get_connected_area(masked_landcover)
@@ -108,35 +123,70 @@ def get_filtered_area_coordinates(polygon, landcover):
 
 
 def calculate_polygons_difference(initial_polygon, filtered_polygon):
+    """
+    Function for defining coordinates of difference of 2 polygons
+    :param initial_polygon:
+    :param filtered_polygon:
+    :return:
+    """
     difference = initial_polygon.difference(filtered_polygon, ee.ErrorMargin(1))
     return difference.coordinates().getInfo()
 
 
 def get_polygon_with_max_area(polygons):
+    """
+    Function for defining coordinates of polygon with the largest area inside the initail polygon
+    :param polygons:
+    :return:
+    """
     polygons_data = [{'coords': coords, 'area': get_polygon_area(ee.Geometry.Polygon(coords))} for coords in polygons]
     result_polygon = max(polygons_data, key=lambda x: x['area'])
     return result_polygon['coords'] if result_polygon else None
 
 
-def check_filtered_area_occupies_most_territory(polygon_area, filtered_area):
-    return (100 * filtered_area / polygon_area) > 80
+def get_filtered_area_percent(polygon_area, filtered_area):
+    """
+    Function for obtaining the percentage ratio of the filtered area to the total area of the initial polygon
+    :param polygon_area:
+    :param filtered_area:
+    :return:
+    """
+    return 100 * filtered_area / polygon_area
+
+
+def define_suitable_polygon_coordinates(polygon_area, filtered_polygon_data, polygon):
+    filtered_polygon = ee.Geometry.Polygon(filtered_polygon_data)
+    filtered_area = get_polygon_area(filtered_polygon)
+    area_percent = get_filtered_area_percent(polygon_area, filtered_area)
+    print('*' * 150)
+    print('filtered_polygon_data    ', filtered_polygon_data)
+    print('*' * 150)
+    print(filtered_polygon.coordinates().getInfo())
+    print('*' * 150)
+    print(polygon)
+    print('*' * 150)
+    print('area_percent ', area_percent)
+    print('*' * 150)
+    if 80 < area_percent < 90:
+        return filtered_polygon.coordinates().getInfo() if filtered_polygon and filtered_polygon.coordinates() else None
+    elif area_percent > 90:
+        return polygon
+    else:
+        eligible_polygons = calculate_polygons_difference(polygon, ee.Geometry.Polygon(filtered_polygon_data))
+        return get_polygon_with_max_area(eligible_polygons)
 
 
 def get_ee_classification(coordinates):
     polygon = ee.Geometry.Polygon(coordinates)
     landcover = ee.Image("COPERNICUS/Landcover/100m/Proba-V-C3/Global/2019").select('discrete_classification')
-
+    print(coordinates)
     polygon_area = get_polygon_area(polygon)
 
     land_types_stats = get_area_classification_details(landcover, polygon, polygon_area)
+    print(land_types_stats)
 
-    filtered_polygon = get_filtered_area_coordinates(polygon, landcover)
-    print('*' * 100)
-    print(filtered_polygon)
-    print('*' * 100)
-    if check_filtered_area_occupies_most_territory(polygon_area, get_polygon_area(ee.Geometry.Polygon(filtered_polygon))):
-        crop = filtered_polygon
-    else:
-        eligible_polygons = calculate_polygons_difference(polygon, ee.Geometry.Polygon(filtered_polygon))
-        crop = get_polygon_with_max_area(eligible_polygons)
-    return landcover.clip(polygon).getInfo(), land_types_stats, crop, filtered_polygon
+    filtered_polygon_data = get_filtered_area_coordinates(polygon, landcover)
+
+    suitable_territory = define_suitable_polygon_coordinates(polygon_area, filtered_polygon_data, coordinates)
+
+    return land_types_stats, suitable_territory
