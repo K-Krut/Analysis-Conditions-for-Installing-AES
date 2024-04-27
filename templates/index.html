@@ -43,9 +43,7 @@
                         console.log(data);
                         polygon.setMap(null);
                         if (data.crop) {
-                            drawPolygon(data.crop[0], map, '#379628'); }
-                        if (data.filtered_area) {
-                            drawPolygon(data.filtered_area[0], map, '#FF0000');}
+                            drawPolygon(data.crop, map, '#379628'); }
                     })
                     .catch(error => console.error('Error:', error));
             });
