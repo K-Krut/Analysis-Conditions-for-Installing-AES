@@ -160,11 +160,17 @@ def define_suitable_polygon_coordinates(polygon_area, filtered_polygon_data, pol
     filtered_polygon = ee.Geometry.Polygon(filtered_polygon_data)
     filtered_area = get_polygon_area(filtered_polygon)
     area_percent = get_filtered_area_percent(polygon_area, filtered_area)
+    print('filtered_polygon ', filtered_polygon.coordinates().getInfo())
+    print('filtered_area ', filtered_area)
+    print('area_percent ', area_percent)
     if 80 < area_percent < 90:
+        print('80 < area_percent < 90')
         return filtered_polygon.coordinates().getInfo() if filtered_polygon and filtered_polygon.coordinates() else None
     elif area_percent > 90:
+        print('area_percent > 90')
         return coordinates
     else:
+        print('eligible_polygons')
         eligible_polygons = calculate_polygons_difference(polygon, ee.Geometry.Polygon(filtered_polygon_data))
         return get_polygon_with_max_area(eligible_polygons[0])
 
@@ -183,7 +189,10 @@ def analyze_land_types_stats(land_types_stats):
     for i in land_types_stats:
         if i['id'] in SUITABLE_TYPES:
             results.append(i)
-    return sum(i['area'] for i in results) >= MIN_POLYGON_AREA if results else results
+    print([i['percentage'] for i in results])
+    print(all([i['percentage'] >= 30 for i in results]))
+    return all([i['percentage'] >= 30 for i in results]) if results else results
+    # return sum(i['area'] for i in results) >= MIN_POLYGON_AREA if results else results
 
 
 
