@@ -246,3 +246,10 @@ landscape_types_details = [
 COPERNICUS_CROP_CLASS_ID = 40
 
 FILTERING_AREAS_SCALE = 300
+
+SUITABLE_TYPES = [30, 40, 60, 100]
+
+# https://www.solargarden.com.ua/ru/kakaya-ploschad-nuzhna-dlya-solnechnoy-elektrostantsii/
+# km^2
+MIN_POLYGON_AREA = 0.000475
+

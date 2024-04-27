@@ -1,6 +1,7 @@
 import ee
 
-from .constants import landscape_types, COPERNICUS_CROP_CLASS_ID, FILTERING_AREAS_SCALE
+from .constants import landscape_types, COPERNICUS_CROP_CLASS_ID, FILTERING_AREAS_SCALE, landscape_types_details, \
+    SUITABLE_TYPES, MIN_POLYGON_AREA
 from .ee_config import EE_CREDENTIALS
 
 ee.Initialize(EE_CREDENTIALS)
@@ -45,11 +46,11 @@ def get_land_types_classification_results_sorted(results):
     :param results:
     :return:
     """
-    return dict(sorted(results.items(), key=lambda item: item[1]['Percentage'], reverse=True))
+    return sorted(results, key=lambda x: x['percentage'], reverse=True)
 
 
 def get_area_classification_details(landcover, polygon, polygon_area):
-    results = {}
+    results = []
 
     for land_type in landscape_types:
 
@@ -57,13 +58,14 @@ def get_area_classification_details(landcover, polygon, polygon_area):
         percentage = (area / polygon_area) * 100
 
         if percentage > 0:
-            results[landscape_types[land_type]] = {
-                'Area (sq km)': round(area, 2),
-                'Percentage': round(percentage, 2),
-                'id': land_type
-            }
-
-    # print(sum(value['Percentage'] for key, value in results.items() if value['Percentage'] > 0))
+            results.append(
+                {
+                    'name': landscape_types[land_type],
+                    'area': round(area, 2),
+                    'percentage': round(percentage, 2),
+                    'id': land_type
+                }
+            )
     return get_land_types_classification_results_sorted(results)
 
 
@@ -76,8 +78,8 @@ def get_connected_area(masked_landcover):
     class_mask_40 = masked_landcover.eq(40)
     class_mask_60 = masked_landcover.eq(60)
     class_mask_100 = masked_landcover.eq(100)
-    class_mask_200 = masked_landcover.eq(200)
-    combined_mask = class_mask_40.Or(class_mask_60).Or(class_mask_200).Or(class_mask_100)
+    class_mask_30 = masked_landcover.eq(30)
+    combined_mask = class_mask_40.Or(class_mask_60).Or(class_mask_30).Or(class_mask_100)
     connected = combined_mask.connectedComponents(connectedness=ee.Kernel.plus(1), maxSize=1024)
     return connected.select('labels').connectedPixelCount(maxSize=1024)
 
@@ -154,39 +156,59 @@ def get_filtered_area_percent(polygon_area, filtered_area):
     return 100 * filtered_area / polygon_area
 
 
-def define_suitable_polygon_coordinates(polygon_area, filtered_polygon_data, polygon):
+def define_suitable_polygon_coordinates(polygon_area, filtered_polygon_data, polygon, coordinates):
     filtered_polygon = ee.Geometry.Polygon(filtered_polygon_data)
     filtered_area = get_polygon_area(filtered_polygon)
     area_percent = get_filtered_area_percent(polygon_area, filtered_area)
-    print('*' * 150)
-    print('filtered_polygon_data    ', filtered_polygon_data)
-    print('*' * 150)
-    print(filtered_polygon.coordinates().getInfo())
-    print('*' * 150)
-    print(polygon)
-    print('*' * 150)
-    print('area_percent ', area_percent)
-    print('*' * 150)
     if 80 < area_percent < 90:
         return filtered_polygon.coordinates().getInfo() if filtered_polygon and filtered_polygon.coordinates() else None
     elif area_percent > 90:
-        return polygon
+        return coordinates
     else:
         eligible_polygons = calculate_polygons_difference(polygon, ee.Geometry.Polygon(filtered_polygon_data))
-        return get_polygon_with_max_area(eligible_polygons)
+        return get_polygon_with_max_area(eligible_polygons[0])
+
+
+def get_suitable_types_ids():
+    results = []
+    for i in landscape_types_details:
+        if i['suitable']:
+            results.append(i['id'])
+    return results
+
+
+def analyze_land_types_stats(land_types_stats):
+    results = []
+
+    for i in land_types_stats:
+        if i['id'] in SUITABLE_TYPES:
+            results.append(i)
+    return sum(i['area'] for i in results) >= MIN_POLYGON_AREA if results else results
+
 
 
 def get_ee_classification(coordinates):
     polygon = ee.Geometry.Polygon(coordinates)
     landcover = ee.Image("COPERNICUS/Landcover/100m/Proba-V-C3/Global/2019").select('discrete_classification')
-    print(coordinates)
+    # print(coordinates)
     polygon_area = get_polygon_area(polygon)
+    print(polygon_area)
+
+    if polygon_area < MIN_POLYGON_AREA:
+        return None
 
     land_types_stats = get_area_classification_details(landcover, polygon, polygon_area)
-    print(land_types_stats)
+
+    land_types_stats_analyze_result = analyze_land_types_stats(land_types_stats)
+
+    print('analyze_land_types_stats: ', land_types_stats_analyze_result)
+
+    if not land_types_stats_analyze_result:
+        return land_types_stats, []
 
     filtered_polygon_data = get_filtered_area_coordinates(polygon, landcover)
 
-    suitable_territory = define_suitable_polygon_coordinates(polygon_area, filtered_polygon_data, coordinates)
-
+    suitable_territory = define_suitable_polygon_coordinates(polygon_area, filtered_polygon_data, polygon, coordinates)
+    print(suitable_territory)
     return land_types_stats, suitable_territory
+
