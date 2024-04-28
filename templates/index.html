@@ -30,7 +30,7 @@
 
             google.maps.event.addListener(drawingManager, 'polygoncomplete', function (polygon) {
                 const coordinates = (polygon.getPath().getArray().map(coord => ([coord.lng(), coord.lat()])));
-                console.log(coordinates);
+                {#console.log(coordinates);#}
                 fetch('/api/polygon/', {
                     method: 'POST',
                     headers: {
@@ -45,7 +45,7 @@
                         if (data.crop) {
                             drawPolygon(data.crop, map, '#379628');
                         }
-                        console.log(data.crop)
+                        {#console.log(data.crop)#}
                         if (data.crop.length === 0) {
                             drawPolygon(coordinates, map, '#fa0000');
                         }

@@ -189,17 +189,16 @@ def analyze_land_types_stats(land_types_stats):
     for i in land_types_stats:
         if i['id'] in SUITABLE_TYPES:
             results.append(i)
-    print([i['percentage'] for i in results])
     print(all([i['percentage'] >= 30 for i in results]))
+    print([i['percentage'] >= 30 for i in results])
     return all([i['percentage'] >= 30 for i in results]) if results else results
-    # return sum(i['area'] for i in results) >= MIN_POLYGON_AREA if results else results
 
 
 
 def get_ee_classification(coordinates):
     polygon = ee.Geometry.Polygon(coordinates)
     landcover = ee.Image("COPERNICUS/Landcover/100m/Proba-V-C3/Global/2019").select('discrete_classification')
-    # print(coordinates)
+    print(coordinates)
     polygon_area = get_polygon_area(polygon)
     print(polygon_area)
 
