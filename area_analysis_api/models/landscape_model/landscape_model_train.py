@@ -1,5 +1,4 @@
 import pandas as pd
-import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from tensorflow.keras.models import Sequential
@@ -623,13 +622,3 @@ test_data = prepare_and_predict(api_data)
 test_data_scaled = scaler.transform(test_data)
 prediction = model.predict(test_data_scaled)
 print(f"Prediction: {prediction}")
-
-
-
-
-
-# model.save('my_model.h5')
-model.export('test')
-
-# import joblib
-# joblib.dump(scaler, 'scaler.gz')

@@ -1,6 +1,4 @@
 import ee
-from tensorflow.keras.models import load_model
-import joblib
 
 from .constants import landscape_types, COPERNICUS_CROP_CLASS_ID, FILTERING_AREAS_SCALE, landscape_types_details, \
     SUITABLE_TYPES, MIN_POLYGON_AREA
