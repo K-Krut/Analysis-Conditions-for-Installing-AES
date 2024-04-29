@@ -1,9 +1,9 @@
 import joblib
 import tensorflow as tf
 
-model = tf.keras.models.load_model('landscape_model.keras')
-scaler = joblib.load('scaler.gz')
-
+# model = tf.keras.models.load_model('landscape_model.keras')
+# scaler = joblib.load('scaler.gz')
+tf.keras.layers.TFSMLayer("landscape_model_files", call_endpoint="serving_default")
 
 # def prepare_polygon_data(polygon):
 #     data = pd.DataFrame(polygon)
