@@ -1,9 +1,13 @@
 import ee
-
-from .constants import landscape_types, COPERNICUS_CROP_CLASS_ID, FILTERING_AREAS_SCALE, landscape_types_details, \
-    SUITABLE_TYPES, MIN_POLYGON_AREA
+import joblib
+from tensorflow import keras
+from ai_models.landscape_model.utils import predict_polygon
+from .constants import landscape_types, FILTERING_AREAS_SCALE, landscape_types_details, MIN_POLYGON_AREA, SUITABLE_TYPES
 from .ee_config import EE_CREDENTIALS
 
+
+scaler = joblib.load('scaler.gz')
+model = keras.models.load_model('landscape_model.keras')
 ee.Initialize(EE_CREDENTIALS)
 
 
@@ -206,12 +210,14 @@ def get_ee_classification(coordinates):
 
     land_types_stats = get_area_classification_details(landcover, polygon, polygon_area)
 
-    land_types_stats_analyze_result = analyze_land_types_stats(land_types_stats)
+    print(predict_polygon(land_types_stats, model, scaler))
 
-    print('analyze_land_types_stats: ', land_types_stats_analyze_result)
-
-    if not land_types_stats_analyze_result:
-        return land_types_stats, []
+    # land_types_stats_analyze_result = analyze_land_types_stats(land_types_stats)
+    #
+    # print('analyze_land_types_stats: ', land_types_stats_analyze_result)
+    #
+    # if not land_types_stats_analyze_result:
+    #     return land_types_stats, []
 
     filtered_polygon_data = get_filtered_area_coordinates(polygon, landcover)
 

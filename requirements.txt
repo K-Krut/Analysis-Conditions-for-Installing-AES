@@ -69,3 +69,9 @@ urllib3==2.2.1
 Werkzeug==3.0.2
 wrapt==1.16.0
 zipp==3.18.1
+
+tensorflow~=2.16.1
+pip~=21.2.4
+wheel~=0.43.0
+setuptools~=58.1.0
+sqlparse~=0.5.0
