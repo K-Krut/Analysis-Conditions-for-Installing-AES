@@ -34,7 +34,7 @@ def predict_polygon(data, model, scaler):
 
     X_scaled = scaler.transform(df)
 
-    return model.predict(X_scaled)
+    return model.predict(X_scaled)[0][0]
 
 
 # polygon = [

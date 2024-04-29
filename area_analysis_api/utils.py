@@ -160,23 +160,35 @@ def get_filtered_area_percent(polygon_area, filtered_area):
     return 100 * filtered_area / polygon_area
 
 
-def define_suitable_polygon_coordinates(polygon_area, filtered_polygon_data, polygon, coordinates):
-    filtered_polygon = ee.Geometry.Polygon(filtered_polygon_data)
-    filtered_area = get_polygon_area(filtered_polygon)
-    area_percent = get_filtered_area_percent(polygon_area, filtered_area)
-    # print('filtered_polygon ', filtered_polygon.coordinates().getInfo())
-    # print('filtered_area ', filtered_area)
-    print('area_percent ', area_percent)
-    if 80 < area_percent < 90:
-        print('80 < area_percent < 90')
-        return filtered_polygon.coordinates().getInfo() if filtered_polygon and filtered_polygon.coordinates() else None
-    elif area_percent > 90:
-        print('area_percent > 90')
-        return coordinates
-    else:
+def define_suitable_polygon_coordinates(prediction, polygon_area, filtered_polygon_data, polygon, coordinates):
+    # filtered_polygon = ee.Geometry.Polygon(filtered_polygon_data)
+    # filtered_area = get_polygon_area(filtered_polygon)
+    # area_percent = get_filtered_area_percent(polygon_area, filtered_area)
+    # # print('filtered_polygon ', filtered_polygon.coordinates().getInfo())
+    # # print('filtered_area ', filtered_area)
+    # print('area_percent ', area_percent)
+    # if 80 < area_percent < 90:
+    #     print('80 < area_percent < 90')
+    #     return filtered_polygon.coordinates().getInfo() if filtered_polygon and filtered_polygon.coordinates() else None
+    # elif area_percent > 90:
+    #     print('area_percent > 90')
+    #     return coordinates
+    # else:
+    #     print('eligible_polygons')
+    #     eligible_polygons = calculate_polygons_difference(polygon, ee.Geometry.Polygon(filtered_polygon_data))
+    #     return get_polygon_with_max_area(eligible_polygons[0])
+    # filtered_polygon = ee.Geometry.Polygon(filtered_polygon_data)
+    # filtered_area = get_polygon_area(filtered_polygon)
+    # print('area_percent ', get_filtered_area_percent(polygon_area, filtered_area))
+    if prediction < -0.5:
         print('eligible_polygons')
         eligible_polygons = calculate_polygons_difference(polygon, ee.Geometry.Polygon(filtered_polygon_data))
         return get_polygon_with_max_area(eligible_polygons[0])
+    elif prediction > 0.5:
+        return coordinates
+    else:
+        print('!!! ', prediction)
+        return []
 
 
 def get_suitable_types_ids():
@@ -193,9 +205,10 @@ def analyze_land_types_stats(land_types_stats):
     for i in land_types_stats:
         if i['id'] in SUITABLE_TYPES:
             results.append(i)
-    print(all([i['percentage'] >= 30 for i in results]))
-    print([i['percentage'] >= 30 for i in results])
-    return all([i['percentage'] >= 30 for i in results]) if results else results
+    return results
+    # print(all([i['percentage'] >= 30 for i in results]))
+    # print([i['percentage'] >= 30 for i in results])
+    # return all([i['percentage'] >= 30 for i in results]) if results else results
 
 
 def get_ee_classification(coordinates):
@@ -210,17 +223,18 @@ def get_ee_classification(coordinates):
 
     land_types_stats = get_area_classification_details(landcover, polygon, polygon_area)
 
-    print('PREDICTION: ', predict_polygon(convert_polygon_stats(land_types_stats), model, scaler))
+    land_types_stats_analyze_result = analyze_land_types_stats(land_types_stats)
 
-    # land_types_stats_analyze_result = analyze_land_types_stats(land_types_stats)
-    #
-    # print('analyze_land_types_stats: ', land_types_stats_analyze_result)
-    #
-    # if not land_types_stats_analyze_result:
-    #     return land_types_stats, []
+    print('analyze_land_types_stats: ', land_types_stats_analyze_result)
+
+    if not land_types_stats_analyze_result:
+        return land_types_stats, []
+    landscape_prediction = predict_polygon(convert_polygon_stats(land_types_stats), model, scaler)
+
+    print('PREDICTION: ', landscape_prediction)
 
     filtered_polygon_data = get_filtered_area_coordinates(polygon, landcover)
 
-    suitable_territory = define_suitable_polygon_coordinates(polygon_area, filtered_polygon_data, polygon, coordinates)
+    suitable_territory = define_suitable_polygon_coordinates(landscape_prediction, polygon_area, filtered_polygon_data, polygon, coordinates)
     # print(suitable_territory)
     return land_types_stats, suitable_territory
