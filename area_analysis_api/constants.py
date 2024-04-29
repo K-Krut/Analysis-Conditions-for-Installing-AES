@@ -253,3 +253,4 @@ SUITABLE_TYPES = [30, 40, 60, 100]
 # km^2
 MIN_POLYGON_AREA = 0.000475
 
+print(list(landscape_types.keys()))

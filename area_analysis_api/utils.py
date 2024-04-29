@@ -1,4 +1,6 @@
 import ee
+from tensorflow.keras.models import load_model
+import joblib
 
 from .constants import landscape_types, COPERNICUS_CROP_CLASS_ID, FILTERING_AREAS_SCALE, landscape_types_details, \
     SUITABLE_TYPES, MIN_POLYGON_AREA
@@ -192,7 +194,6 @@ def analyze_land_types_stats(land_types_stats):
     print(all([i['percentage'] >= 30 for i in results]))
     print([i['percentage'] >= 30 for i in results])
     return all([i['percentage'] >= 30 for i in results]) if results else results
-
 
 
 def get_ee_classification(coordinates):
