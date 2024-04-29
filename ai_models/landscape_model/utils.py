@@ -1,9 +1,9 @@
-# import joblib
-# import tensorflow as tf
+import joblib
+import tensorflow as tf
 import pandas as pd
 
-# scaler = joblib.load('scaler.gz')
-# model = tf.keras.models.load_model('landscape_model.keras')
+# scaler = joblib.load('ai_models/landscape_model/scaler.gz')
+# model = tf.keras.models.load_model('ai_models/landscape_model/landscape_model.keras')
 
 FEATURES_COLS = ['area_id_40', 'perc_id_40', 'area_id_114', 'perc_id_114', 'area_id_115',
                  'perc_id_115', 'area_id_126', 'perc_id_126', 'area_id_124',
@@ -13,6 +13,7 @@ FEATURES_COLS = ['area_id_40', 'perc_id_40', 'area_id_114', 'perc_id_114', 'area
 
 
 def convert_polygon_stats(polygon_data):
+    print('convert_polygon_stats')
     polygon_data_features = {}
 
     for i in polygon_data:
@@ -53,4 +54,4 @@ def predict_polygon(data, model, scaler):
 #
 # polygon_converted = convert_polygon_stats(polygon)
 #
-# print(predict_polygon(polygon_converted))
+# print(predict_polygon(polygon_converted, model, scaler))
