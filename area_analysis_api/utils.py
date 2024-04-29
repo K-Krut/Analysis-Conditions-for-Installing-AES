@@ -1,10 +1,10 @@
 import ee
 import joblib
-from tensorflow import keras
-from ai_models.landscape_model.utils import predict_polygon
+
+import keras
+from ai_models.landscape_model.utils import predict_polygon, convert_polygon_stats
 from .constants import landscape_types, FILTERING_AREAS_SCALE, landscape_types_details, MIN_POLYGON_AREA, SUITABLE_TYPES
 from .ee_config import EE_CREDENTIALS
-
 
 scaler = joblib.load('scaler.gz')
 model = keras.models.load_model('landscape_model.keras')
@@ -164,8 +164,8 @@ def define_suitable_polygon_coordinates(polygon_area, filtered_polygon_data, pol
     filtered_polygon = ee.Geometry.Polygon(filtered_polygon_data)
     filtered_area = get_polygon_area(filtered_polygon)
     area_percent = get_filtered_area_percent(polygon_area, filtered_area)
-    print('filtered_polygon ', filtered_polygon.coordinates().getInfo())
-    print('filtered_area ', filtered_area)
+    # print('filtered_polygon ', filtered_polygon.coordinates().getInfo())
+    # print('filtered_area ', filtered_area)
     print('area_percent ', area_percent)
     if 80 < area_percent < 90:
         print('80 < area_percent < 90')
@@ -210,7 +210,7 @@ def get_ee_classification(coordinates):
 
     land_types_stats = get_area_classification_details(landcover, polygon, polygon_area)
 
-    print(predict_polygon(land_types_stats, model, scaler))
+    print('PREDICTION: ', predict_polygon(convert_polygon_stats(land_types_stats), model, scaler))
 
     # land_types_stats_analyze_result = analyze_land_types_stats(land_types_stats)
     #
@@ -222,6 +222,5 @@ def get_ee_classification(coordinates):
     filtered_polygon_data = get_filtered_area_coordinates(polygon, landcover)
 
     suitable_territory = define_suitable_polygon_coordinates(polygon_area, filtered_polygon_data, polygon, coordinates)
-    print(suitable_territory)
+    # print(suitable_territory)
     return land_types_stats, suitable_territory
-
