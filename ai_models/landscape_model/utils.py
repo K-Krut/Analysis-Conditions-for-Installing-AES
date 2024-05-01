@@ -2,14 +2,33 @@ import joblib
 import tensorflow as tf
 import pandas as pd
 
-# scaler = joblib.load('ai_models/landscape_model/scaler.gz')
-# model = tf.keras.models.load_model('ai_models/landscape_model/landscape_model.keras')
+# scaler = joblib.load('../../landscape_scaler_3.gz')
+# model = tf.keras.models.load_model('../../landscape_model_3.keras')
+# print(model.input_shape)
+# print(scaler.feature_names_in_)
 
-FEATURES_COLS = ['area_id_40', 'perc_id_40', 'area_id_114', 'perc_id_114', 'area_id_115',
-                 'perc_id_115', 'area_id_126', 'perc_id_126', 'area_id_124',
-                 'perc_id_124', 'area_id_125', 'perc_id_125', 'area_id_116',
-                 'perc_id_116', 'area_id_50', 'perc_id_50', 'area_id_90', 'perc_id_90',
-                 'area_id_80', 'perc_id_80', 'area_id_30', 'perc_id_30']
+
+# FEATURES_COLS = ['area_id_0', 'perc_id_0', 'area_id_20', 'perc_id_20', 'area_id_30', 'perc_id_30', 'area_id_40',
+#                  'perc_id_40', 'area_id_50', 'perc_id_50', 'area_id_60', 'perc_id_60',
+#                  'area_id_70', 'perc_id_70', 'area_id_80', 'perc_id_80', 'area_id_90', 'perc_id_90', 'area_id_100',
+#                  'perc_id_100', 'area_id_111', 'perc_id_111', 'area_id_112', 'perc_id_112', 'area_id_113',
+#                  'perc_id_113', 'area_id_114', 'perc_id_114', 'area_id_115', 'perc_id_115', 'area_id_116',
+#                  'perc_id_116', 'area_id_121', 'perc_id_121', 'area_id_122', 'perc_id_122', 'area_id_123',
+#                  'perc_id_123', 'area_id_124', 'perc_id_124', 'area_id_125', 'perc_id_125', 'area_id_126',
+#                  'perc_id_126', 'area_id_200', 'perc_id_200']
+
+FEATURES_COLS = [
+    'area_id_40', 'perc_id_40', 'area_id_114', 'perc_id_114', 'area_id_115',
+    'perc_id_115', 'area_id_126', 'perc_id_126', 'area_id_124', 'perc_id_124',
+    'area_id_125', 'perc_id_125', 'area_id_116', 'perc_id_116', 'area_id_50',
+    'perc_id_50', 'area_id_90', 'perc_id_90', 'area_id_80', 'perc_id_80',
+    'area_id_30', 'perc_id_30', 'area_id_111', 'perc_id_111', 'area_id_121',
+    'perc_id_121', 'area_id_20', 'perc_id_20', 'area_id_100', 'perc_id_100',
+    'area_id_60', 'perc_id_60', 'area_id_122', 'perc_id_122', 'area_id_123',
+    'perc_id_123', 'area_id_112', 'perc_id_112', 'area_id_113', 'perc_id_113',
+    'area_id_70', 'perc_id_70', 'area_id_200', 'perc_id_200', 'area_id_0',
+    'perc_id_0'
+]
 
 
 def convert_polygon_stats(polygon_data):
@@ -35,23 +54,3 @@ def predict_polygon(data, model, scaler):
     X_scaled = scaler.transform(df)
 
     return model.predict(X_scaled)[0][0]
-
-
-# polygon = [
-#     {
-#         "name": "Cultivated and managed vegetation / agriculture. Lands covered with temporary crops followed by harvest\nand a bare soil period (e.g., single and multiple cropping systems).\nNote that perennial woody crops will be classified as the appropriate\nforest or shrub land cover type.\n",
-#         "area": 0.01,
-#         "percentage": 77.33,
-#         "id": 40
-#     },
-#     {
-#         "name": "Open forest, not matching any of the other definitions.",
-#         "area": 0.0,
-#         "percentage": 22.97,
-#         "id": 126
-#     }
-# ]
-#
-# polygon_converted = convert_polygon_stats(polygon)
-#
-# print(predict_polygon(polygon_converted, model, scaler))

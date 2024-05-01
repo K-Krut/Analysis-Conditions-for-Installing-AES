@@ -6,7 +6,7 @@ from ai_models.landscape_model.utils import predict_polygon, convert_polygon_sta
 from .constants import landscape_types, FILTERING_AREAS_SCALE, landscape_types_details, MIN_POLYGON_AREA, SUITABLE_TYPES
 from .ee_config import EE_CREDENTIALS
 
-scaler = joblib.load('scaler.gz')
+scaler = joblib.load('landscape_scaler.gz')
 model = keras.models.load_model('landscape_model.keras')
 ee.Initialize(EE_CREDENTIALS)
 
@@ -183,7 +183,10 @@ def define_suitable_polygon_coordinates(prediction, polygon_area, filtered_polyg
     if prediction < -0.5:
         print('eligible_polygons')
         eligible_polygons = calculate_polygons_difference(polygon, ee.Geometry.Polygon(filtered_polygon_data))
-        return get_polygon_with_max_area(eligible_polygons[0])
+        print(eligible_polygons)
+        max_polygon = get_polygon_with_max_area(eligible_polygons[0])
+        print('max_polygon ', max_polygon)
+        return max_polygon
     elif prediction > 0.5:
         return coordinates
     else:
@@ -223,18 +226,22 @@ def get_ee_classification(coordinates):
 
     land_types_stats = get_area_classification_details(landcover, polygon, polygon_area)
 
-    land_types_stats_analyze_result = analyze_land_types_stats(land_types_stats)
+    print(land_types_stats)
+    print()
 
-    print('analyze_land_types_stats: ', land_types_stats_analyze_result)
-
-    if not land_types_stats_analyze_result:
-        return land_types_stats, []
     landscape_prediction = predict_polygon(convert_polygon_stats(land_types_stats), model, scaler)
 
     print('PREDICTION: ', landscape_prediction)
 
+    # land_types_stats_analyze_result = analyze_land_types_stats(land_types_stats)
+
+    # print('analyze_land_types_stats: ', land_types_stats_analyze_result)
+
+    # if not land_types_stats_analyze_result:
+    #     return land_types_stats, []
+
     filtered_polygon_data = get_filtered_area_coordinates(polygon, landcover)
 
     suitable_territory = define_suitable_polygon_coordinates(landscape_prediction, polygon_area, filtered_polygon_data, polygon, coordinates)
-    # print(suitable_territory)
+    print('suitable_territory: ', suitable_territory)
     return land_types_stats, suitable_territory
