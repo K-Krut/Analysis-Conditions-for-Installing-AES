@@ -188,7 +188,7 @@ landscape_types_details = [
     },
 ]
 
-FILTERING_AREAS_SCALE = 100
+FILTERING_AREAS_SCALE = 50
 
 SUITABLE_TYPES = [30, 40, 60, 100]
 

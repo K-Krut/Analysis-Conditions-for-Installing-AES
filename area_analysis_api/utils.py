@@ -6,10 +6,11 @@ from ai_models.landscape_model.utils import predict_polygon, convert_polygon_sta
 from .constants import landscape_types, FILTERING_AREAS_SCALE, landscape_types_details, MIN_POLYGON_AREA, SUITABLE_TYPES
 from .ee_config import EE_CREDENTIALS
 
-scaler = joblib.load('landscape_scaler.gz')
-model = keras.models.load_model('landscape_model.keras')
+scaler = joblib.load('landscape_scaler_v5.gz')
+model = keras.models.load_model('landscape_model_v5.keras')
 ee.Initialize(EE_CREDENTIALS)
 landcover = ee.Image("COPERNICUS/Landcover/100m/Proba-V-C3/Global/2019").select('discrete_classification')
+
 
 def get_land_type_area_inside_polygon(polygon, class_mask):
     """
@@ -64,9 +65,11 @@ def get_area_classification_details(landcover, polygon, polygon_area):
         if percentage > 0:
             results.append(
                 {
-                    'name': landscape_types[land_type],
-                    'area': round(area, 2),
-                    'percentage': round(percentage, 2),
+                    # 'name': landscape_types[land_type],
+                    # 'area': round(area, 2),
+                    # 'percentage': round(percentage, 2),
+                    'area': area,
+                    'percentage': percentage,
                     'id': land_type
                 }
             )
@@ -170,8 +173,6 @@ def define_suitable_polygon_coordinates(prediction, polygon_area, filtered_polyg
 
     if prediction < -0.5:
         print('     eligible_polygons')
-
-
         filtered_polygon_classification = get_classification_of_filtered_area(filtered_polygon)
         print('     filtered_polygon_classification: ', filtered_polygon_classification)
         landscape_prediction = predict_polygon(convert_polygon_stats(filtered_polygon_classification), model, scaler)
@@ -206,12 +207,10 @@ def analyze_land_types_stats(land_types_stats):
         if i['id'] in SUITABLE_TYPES:
             results.append(i)
     return results
-    # print(all([i['percentage'] >= 30 for i in results]))
-    # print([i['percentage'] >= 30 for i in results])
-    # return all([i['percentage'] >= 30 for i in results]) if results else results
 
 
 def get_ee_classification(coordinates):
+    # coordinates = [[26.23570774134034, 50.33724069301126], [26.246822815498057, 50.324885532159975], [26.281112175544443, 50.33754199826431]]
     polygon = ee.Geometry.Polygon(coordinates)
     # landcover = ee.Image("COPERNICUS/Landcover/100m/Proba-V-C3/Global/2019").select('discrete_classification')
     print(coordinates)
@@ -229,17 +228,8 @@ def get_ee_classification(coordinates):
 
     print('PREDICTION: ', landscape_prediction)
 
-    # land_types_stats_analyze_result = analyze_land_types_stats(land_types_stats)
-
-    # print('analyze_land_types_stats: ', land_types_stats_analyze_result)
-
-    # if not land_types_stats_analyze_result:
-    #     return land_types_stats, []
-
     filtered_polygon_data = get_filtered_area_coordinates(polygon, landcover)
-    # print('filtered_polygon_data: ', filtered_polygon_data)
 
-    suitable_territory = define_suitable_polygon_coordinates(landscape_prediction, polygon_area, filtered_polygon_data,
-                                                             polygon, coordinates)
-    # print('suitable_territory: ', suitable_territory)
+    suitable_territory = define_suitable_polygon_coordinates(landscape_prediction, polygon_area, filtered_polygon_data, polygon, coordinates)
+
     return land_types_stats, suitable_territory[0], filtered_polygon_data, suitable_territory[1]
