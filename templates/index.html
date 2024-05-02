@@ -42,18 +42,26 @@
                     .then(data => {
                         console.log(data);
                         polygon.setMap(null);
-                        if (data.crop) {
-                            drawPolygon(data.crop, map, '#379628');
-                        }
+
                         {#console.log(data.crop)#}
-                        if (data.crop.length === 0) {
-                            drawPolygon(coordinates, map, '#fa0000');
+
+                        if (data.f) {
+                            drawPolygon(data.f[0], map, '#fae100');}
+                        if (data.e) {
+                            for (let rec of data.e) {
+                                drawPolygon(rec[0], map, '#b0309a', 0.5);}
+                        }
+                        if (data.crop) {
+                            drawPolygon(data.crop, map, '#379628', 0.8);
+                        }
+                                                if (data.crop.length === 0) {
+                            drawPolygon(coordinates, map, '#fa0000', 1);
                         }
                     })
                     .catch(error => console.error('Error:', error));
             });
 
-            function drawPolygon(coords, map, color) {
+            function drawPolygon(coords, map, color, opacity=0.35) {
                 const polygonPath = coords.map(coord => {
                     return {lat: coord[1], lng: coord[0]};
                 });
@@ -64,7 +72,7 @@
                     strokeOpacity: 0.3,
                     strokeWeight: 2,
                     fillColor: color,
-                    fillOpacity: 0.35
+                    fillOpacity: opacity
                 });
                 polygon.setMap(map);
             }

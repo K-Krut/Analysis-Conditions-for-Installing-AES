@@ -183,15 +183,15 @@ def define_suitable_polygon_coordinates(prediction, polygon_area, filtered_polyg
     if prediction < -0.5:
         print('eligible_polygons')
         eligible_polygons = calculate_polygons_difference(polygon, ee.Geometry.Polygon(filtered_polygon_data))
-        print(eligible_polygons)
-        max_polygon = get_polygon_with_max_area(eligible_polygons[0])
+        # print(eligible_polygons)
+        max_polygon = get_polygon_with_max_area(eligible_polygons)
         print('max_polygon ', max_polygon)
-        return max_polygon
+        return max_polygon[0], eligible_polygons
     elif prediction > 0.5:
-        return coordinates
+        return coordinates, []
     else:
         print('!!! ', prediction)
-        return []
+        return [], []
 
 
 def get_suitable_types_ids():
@@ -227,7 +227,6 @@ def get_ee_classification(coordinates):
     land_types_stats = get_area_classification_details(landcover, polygon, polygon_area)
 
     print(land_types_stats)
-    print()
 
     landscape_prediction = predict_polygon(convert_polygon_stats(land_types_stats), model, scaler)
 
@@ -241,7 +240,8 @@ def get_ee_classification(coordinates):
     #     return land_types_stats, []
 
     filtered_polygon_data = get_filtered_area_coordinates(polygon, landcover)
+    # print('filtered_polygon_data: ', filtered_polygon_data)
 
     suitable_territory = define_suitable_polygon_coordinates(landscape_prediction, polygon_area, filtered_polygon_data, polygon, coordinates)
-    print('suitable_territory: ', suitable_territory)
-    return land_types_stats, suitable_territory
+    # print('suitable_territory: ', suitable_territory)
+    return land_types_stats, suitable_territory[0], filtered_polygon_data, suitable_territory[1]

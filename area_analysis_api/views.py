@@ -24,6 +24,6 @@ class AnalyzeArea(APIView):
             if len(coordinates) < 3:
                 return JsonResponse({'error': 'Error - polygon must consist of at least 3 interconnected points'}, status=500)
             res = get_ee_classification(coordinates)
-            return JsonResponse({'coordinates': coordinates, 'area': res[0], 'crop': res[1]}, status=200)
+            return JsonResponse({'coordinates': coordinates, 'area': res[0], 'crop': res[1], 'f': res[2], 'e': res[3]}, status=200)
         # except Exception as e:
         #     return JsonResponse({'error': 'Error analysing polygon data' + str(e)}, status=500)
