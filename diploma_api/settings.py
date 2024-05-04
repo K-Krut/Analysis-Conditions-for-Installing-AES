@@ -42,6 +42,9 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
 ]
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+]
 
 ROOT_URLCONF = "diploma_api.urls"
 
