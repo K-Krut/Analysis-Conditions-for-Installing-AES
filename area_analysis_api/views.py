@@ -1,9 +1,6 @@
 from django.http import JsonResponse
-from django.shortcuts import render
 from rest_framework.parsers import JSONParser
 from rest_framework.views import APIView
-from rest_framework.response import Response
-from diploma_api import settings
 from .utils import get_ee_classification
 
 
@@ -11,7 +8,7 @@ from .utils import get_ee_classification
 
 class AnalyzeArea(APIView):
     def post(self, request):
-        # try:
+        try:
             data = JSONParser().parse(request)
             coordinates = data.get('coordinates')
             if not coordinates:
@@ -20,5 +17,5 @@ class AnalyzeArea(APIView):
                 return JsonResponse({'error': 'Error - polygon must consist of at least 3 interconnected points'}, status=500)
             res = get_ee_classification(coordinates)
             return JsonResponse({'coordinates': coordinates, 'area': res[0], 'crop': res[1]}, status=200)
-        # except Exception as e:
-        #     return JsonResponse({'error': 'Error analysing polygon data' + str(e)}, status=500)
+        except Exception as e:
+            return JsonResponse({'error': 'Error analysing polygon data' + str(e)}, status=500)
