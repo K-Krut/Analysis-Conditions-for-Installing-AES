@@ -48,7 +48,7 @@ landscape_types_details = [
         "name": "Herbaceous vegetation",
         "details": "Herbaceous vegetation. Plants without persistent stem or shoots above ground and lacking definite "
                    "firm structure. Tree and shrub cover is less than 10 %.",
-        "suitable": False
+        "suitable": True
     },
     {
         "id": 40,
@@ -188,7 +188,9 @@ landscape_types_details = [
     },
 ]
 
-FILTERING_AREAS_SCALE = 50
+FILTERING_AREAS_SCALE = 100
+FILTERING_AREAS_SCALE_MIN = 50
+FILTERING_AREAS_SCALE_MAX = 200
 
 SUITABLE_TYPES = [30, 40, 60, 100]
 
