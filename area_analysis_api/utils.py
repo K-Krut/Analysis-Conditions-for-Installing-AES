@@ -65,7 +65,7 @@ def get_area_classification_details(landcover, polygon, polygon_area):
         if percentage > 0:
             results.append(
                 {
-                    # 'name': landscape_types[land_type],
+                    'name': landscape_types[land_type],
                     # 'area': round(area, 2),
                     # 'percentage': round(percentage, 2),
                     'area': area,
@@ -174,7 +174,6 @@ def define_suitable_polygon_coordinates(prediction, polygon_area, filtered_polyg
     if prediction < -0.5:
         print('     eligible_polygons')
         filtered_polygon_classification = get_classification_of_filtered_area(filtered_polygon)
-        # print('     filtered_polygon_classification: ', filtered_polygon_classification)
         landscape_prediction = predict_polygon(convert_polygon_stats(filtered_polygon_classification), model, scaler)
 
         print('     PREDICTION: ', landscape_prediction)
@@ -183,7 +182,6 @@ def define_suitable_polygon_coordinates(prediction, polygon_area, filtered_polyg
         else:
             eligible_polygons = calculate_polygons_difference(polygon, filtered_polygon)
             max_polygon = get_polygon_with_max_area(eligible_polygons)
-            # print('     max_polygon ', max_polygon)
             return max_polygon[0], eligible_polygons
     elif prediction > 0.5:
         return coordinates, []
@@ -210,12 +208,9 @@ def analyze_land_types_stats(land_types_stats):
 
 
 def get_ee_classification(coordinates):
-    # coordinates = [[26.23570774134034, 50.33724069301126], [26.246822815498057, 50.324885532159975], [26.281112175544443, 50.33754199826431]]
     polygon = ee.Geometry.Polygon(coordinates)
-    # landcover = ee.Image("COPERNICUS/Landcover/100m/Proba-V-C3/Global/2019").select('discrete_classification')
-    # print(coordinates)
+
     polygon_area = get_polygon_area(polygon)
-    # print(polygon_area)
 
     if polygon_area < MIN_POLYGON_AREA:
         return None
