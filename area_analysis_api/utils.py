@@ -6,8 +6,8 @@ from ai_models.landscape_model.utils import predict_polygon, convert_polygon_sta
 from .constants import landscape_types, FILTERING_AREAS_SCALE, landscape_types_details, MIN_POLYGON_AREA, SUITABLE_TYPES
 from .ee_config import EE_CREDENTIALS
 
-scaler = joblib.load('landscape_scaler_v14.gz')
-model = keras.models.load_model('landscape_model_v14.keras')
+scaler = joblib.load('landscape_scaler_v15.gz')
+model = keras.models.load_model('landscape_model_v15.keras')
 ee.Initialize(EE_CREDENTIALS)
 landcover = ee.Image("COPERNICUS/Landcover/100m/Proba-V-C3/Global/2019").select('discrete_classification')
 
@@ -65,9 +65,7 @@ def get_area_classification_details(landcover, polygon, polygon_area):
         if percentage > 0:
             results.append(
                 {
-                    # 'name': landscape_types[land_type],
-                    # 'area': round(area, 2),
-                    # 'percentage': round(percentage, 2),
+                    'name': landscape_types[land_type],
                     'area': area,
                     'percentage': percentage,
                     'id': land_type
@@ -179,16 +177,18 @@ def define_suitable_polygon_coordinates(prediction, polygon_area, filtered_polyg
 
         print('     PREDICTION: ', landscape_prediction)
         if landscape_prediction > 0.5:
-            return filtered_polygon.coordinates().getInfo()[0], []
-        else:
+            return filtered_polygon.coordinates().getInfo()[0]
+        elif landscape_prediction < -0.5:
             eligible_polygons = calculate_polygons_difference(polygon, filtered_polygon)
             max_polygon = get_polygon_with_max_area(eligible_polygons)
-            return max_polygon[0], eligible_polygons
+            return max_polygon[0]
+        else:
+            return []
     elif prediction > 0.5:
-        return coordinates, []
+        return coordinates
     else:
         print('     !!! ', prediction)
-        return [], []
+        return []
 
 
 def get_suitable_types_ids():
@@ -229,7 +229,9 @@ def get_ee_classification(coordinates):
     suitable_territory = define_suitable_polygon_coordinates(landscape_prediction, polygon_area, filtered_polygon_data,
                                                              polygon, coordinates)
 
+    print(suitable_territory)
+
     # print('crop: ', suitable_territory[0])
-    return land_types_stats, suitable_territory[0], filtered_polygon_data[0], suitable_territory[1]
+    return land_types_stats, suitable_territory, polygon_area
 
 
