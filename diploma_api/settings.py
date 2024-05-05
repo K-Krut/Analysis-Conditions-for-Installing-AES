@@ -1,8 +1,6 @@
 from pathlib import Path
 import os
 from dotenv import load_dotenv
-import django_heroku
-import dj_database_url
 from django.contrib import staticfiles
 
 
@@ -26,7 +24,7 @@ ALLOWED_HOSTS = [
 
 
 INSTALLED_APPS = [
-    "django.contrib.admin",
+    # "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
@@ -114,6 +112,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
-
 
 DEFAULT_AUTO_FIELD = "django.db.ai_models.BigAutoField"

@@ -1,1 +1,1 @@
-web gunicorn diploma/-api.wsgi
+web gunicorn diploma_api.wsgi:application

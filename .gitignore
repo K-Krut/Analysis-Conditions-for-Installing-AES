@@ -1,8 +1,8 @@
 /.env
 /.idea
-/area_analysis_api/maximal-goods-420319-869eed583e4c.json
 /area_analysis_api/gee_console_scripts/utils-test.py
 /area_analysis_api/gee_console_scripts/
 /area_analysis_api/test.py
 /ai_models/landscape_model/utils-test.py
 /area_analysis_api/data-train.py
+/vulture_report.txt
