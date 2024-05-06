@@ -1,6 +1,7 @@
 from pathlib import Path
 import os
 from dotenv import load_dotenv
+from django.contrib import staticfiles
 
 
 load_dotenv()
@@ -16,8 +17,10 @@ EE_ACCOUNT = os.getenv('EE_ACCOUNT')
 EE_PRIVATE_KEY_FILE = os.getenv('EE_PRIVATE_KEY_FILE')
 
 
-
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "127.0.0.1",
+    "diploma-api-f6a839b4d124.herokuapp.com",
+]
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
@@ -26,7 +29,7 @@ CORS_ALLOWED_ORIGINS = [
 
 
 INSTALLED_APPS = [
-    "django.contrib.admin",
+    # "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
@@ -46,6 +49,10 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
+]
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
 ]
 
 ROOT_URLCONF = "diploma_api.urls"
@@ -107,11 +114,8 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.2/howto/static-files/
-
-STATIC_URL = "static/"
-
-# Default primary key field type
-# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 
 DEFAULT_AUTO_FIELD = "django.db.ai_models.BigAutoField"

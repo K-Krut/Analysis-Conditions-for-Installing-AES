@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "maximal-goods-420319",
+  "private_key_id": "869eed583e4c31c031932af6ce247aebce601391",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDBHZbhXUeU4tcM\n9aVPSRITXOeR7RKCBgMQ2FtlkgzC35eHgsQZ1gcijq/XHsO/k9awknPXTqgautAr\ncDK8xLCtzKKSTrK2aas/phKSUdrQZL0cba62kClZZ4nXybmzdlCKRomLm6DhX91c\nwIpbcXgD0gSJOuz0v4x04rTkA+OJRSWkQRwP2Qn6KkWzEC2J6spiJh8to6dqzn3E\nnTCaUJXpKdmPSp6sfbwwTHKWW6tEX29nL3qV3vDVdYsRPGYrzz28W/nXmVpsJJZf\njeoztwJbdqziG+JlOwghpSfAtyftePrqm8GnIoVrsAFKMckgzMjlpvcFG/sAGPqZ\no8rcDkFRAgMBAAECggEADDsyapr4vQ16gy2+TwWg5VTPrnKKZu2YTV10uXvM/t1A\nSNMPllbT3ByXNsvyKDzF/uhBucf3tfyx0WSBdCsNiS6CN/vPziWmdOkw+S9ByYvt\n3eJ1C8dY9RqNlJsoXb1fR8jErrDYWVnz6Gth//1xdWV8h9ARgMVukRsoS55S76dT\nN5lM5cZf6MXsbKFe2P9Li1X6zQUDKoVq02uNr/7guc+yfcl6+IMKhAfUdwzxXlL4\niSqJPpGgsGfPnN/kbfhPmhWL/CYeDHCmxpTRSutvABww2XQS/0VcuDaDLovmuVKI\nsj1miNq4BiwqCFutbpmGCU7WcepnH1RikxtgO0wROQKBgQDlSEerTT1LM8JCkoUY\nmR67zKks3ZzZRWwVbUKExzK261eANyO20GoZQabbJI5uAKomOkW4JS0yVatwkzIT\nXVSVeLbC9OsmWdJ4N74dfxiFS/MrouCtADaFVXpiZ454stsyQaiOdZEaqLkDenW7\nqGo6treY6kpPgLvODaSyzoh56QKBgQDXnmtGZq6q7hqJrjSCNiXrtvuvc1qhrVy2\nUoE72GLBMvlI9pX6yUnib7NyACKN9LDclyJN8JMzIUBWsJzLlnEAO55dReRNXqMs\ntDDZ3bAEOT9PxpgtVSUy1zE+05V5yFeVIUzjM9WW5VYYWllJj9rFszmrOkJGr2ZO\nwM7CaH0DKQKBgQDPeBYR9bRu5gj0AG0bEwLyYID8rhONrvnccZ9tUmqbhl0JEdvp\nQrGe5P888NlIxKUyLiyEMm+xSj/1f9wiFaPCFRcbVk+pxkFist3/BtCDXXROmfW/\n1Z+ACxbREG+k3ALoeO0y60M/4kh300nRYtWtB0Uew3I2eoB2NXZArg5kcQKBgQCq\ntAv//5k3UCyIZffCQvZAqGyYGf5d06971NPlukls5VtAraBNnQC2mXJ6xaqVsmw3\nKBwLknQnXaLfPxHTiHZMFecptwSpUExlPv8R7RXGMkByeyrNcQRzPLULJV3IvZjB\nQ0zo74eg4E4KF7VqrM4qCNuWORhxd7nKjZDjju+yCQKBgQCBi4FFcXW/DOiFg8GZ\npZKUKfraTomDC8E0ZCLGW5GfMm/0owRbWsu1/OZcJnsymt46Kt/aG/j3rfNm0QR/\nLg88XEXl8uQZ3BnPpBCK8conaYbNefwTVwB3lmOkEcQ6ERg95bNrMjAGfPR8l5Ut\nrZGFgk0C+FfDInbxWAx+vWEtqg==\n-----END PRIVATE KEY-----\n",
+  "client_email": "diploma@maximal-goods-420319.iam.gserviceaccount.com",
+  "client_id": "100859032892593623402",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/diploma%40maximal-goods-420319.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

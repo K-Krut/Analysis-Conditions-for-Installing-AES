@@ -3,31 +3,56 @@ Landscape types in GEE
 https://zenodo.org/records/4723921
 """
 landscape_types = {
-    0: "Unknown. No or not enough satellite data available.",
-    20: "Shrubs. Woody perennial plants with persistent and woody stems\nand without any defined main stem being less than 5 m tall. The\nshrub foliage can be either evergreen or deciduous.\n",
-    30: "Herbaceous vegetation. Plants without persistent stem or shoots above ground\nand lacking definite firm structure. Tree and shrub cover is less\nthan 10 %.\n",
-    40: "Cultivated and managed vegetation / agriculture. Lands covered with temporary crops followed by harvest\nand a bare soil period (e.g., single and multiple cropping systems).\nNote that perennial woody crops will be classified as the appropriate\nforest or shrub land cover type.\n",
-    50: "Urban / built up. Land covered by buildings and other man-made structures.",
-    60: "Bare / sparse vegetation. Lands with exposed soil, sand, or rocks and never has\nmore than 10 % vegetated cover during any time of the year.\n",
-    70: "Snow and ice. Lands under snow or ice cover throughout the year.",
-    80: "Permanent water bodies. Lakes, reservoirs, and rivers. Can be either fresh or salt-water bodies.",
-    90: "Herbaceous wetland. Lands with a permanent mixture of water and herbaceous\nor woody vegetation. The vegetation can be present in either salt,\nbrackish, or fresh water.\n",
-    100: "Moss and lichen.",
-    111: "Closed forest, evergreen needle leaf. Tree canopy >70 %, almost all needle leaf trees remain\ngreen all year. Canopy is never without green foliage.\n",
-    112: "Closed forest, evergreen broad leaf. Tree canopy >70 %, almost all broadleaf trees remain\ngreen year round. Canopy is never without green foliage.\n",
-    113: "Closed forest, deciduous needle leaf. Tree canopy >70 %, consists of seasonal needle leaf\ntree communities with an annual cycle of leaf-on and leaf-off\nperiods.\n",
-    114: "Closed forest, deciduous broad leaf. Tree canopy >70 %, consists of seasonal broadleaf\ntree communities with an annual cycle of leaf-on and leaf-off periods.\n",
-    115: "Closed forest, mixed.",
-    116: "Closed forest, not matching any of the other definitions.",
-    121: "Open forest, evergreen needle leaf. Top layer- trees 15-70 % and second layer- mixed of shrubs\nand grassland, almost all needle leaf trees remain green all year.\nCanopy is never without green foliage.\n",
-    122: "Open forest, evergreen broad leaf. Top layer- trees 15-70 % and second layer- mixed of shrubs\nand grassland, almost all broadleaf trees remain green year round.\nCanopy is never without green foliage.\n",
-    123: "Open forest, deciduous needle leaf. Top layer- trees 15-70 % and second layer- mixed of shrubs\nand grassland, consists of seasonal needle leaf tree communities with\nan annual cycle of leaf-on and leaf-off periods.\n",
-    124: "Open forest, deciduous broad leaf. Top layer- trees 15-70 % and second layer- mixed of shrubs\nand grassland, consists of seasonal broadleaf tree communities with\nan annual cycle of leaf-on and leaf-off periods.\n",
-    125: "Open forest, mixed.",
-    126: "Open forest, not matching any of the other definitions.",
-    200: "Oceans, seas. Can be either fresh or salt-water bodies."
+    0: "Unknown",
+    20: "Shrubs",
+    30: "Herbaceous vegetation",
+    40: "Cultivated and managed vegetation / agriculture",
+    50: "Urban / built up",
+    60: "Bare / sparse vegetation",
+    70: "Snow and ice",
+    80: "Permanent water bodies",
+    90: "Herbaceous wetland",
+    100: "Moss and lichen",
+    111: "Closed forest, evergreen needle leaf",
+    112: "Closed forest, evergreen broad leaf",
+    113: "Closed forest, deciduous needle leaf",
+    114: "Closed forest, deciduous broad leaf",
+    115: "Closed forest, mixed",
+    116: "Closed forest, not matching any of the other definitions",
+    121: "Open forest, evergreen needle leaf",
+    122: "Open forest, evergreen broad leaf",
+    123: "Open forest, deciduous needle leaf",
+    124: "Open forest, deciduous broad leaf",
+    125: "Open forest, mixed",
+    126: "Open forest, not matching any of the other definitions",
+    200: "Oceans, seas. Can be either fresh or salt-water bodies"
 }
 
+# landscape_types = {
+#     0: "Unknown. No or not enough satellite data available.",
+#     20: "Shrubs. Woody perennial plants with persistent and woody stems\nand without any defined main stem being less than 5 m tall. The\nshrub foliage can be either evergreen or deciduous.\n",
+#     30: "Herbaceous vegetation. Plants without persistent stem or shoots above ground\nand lacking definite firm structure. Tree and shrub cover is less\nthan 10 %.\n",
+#     40: "Cultivated and managed vegetation / agriculture. Lands covered with temporary crops followed by harvest\nand a bare soil period (e.g., single and multiple cropping systems).\nNote that perennial woody crops will be classified as the appropriate\nforest or shrub land cover type.\n",
+#     50: "Urban / built up. Land covered by buildings and other man-made structures.",
+#     60: "Bare / sparse vegetation. Lands with exposed soil, sand, or rocks and never has\nmore than 10 % vegetated cover during any time of the year.\n",
+#     70: "Snow and ice. Lands under snow or ice cover throughout the year.",
+#     80: "Permanent water bodies. Lakes, reservoirs, and rivers. Can be either fresh or salt-water bodies.",
+#     90: "Herbaceous wetland. Lands with a permanent mixture of water and herbaceous\nor woody vegetation. The vegetation can be present in either salt,\nbrackish, or fresh water.\n",
+#     100: "Moss and lichen.",
+#     111: "Closed forest, evergreen needle leaf. Tree canopy >70 %, almost all needle leaf trees remain\ngreen all year. Canopy is never without green foliage.\n",
+#     112: "Closed forest, evergreen broad leaf. Tree canopy >70 %, almost all broadleaf trees remain\ngreen year round. Canopy is never without green foliage.\n",
+#     113: "Closed forest, deciduous needle leaf. Tree canopy >70 %, consists of seasonal needle leaf\ntree communities with an annual cycle of leaf-on and leaf-off\nperiods.\n",
+#     114: "Closed forest, deciduous broad leaf. Tree canopy >70 %, consists of seasonal broadleaf\ntree communities with an annual cycle of leaf-on and leaf-off periods.\n",
+#     115: "Closed forest, mixed.",
+#     116: "Closed forest, not matching any of the other definitions.",
+#     121: "Open forest, evergreen needle leaf. Top layer- trees 15-70 % and second layer- mixed of shrubs\nand grassland, almost all needle leaf trees remain green all year.\nCanopy is never without green foliage.\n",
+#     122: "Open forest, evergreen broad leaf. Top layer- trees 15-70 % and second layer- mixed of shrubs\nand grassland, almost all broadleaf trees remain green year round.\nCanopy is never without green foliage.\n",
+#     123: "Open forest, deciduous needle leaf. Top layer- trees 15-70 % and second layer- mixed of shrubs\nand grassland, consists of seasonal needle leaf tree communities with\nan annual cycle of leaf-on and leaf-off periods.\n",
+#     124: "Open forest, deciduous broad leaf. Top layer- trees 15-70 % and second layer- mixed of shrubs\nand grassland, consists of seasonal broadleaf tree communities with\nan annual cycle of leaf-on and leaf-off periods.\n",
+#     125: "Open forest, mixed.",
+#     126: "Open forest, not matching any of the other definitions.",
+#     200: "Oceans, seas. Can be either fresh or salt-water bodies."
+# }
 
 landscape_types_details = [
     {
@@ -48,7 +73,7 @@ landscape_types_details = [
         "name": "Herbaceous vegetation",
         "details": "Herbaceous vegetation. Plants without persistent stem or shoots above ground and lacking definite "
                    "firm structure. Tree and shrub cover is less than 10 %.",
-        "suitable": False
+        "suitable": True
     },
     {
         "id": 40,
@@ -188,7 +213,9 @@ landscape_types_details = [
     },
 ]
 
-FILTERING_AREAS_SCALE = 50
+FILTERING_AREAS_SCALE = 100
+FILTERING_AREAS_SCALE_MIN = 50
+FILTERING_AREAS_SCALE_MAX = 200
 
 SUITABLE_TYPES = [30, 40, 60, 100]
 
