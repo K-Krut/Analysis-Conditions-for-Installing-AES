@@ -1,0 +1,7177 @@
+[
+    {
+        "id": "33049",
+        "name": {
+            "en": "Semenovka"
+        },
+        "country": "UA",
+        "region": "CH",
+        "identifiers": {
+            "national": null,
+            "wmo": "33049",
+            "icao": null
+        },
+        "location": {
+            "latitude": 52.1833,
+            "longitude": 32.5833,
+            "elevation": 160
+        },
+        "timezone": "Europe/Kiev",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-01-01",
+                "end": "2016-06-14"
+            },
+            "monthly": {
+                "start": 1969,
+                "end": 2016
+            },
+            "normals": {
+                "start": 1961,
+                "end": 1990
+            }
+        }
+    },
+    {
+        "id": "33058",
+        "name": {
+            "en": "Druzhba"
+        },
+        "country": "UA",
+        "region": "SM",
+        "identifiers": {
+            "national": null,
+            "wmo": "33058",
+            "icao": null
+        },
+        "location": {
+            "latitude": 52.05,
+            "longitude": 33.95,
+            "elevation": 190
+        },
+        "timezone": "Europe/Kiev",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-07-01",
+                "end": "2016-06-14"
+            },
+            "monthly": {
+                "start": 1959,
+                "end": 2016
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33075",
+        "name": {
+            "en": "Pnevno"
+        },
+        "country": "UA",
+        "region": "VO",
+        "identifiers": {
+            "national": null,
+            "wmo": "33075",
+            "icao": null
+        },
+        "location": {
+            "latitude": 51.6667,
+            "longitude": 25.2667,
+            "elevation": 152
+        },
+        "timezone": "Europe/Kiev",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-07-01",
+                "end": "2009-06-17"
+            },
+            "monthly": {
+                "start": 1959,
+                "end": 2008
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33088",
+        "name": {
+            "en": "Sarny"
+        },
+        "country": "UA",
+        "region": "RV",
+        "identifiers": {
+            "national": null,
+            "wmo": "33088",
+            "icao": null
+        },
+        "location": {
+            "latitude": 51.2833,
+            "longitude": 26.6167,
+            "elevation": 154
+        },
+        "timezone": "Europe/Kiev",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-07-01",
+                "end": "2009-06-17"
+            },
+            "monthly": {
+                "start": 1959,
+                "end": 2008
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33135",
+        "name": {
+            "en": "Chernihiv"
+        },
+        "country": "UA",
+        "region": "CH",
+        "identifiers": {
+            "national": null,
+            "wmo": "33135",
+            "icao": null
+        },
+        "location": {
+            "latitude": 51.4667,
+            "longitude": 31.25,
+            "elevation": 139
+        },
+        "timezone": "Europe/Kiev",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1936-01-01",
+                "end": "2009-06-17"
+            },
+            "monthly": {
+                "start": 1936,
+                "end": 2010
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2020
+            }
+        }
+    },
+    {
+        "id": "33136",
+        "name": {
+            "en": "Volskovtsky"
+        },
+        "country": "UA",
+        "region": "CH",
+        "identifiers": {
+            "national": null,
+            "wmo": "33136",
+            "icao": null
+        },
+        "location": {
+            "latitude": 51.5667,
+            "longitude": 31.9667,
+            "elevation": 143
+        },
+        "timezone": "Europe/Kiev",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-07-02",
+                "end": "2009-06-17"
+            },
+            "monthly": {
+                "start": 1959,
+                "end": 2008
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33156",
+        "name": {
+            "en": "Glukhov"
+        },
+        "country": "UA",
+        "region": "SM",
+        "identifiers": {
+            "national": null,
+            "wmo": "33156",
+            "icao": null
+        },
+        "location": {
+            "latitude": 51.6833,
+            "longitude": 33.9167,
+            "elevation": 180
+        },
+        "timezone": "Europe/Kiev",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-07-01",
+                "end": "2009-06-17"
+            },
+            "monthly": {
+                "start": 1959,
+                "end": 2008
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33173",
+        "name": {
+            "en": "Kovel"
+        },
+        "country": "UA",
+        "region": "VO",
+        "identifiers": {
+            "national": null,
+            "wmo": "33173",
+            "icao": null
+        },
+        "location": {
+            "latitude": 51.2167,
+            "longitude": 24.6833,
+            "elevation": 173
+        },
+        "timezone": "Europe/Uzhgorod",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1940-06-21",
+                "end": "2009-06-17"
+            },
+            "monthly": {
+                "start": 1940,
+                "end": 2008
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33177",
+        "name": {
+            "en": "Volodymyr-Volyns'Kyi"
+        },
+        "country": "UA",
+        "region": "VO",
+        "identifiers": {
+            "national": null,
+            "wmo": "33177",
+            "icao": null
+        },
+        "location": {
+            "latitude": 50.8333,
+            "longitude": 24.3167,
+            "elevation": 193
+        },
+        "timezone": "Europe/Uzhgorod",
+        "inventory": {
+            "model": {
+                "start": "2019-11-04",
+                "end": "2024-05-15"
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-01-01",
+                "end": "2024-04-30"
+            },
+            "monthly": {
+                "start": 1960,
+                "end": 2021
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2020
+            }
+        }
+    },
+    {
+        "id": "33182",
+        "name": {
+            "en": "Manevichi"
+        },
+        "country": "UA",
+        "region": "VO",
+        "identifiers": {
+            "national": null,
+            "wmo": "33182",
+            "icao": null
+        },
+        "location": {
+            "latitude": 51.2833,
+            "longitude": 25.5333,
+            "elevation": 183
+        },
+        "timezone": "Europe/Kiev",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-07-01",
+                "end": "2009-06-17"
+            },
+            "monthly": {
+                "start": 1959,
+                "end": 2008
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33187",
+        "name": {
+            "en": "Luts'K"
+        },
+        "country": "UA",
+        "region": "VO",
+        "identifiers": {
+            "national": null,
+            "wmo": "33187",
+            "icao": null
+        },
+        "location": {
+            "latitude": 50.7,
+            "longitude": 25.5,
+            "elevation": 233
+        },
+        "timezone": "Europe/Uzhgorod",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-07-02",
+                "end": "2009-06-17"
+            },
+            "monthly": {
+                "start": 1959,
+                "end": 2008
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33213",
+        "name": {
+            "en": "Ovruch"
+        },
+        "country": "UA",
+        "region": "ZT",
+        "identifiers": {
+            "national": null,
+            "wmo": "33213",
+            "icao": null
+        },
+        "location": {
+            "latitude": 51.3167,
+            "longitude": 28.7833,
+            "elevation": 168
+        },
+        "timezone": "Europe/Kiev",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1936-01-01",
+                "end": "2016-06-14"
+            },
+            "monthly": {
+                "start": 1936,
+                "end": 2021
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2020
+            }
+        }
+    },
+    {
+        "id": "33215",
+        "name": {
+            "en": "Korosten"
+        },
+        "country": "UA",
+        "region": "ZT",
+        "identifiers": {
+            "national": null,
+            "wmo": "33215",
+            "icao": null
+        },
+        "location": {
+            "latitude": 50.95,
+            "longitude": 28.65,
+            "elevation": 189
+        },
+        "timezone": "Europe/Kiev",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-07-01",
+                "end": "2009-06-17"
+            },
+            "monthly": {
+                "start": 1959,
+                "end": 2008
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33222",
+        "name": {
+            "en": "Volya"
+        },
+        "country": "UA",
+        "region": "KV",
+        "identifiers": {
+            "national": null,
+            "wmo": "33222",
+            "icao": null
+        },
+        "location": {
+            "latitude": 51.2333,
+            "longitude": 29.3833,
+            "elevation": 137
+        },
+        "timezone": "Europe/Kiev",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-07-01",
+                "end": "1991-09-18"
+            },
+            "monthly": {
+                "start": 1959,
+                "end": 1990
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33228",
+        "name": {
+            "en": "Teteriv"
+        },
+        "country": "UA",
+        "region": "KV",
+        "identifiers": {
+            "national": null,
+            "wmo": "33228",
+            "icao": null
+        },
+        "location": {
+            "latitude": 50.7,
+            "longitude": 29.5833,
+            "elevation": 132
+        },
+        "timezone": "Europe/Kiev",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-01-01",
+                "end": "2016-06-14"
+            },
+            "monthly": {
+                "start": 1969,
+                "end": 2016
+            },
+            "normals": {
+                "start": 1961,
+                "end": 1990
+            }
+        }
+    },
+    {
+        "id": "33231",
+        "name": {
+            "en": "Chornobyl"
+        },
+        "country": "UA",
+        "region": "KV",
+        "identifiers": {
+            "national": null,
+            "wmo": "33231",
+            "icao": null
+        },
+        "location": {
+            "latitude": 51.2833,
+            "longitude": 30.2333,
+            "elevation": 123
+        },
+        "timezone": "Europe/Kiev",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1955-01-29",
+                "end": "2016-06-14"
+            },
+            "monthly": {
+                "start": 1976,
+                "end": 2016
+            },
+            "normals": {
+                "start": 1961,
+                "end": 1990
+            }
+        }
+    },
+    {
+        "id": "33236",
+        "name": {
+            "en": "Oster / Ostër"
+        },
+        "country": "UA",
+        "region": "CH",
+        "identifiers": {
+            "national": null,
+            "wmo": "33236",
+            "icao": null
+        },
+        "location": {
+            "latitude": 50.95,
+            "longitude": 30.8833,
+            "elevation": 104
+        },
+        "timezone": "Europe/Kiev",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-07-01",
+                "end": "2016-06-01"
+            },
+            "monthly": {
+                "start": 1959,
+                "end": 2008
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33246",
+        "name": {
+            "en": "Nizhyn"
+        },
+        "country": "UA",
+        "region": "CH",
+        "identifiers": {
+            "national": null,
+            "wmo": "33246",
+            "icao": null
+        },
+        "location": {
+            "latitude": 51.05,
+            "longitude": 31.9,
+            "elevation": 124
+        },
+        "timezone": "Europe/Kiev",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1955-03-05",
+                "end": "2016-06-14"
+            },
+            "monthly": {
+                "start": 1973,
+                "end": 2016
+            },
+            "normals": {
+                "start": 1961,
+                "end": 1990
+            }
+        }
+    },
+    {
+        "id": "33261",
+        "name": {
+            "en": "Konotop"
+        },
+        "country": "UA",
+        "region": "SM",
+        "identifiers": {
+            "national": null,
+            "wmo": "33261",
+            "icao": null
+        },
+        "location": {
+            "latitude": 51.2333,
+            "longitude": 33.2,
+            "elevation": 144
+        },
+        "timezone": "Europe/Kiev",
+        "inventory": {
+            "model": {
+                "start": "2018-01-28",
+                "end": "2024-05-16"
+            },
+            "hourly": {
+                "start": "2018-01-27",
+                "end": "2024-05-06"
+            },
+            "daily": {
+                "start": "1936-01-01",
+                "end": "2024-04-21"
+            },
+            "monthly": {
+                "start": 1936,
+                "end": 2021
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33268",
+        "name": {
+            "en": "Romny"
+        },
+        "country": "UA",
+        "region": "SM",
+        "identifiers": {
+            "national": null,
+            "wmo": "33268",
+            "icao": null
+        },
+        "location": {
+            "latitude": 50.7667,
+            "longitude": 33.45,
+            "elevation": 168
+        },
+        "timezone": "Europe/Kiev",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-01-05",
+                "end": "2016-06-14"
+            },
+            "monthly": {
+                "start": 1969,
+                "end": 2016
+            },
+            "normals": {
+                "start": 1961,
+                "end": 1990
+            }
+        }
+    },
+    {
+        "id": "33271",
+        "name": {
+            "en": "Belopol'E / Bilopillya"
+        },
+        "country": "UA",
+        "region": "SM",
+        "identifiers": {
+            "national": null,
+            "wmo": "33271",
+            "icao": null
+        },
+        "location": {
+            "latitude": 51.15,
+            "longitude": 34.3333,
+            "elevation": 156
+        },
+        "timezone": "Europe/Kiev",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-01-02",
+                "end": "1989-09-10"
+            },
+            "monthly": {
+                "start": 1973,
+                "end": 1984
+            },
+            "normals": {
+                "start": 1961,
+                "end": 1990
+            }
+        }
+    },
+    {
+        "id": "33275",
+        "name": {
+            "en": "Sumy"
+        },
+        "country": "UA",
+        "region": "SM",
+        "identifiers": {
+            "national": null,
+            "wmo": "33275",
+            "icao": "UKHS"
+        },
+        "location": {
+            "latitude": 50.85,
+            "longitude": 34.6667,
+            "elevation": 180
+        },
+        "timezone": "Europe/Kiev",
+        "inventory": {
+            "model": {
+                "start": "2019-11-04",
+                "end": "2024-05-15"
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1936-01-01",
+                "end": "2024-04-21"
+            },
+            "monthly": {
+                "start": 1936,
+                "end": 2021
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2020
+            }
+        }
+    },
+    {
+        "id": "33287",
+        "name": {
+            "en": "Rava-Rus'Ka"
+        },
+        "country": "UA",
+        "region": "LV",
+        "identifiers": {
+            "national": null,
+            "wmo": "33287",
+            "icao": null
+        },
+        "location": {
+            "latitude": 50.25,
+            "longitude": 23.6333,
+            "elevation": 252
+        },
+        "timezone": "Europe/Uzhgorod",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-01-01",
+                "end": "2016-06-14"
+            },
+            "monthly": {
+                "start": 1975,
+                "end": 2016
+            },
+            "normals": {
+                "start": 1961,
+                "end": 1990
+            }
+        }
+    },
+    {
+        "id": "33288",
+        "name": {
+            "en": "Kamenka-Bugskaya"
+        },
+        "country": "UA",
+        "region": "LV",
+        "identifiers": {
+            "national": null,
+            "wmo": "33288",
+            "icao": null
+        },
+        "location": {
+            "latitude": 50.1,
+            "longitude": 24.35,
+            "elevation": 228
+        },
+        "timezone": "Europe/Uzhgorod",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-01-01",
+                "end": "2009-06-17"
+            },
+            "monthly": {
+                "start": 1978,
+                "end": 2008
+            },
+            "normals": {
+                "start": 1961,
+                "end": 1990
+            }
+        }
+    },
+    {
+        "id": "33296",
+        "name": {
+            "en": "Dubno"
+        },
+        "country": "UA",
+        "region": null,
+        "identifiers": {
+            "national": null,
+            "wmo": "33296",
+            "icao": null
+        },
+        "location": {
+            "latitude": 50.4167,
+            "longitude": 25.75,
+            "elevation": 216
+        },
+        "timezone": "Europe/Uzhgorod",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-07-01",
+                "end": "2016-05-30"
+            },
+            "monthly": {
+                "start": 1959,
+                "end": 2008
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33297",
+        "name": {
+            "en": "Brody"
+        },
+        "country": "UA",
+        "region": "LV",
+        "identifiers": {
+            "national": null,
+            "wmo": "33297",
+            "icao": null
+        },
+        "location": {
+            "latitude": 50.1,
+            "longitude": 25.15,
+            "elevation": 227
+        },
+        "timezone": "Europe/Uzhgorod",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-01-01",
+                "end": "2016-06-14"
+            },
+            "monthly": {
+                "start": 1976,
+                "end": 2016
+            },
+            "normals": {
+                "start": 1961,
+                "end": 1990
+            }
+        }
+    },
+    {
+        "id": "33301",
+        "name": {
+            "en": "Rivne"
+        },
+        "country": "UA",
+        "region": "RV",
+        "identifiers": {
+            "national": null,
+            "wmo": "33301",
+            "icao": "UKLR"
+        },
+        "location": {
+            "latitude": 50.5833,
+            "longitude": 26.1333,
+            "elevation": 231
+        },
+        "timezone": "Europe/Kiev",
+        "inventory": {
+            "model": {
+                "start": "2019-11-04",
+                "end": "2024-05-15"
+            },
+            "hourly": {
+                "start": "1959-01-01",
+                "end": "2024-04-29"
+            },
+            "daily": {
+                "start": "1959-01-01",
+                "end": "2024-04-30"
+            },
+            "monthly": {
+                "start": 1960,
+                "end": 2021
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2020
+            }
+        }
+    },
+    {
+        "id": "33312",
+        "name": {
+            "en": "Novohrad-Volyns'Kyi"
+        },
+        "country": "UA",
+        "region": "ZT",
+        "identifiers": {
+            "national": null,
+            "wmo": "33312",
+            "icao": null
+        },
+        "location": {
+            "latitude": 50.6,
+            "longitude": 27.6333,
+            "elevation": 216
+        },
+        "timezone": "Europe/Kiev",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-01-01",
+                "end": "2016-06-14"
+            },
+            "monthly": {
+                "start": 1976,
+                "end": 2016
+            },
+            "normals": {
+                "start": 1961,
+                "end": 1990
+            }
+        }
+    },
+    {
+        "id": "33317",
+        "name": {
+            "en": "Shepetivka"
+        },
+        "country": "UA",
+        "region": "KM",
+        "identifiers": {
+            "national": null,
+            "wmo": "33317",
+            "icao": null
+        },
+        "location": {
+            "latitude": 50.1667,
+            "longitude": 27.0333,
+            "elevation": 277
+        },
+        "timezone": "Europe/Kiev",
+        "inventory": {
+            "model": {
+                "start": "2019-11-04",
+                "end": "2024-05-15"
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1924-04-01",
+                "end": "2024-04-30"
+            },
+            "monthly": {
+                "start": 1924,
+                "end": 2021
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2020
+            }
+        }
+    },
+    {
+        "id": "33325",
+        "name": {
+            "en": "Zhytomyr"
+        },
+        "country": "UA",
+        "region": "ZT",
+        "identifiers": {
+            "national": null,
+            "wmo": "33325",
+            "icao": null
+        },
+        "location": {
+            "latitude": 50.2333,
+            "longitude": 28.7333,
+            "elevation": 219
+        },
+        "timezone": "Europe/Kiev",
+        "inventory": {
+            "model": {
+                "start": "2019-11-04",
+                "end": "2024-05-15"
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1938-01-01",
+                "end": "2024-04-26"
+            },
+            "monthly": {
+                "start": 1938,
+                "end": 2021
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33339",
+        "name": {
+            "en": "Fastov"
+        },
+        "country": "UA",
+        "region": "KV",
+        "identifiers": {
+            "national": null,
+            "wmo": "33339",
+            "icao": null
+        },
+        "location": {
+            "latitude": 50.0833,
+            "longitude": 29.9167,
+            "elevation": 209
+        },
+        "timezone": "Europe/Kiev",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-07-01",
+                "end": "2009-06-17"
+            },
+            "monthly": {
+                "start": 1959,
+                "end": 2008
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33345",
+        "name": {
+            "en": "Kyiv"
+        },
+        "country": "UA",
+        "region": "KV",
+        "identifiers": {
+            "national": null,
+            "wmo": "33345",
+            "icao": "UKKK"
+        },
+        "location": {
+            "latitude": 50.4,
+            "longitude": 30.5667,
+            "elevation": 166
+        },
+        "timezone": "Europe/Kiev",
+        "inventory": {
+            "model": {
+                "start": "2018-01-28",
+                "end": "2024-05-16"
+            },
+            "hourly": {
+                "start": "1932-01-01",
+                "end": "2024-05-06"
+            },
+            "daily": {
+                "start": "1881-01-01",
+                "end": "2024-04-30"
+            },
+            "monthly": {
+                "start": 1881,
+                "end": 2022
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2020
+            }
+        }
+    },
+    {
+        "id": "33346",
+        "name": {
+            "en": "Kiev / Boryspil"
+        },
+        "country": "UA",
+        "region": "KV",
+        "identifiers": {
+            "national": null,
+            "wmo": "33346",
+            "icao": null
+        },
+        "location": {
+            "latitude": 50.35,
+            "longitude": 30.9167,
+            "elevation": 125
+        },
+        "timezone": "Europe/Kiev",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": null,
+                "end": null
+            },
+            "monthly": {
+                "start": null,
+                "end": null
+            },
+            "normals": {
+                "start": null,
+                "end": null
+            }
+        }
+    },
+    {
+        "id": "33347",
+        "name": {
+            "en": "Boryspil"
+        },
+        "country": "UA",
+        "region": "KV",
+        "identifiers": {
+            "national": null,
+            "wmo": "33347",
+            "icao": "UKBB"
+        },
+        "location": {
+            "latitude": 50.3333,
+            "longitude": 30.9667,
+            "elevation": 121
+        },
+        "timezone": "Europe/Kiev",
+        "inventory": {
+            "model": {
+                "start": "2018-01-28",
+                "end": "2024-05-16"
+            },
+            "hourly": {
+                "start": "1961-04-04",
+                "end": "2022-02-24"
+            },
+            "daily": {
+                "start": "1959-07-01",
+                "end": "2022-02-23"
+            },
+            "monthly": {
+                "start": 1959,
+                "end": 2022
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33356",
+        "name": {
+            "en": "Yahotyn"
+        },
+        "country": "UA",
+        "region": "KV",
+        "identifiers": {
+            "national": null,
+            "wmo": "33356",
+            "icao": null
+        },
+        "location": {
+            "latitude": 50.2167,
+            "longitude": 31.8,
+            "elevation": 125
+        },
+        "timezone": "Europe/Kiev",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-01-01",
+                "end": "2016-06-14"
+            },
+            "monthly": {
+                "start": 1975,
+                "end": 2016
+            },
+            "normals": {
+                "start": 1961,
+                "end": 1990
+            }
+        }
+    },
+    {
+        "id": "33362",
+        "name": {
+            "en": "Priluky"
+        },
+        "country": "UA",
+        "region": "CH",
+        "identifiers": {
+            "national": null,
+            "wmo": "33362",
+            "icao": null
+        },
+        "location": {
+            "latitude": 50.5833,
+            "longitude": 32.3833,
+            "elevation": 132
+        },
+        "timezone": "Europe/Kiev",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1955-03-05",
+                "end": "2016-06-14"
+            },
+            "monthly": {
+                "start": 1973,
+                "end": 2016
+            },
+            "normals": {
+                "start": 1961,
+                "end": 1990
+            }
+        }
+    },
+    {
+        "id": "33374",
+        "name": {
+            "en": "Lohvica / Lokhvytsya"
+        },
+        "country": "UA",
+        "region": "MY",
+        "identifiers": {
+            "national": null,
+            "wmo": "33374",
+            "icao": null
+        },
+        "location": {
+            "latitude": 50.3667,
+            "longitude": 33.2667,
+            "elevation": 127
+        },
+        "timezone": "Europe/Kiev",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-07-01",
+                "end": "1989-09-30"
+            },
+            "monthly": {
+                "start": 1959,
+                "end": 1989
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33376",
+        "name": {
+            "en": "Hadiach"
+        },
+        "country": "UA",
+        "region": "MY",
+        "identifiers": {
+            "national": null,
+            "wmo": "33376",
+            "icao": null
+        },
+        "location": {
+            "latitude": 50.3667,
+            "longitude": 33.9833,
+            "elevation": 154
+        },
+        "timezone": "Europe/Kiev",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-01-01",
+                "end": "2016-06-14"
+            },
+            "monthly": {
+                "start": 1973,
+                "end": 2016
+            },
+            "normals": {
+                "start": 1961,
+                "end": 1990
+            }
+        }
+    },
+    {
+        "id": "33377",
+        "name": {
+            "en": "Lubny"
+        },
+        "country": "UA",
+        "region": "MY",
+        "identifiers": {
+            "national": null,
+            "wmo": "33377",
+            "icao": null
+        },
+        "location": {
+            "latitude": 50.0,
+            "longitude": 33.0167,
+            "elevation": 156
+        },
+        "timezone": "Europe/Kiev",
+        "inventory": {
+            "model": {
+                "start": "2021-01-01",
+                "end": "2024-05-15"
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1936-01-01",
+                "end": "2024-04-30"
+            },
+            "monthly": {
+                "start": 1936,
+                "end": 2021
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2020
+            }
+        }
+    },
+    {
+        "id": "33382",
+        "name": {
+            "en": "Lebedin"
+        },
+        "country": "UA",
+        "region": "SM",
+        "identifiers": {
+            "national": null,
+            "wmo": "33382",
+            "icao": null
+        },
+        "location": {
+            "latitude": 50.5833,
+            "longitude": 34.4833,
+            "elevation": 142
+        },
+        "timezone": "Europe/Kiev",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-07-01",
+                "end": "2009-06-17"
+            },
+            "monthly": {
+                "start": 1959,
+                "end": 2008
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33391",
+        "name": {
+            "en": "Mostiska"
+        },
+        "country": "UA",
+        "region": "LV",
+        "identifiers": {
+            "national": null,
+            "wmo": "33391",
+            "icao": null
+        },
+        "location": {
+            "latitude": 49.8,
+            "longitude": 23.15,
+            "elevation": 216
+        },
+        "timezone": "Europe/Uzhgorod",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-01-01",
+                "end": "2009-06-17"
+            },
+            "monthly": {
+                "start": 1977,
+                "end": 2008
+            },
+            "normals": {
+                "start": 1961,
+                "end": 1990
+            }
+        }
+    },
+    {
+        "id": "33392",
+        "name": {
+            "en": "Yavorov"
+        },
+        "country": "UA",
+        "region": "LV",
+        "identifiers": {
+            "national": null,
+            "wmo": "33392",
+            "icao": null
+        },
+        "location": {
+            "latitude": 49.9333,
+            "longitude": 23.3833,
+            "elevation": 229
+        },
+        "timezone": "Europe/Uzhgorod",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-07-01",
+                "end": "2009-06-17"
+            },
+            "monthly": {
+                "start": 1959,
+                "end": 2008
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33393",
+        "name": {
+            "en": "L'Viv"
+        },
+        "country": "UA",
+        "region": "LV",
+        "identifiers": {
+            "national": null,
+            "wmo": "33393",
+            "icao": "UKLL"
+        },
+        "location": {
+            "latitude": 49.8167,
+            "longitude": 23.95,
+            "elevation": 319
+        },
+        "timezone": "Europe/Uzhgorod",
+        "inventory": {
+            "model": {
+                "start": "2019-11-04",
+                "end": "2024-05-15"
+            },
+            "hourly": {
+                "start": "1928-01-02",
+                "end": "2024-04-29"
+            },
+            "daily": {
+                "start": "1936-01-01",
+                "end": "2024-04-30"
+            },
+            "monthly": {
+                "start": 1936,
+                "end": 2022
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2020
+            }
+        }
+    },
+    {
+        "id": "33398",
+        "name": {
+            "en": "Drohobych"
+        },
+        "country": "UA",
+        "region": "LV",
+        "identifiers": {
+            "national": null,
+            "wmo": "33398",
+            "icao": null
+        },
+        "location": {
+            "latitude": 49.35,
+            "longitude": 23.5167,
+            "elevation": 275
+        },
+        "timezone": "Europe/Uzhgorod",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1941-01-02",
+                "end": "2016-06-13"
+            },
+            "monthly": {
+                "start": 1941,
+                "end": 2016
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33409",
+        "name": {
+            "en": "Berezhany"
+        },
+        "country": "UA",
+        "region": "TP",
+        "identifiers": {
+            "national": null,
+            "wmo": "33409",
+            "icao": null
+        },
+        "location": {
+            "latitude": 49.4333,
+            "longitude": 24.95,
+            "elevation": 303
+        },
+        "timezone": "Europe/Uzhgorod",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-01-01",
+                "end": "2016-06-14"
+            },
+            "monthly": {
+                "start": 1973,
+                "end": 2016
+            },
+            "normals": {
+                "start": 1961,
+                "end": 1990
+            }
+        }
+    },
+    {
+        "id": "33415",
+        "name": {
+            "en": "Ternopil"
+        },
+        "country": "UA",
+        "region": "TP",
+        "identifiers": {
+            "national": null,
+            "wmo": "33415",
+            "icao": "UKLT"
+        },
+        "location": {
+            "latitude": 49.5333,
+            "longitude": 25.6667,
+            "elevation": 327
+        },
+        "timezone": "Europe/Uzhgorod",
+        "inventory": {
+            "model": {
+                "start": "2019-11-04",
+                "end": "2024-05-15"
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1944-05-01",
+                "end": "2024-04-24"
+            },
+            "monthly": {
+                "start": 1946,
+                "end": 2021
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2020
+            }
+        }
+    },
+    {
+        "id": "33421",
+        "name": {
+            "en": "Yampol"
+        },
+        "country": "UA",
+        "region": "KM",
+        "identifiers": {
+            "national": null,
+            "wmo": "33421",
+            "icao": null
+        },
+        "location": {
+            "latitude": 49.9667,
+            "longitude": 26.25,
+            "elevation": 282
+        },
+        "timezone": "Europe/Kiev",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-07-01",
+                "end": "2009-06-17"
+            },
+            "monthly": {
+                "start": 1959,
+                "end": 2008
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33429",
+        "name": {
+            "en": "Khmel'Nyts'Kyi"
+        },
+        "country": "UA",
+        "region": null,
+        "identifiers": {
+            "national": null,
+            "wmo": "33429",
+            "icao": "UKLH"
+        },
+        "location": {
+            "latitude": 49.4333,
+            "longitude": 26.9833,
+            "elevation": 350
+        },
+        "timezone": "Europe/Kiev",
+        "inventory": {
+            "model": {
+                "start": "2021-01-01",
+                "end": "2024-05-15"
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1955-01-29",
+                "end": "2024-04-30"
+            },
+            "monthly": {
+                "start": 1959,
+                "end": 2022
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2020
+            }
+        }
+    },
+    {
+        "id": "33446",
+        "name": {
+            "en": "Bilopillja"
+        },
+        "country": "UA",
+        "region": "VI",
+        "identifiers": {
+            "national": null,
+            "wmo": "33446",
+            "icao": null
+        },
+        "location": {
+            "latitude": 49.8333,
+            "longitude": 28.8833,
+            "elevation": 257
+        },
+        "timezone": "Europe/Kiev",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-07-02",
+                "end": "2009-06-17"
+            },
+            "monthly": {
+                "start": 1959,
+                "end": 2008
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33464",
+        "name": {
+            "en": "Bila Tserkva"
+        },
+        "country": "UA",
+        "region": "KV",
+        "identifiers": {
+            "national": null,
+            "wmo": "33464",
+            "icao": null
+        },
+        "location": {
+            "latitude": 49.75,
+            "longitude": 30.1167,
+            "elevation": 179
+        },
+        "timezone": "Europe/Kiev",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-01-01",
+                "end": "2016-06-14"
+            },
+            "monthly": {
+                "start": 1969,
+                "end": 2016
+            },
+            "normals": {
+                "start": 1961,
+                "end": 1990
+            }
+        }
+    },
+    {
+        "id": "33466",
+        "name": {
+            "en": "Myronivka"
+        },
+        "country": "UA",
+        "region": "KV",
+        "identifiers": {
+            "national": null,
+            "wmo": "33466",
+            "icao": null
+        },
+        "location": {
+            "latitude": 49.6667,
+            "longitude": 31.0,
+            "elevation": 151
+        },
+        "timezone": "Europe/Kiev",
+        "inventory": {
+            "model": {
+                "start": "2019-11-04",
+                "end": "2024-05-15"
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1945-01-01",
+                "end": "2024-04-26"
+            },
+            "monthly": {
+                "start": 1945,
+                "end": 2021
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33484",
+        "name": {
+            "en": "Zolotonosha"
+        },
+        "country": "UA",
+        "region": "CK",
+        "identifiers": {
+            "national": null,
+            "wmo": "33484",
+            "icao": null
+        },
+        "location": {
+            "latitude": 49.6833,
+            "longitude": 32.5167,
+            "elevation": 94
+        },
+        "timezone": "Europe/Kiev",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1936-01-01",
+                "end": "2009-06-17"
+            },
+            "monthly": {
+                "start": 1936,
+                "end": 2005
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33487",
+        "name": {
+            "en": "Cherkasy"
+        },
+        "country": "UA",
+        "region": "CK",
+        "identifiers": {
+            "national": null,
+            "wmo": "33487",
+            "icao": null
+        },
+        "location": {
+            "latitude": 49.4167,
+            "longitude": 32.05,
+            "elevation": 106
+        },
+        "timezone": "Europe/Kiev",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-07-01",
+                "end": "2009-06-17"
+            },
+            "monthly": {
+                "start": 1960,
+                "end": 2008
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33495",
+        "name": {
+            "en": "Veselyi Podil"
+        },
+        "country": "UA",
+        "region": "MY",
+        "identifiers": {
+            "national": null,
+            "wmo": "33495",
+            "icao": null
+        },
+        "location": {
+            "latitude": 49.6167,
+            "longitude": 33.2667,
+            "elevation": 96
+        },
+        "timezone": "Europe/Kiev",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1936-01-01",
+                "end": "2016-06-14"
+            },
+            "monthly": {
+                "start": 1936,
+                "end": 2016
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33506",
+        "name": {
+            "en": "Poltava"
+        },
+        "country": "UA",
+        "region": "MY",
+        "identifiers": {
+            "national": null,
+            "wmo": "33506",
+            "icao": "UKHP"
+        },
+        "location": {
+            "latitude": 49.6,
+            "longitude": 34.55,
+            "elevation": 160
+        },
+        "timezone": "Europe/Zaporozhye",
+        "inventory": {
+            "model": {
+                "start": "2019-11-04",
+                "end": "2024-05-15"
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1900-01-01",
+                "end": "2024-04-30"
+            },
+            "monthly": {
+                "start": 1900,
+                "end": 2021
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2020
+            }
+        }
+    },
+    {
+        "id": "33510",
+        "name": {
+            "en": "Poltava"
+        },
+        "country": "UA",
+        "region": "MY",
+        "identifiers": {
+            "national": null,
+            "wmo": "33510",
+            "icao": null
+        },
+        "location": {
+            "latitude": 49.59,
+            "longitude": 34.55,
+            "elevation": 159
+        },
+        "timezone": "Europe/Kiev",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": null,
+                "end": null
+            },
+            "monthly": {
+                "start": null,
+                "end": null
+            },
+            "normals": {
+                "start": null,
+                "end": null
+            }
+        }
+    },
+    {
+        "id": "33513",
+        "name": {
+            "en": "Stryy / Stryi"
+        },
+        "country": "UA",
+        "region": "LV",
+        "identifiers": {
+            "national": null,
+            "wmo": "33513",
+            "icao": null
+        },
+        "location": {
+            "latitude": 49.25,
+            "longitude": 23.85,
+            "elevation": 306
+        },
+        "timezone": "Europe/Uzhgorod",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1960-01-01",
+                "end": "2009-06-17"
+            },
+            "monthly": {
+                "start": 1960,
+                "end": 2008
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33514",
+        "name": {
+            "en": "Velikiy Berezny"
+        },
+        "country": "UA",
+        "region": "ZK",
+        "identifiers": {
+            "national": null,
+            "wmo": "33514",
+            "icao": null
+        },
+        "location": {
+            "latitude": 48.9,
+            "longitude": 22.4667,
+            "elevation": 195
+        },
+        "timezone": "Europe/Uzhgorod",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1946-08-02",
+                "end": "2009-06-17"
+            },
+            "monthly": {
+                "start": 1946,
+                "end": 2008
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33515",
+        "name": {
+            "en": "Skole"
+        },
+        "country": "UA",
+        "region": "LV",
+        "identifiers": {
+            "national": null,
+            "wmo": "33515",
+            "icao": null
+        },
+        "location": {
+            "latitude": 49.0333,
+            "longitude": 23.5167,
+            "elevation": 549
+        },
+        "timezone": "Europe/Uzhgorod",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1968-07-18",
+                "end": "2009-06-17"
+            },
+            "monthly": {
+                "start": 1968,
+                "end": 2008
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33517",
+        "name": {
+            "en": "Perechin"
+        },
+        "country": "UA",
+        "region": "ZK",
+        "identifiers": {
+            "national": null,
+            "wmo": "33517",
+            "icao": null
+        },
+        "location": {
+            "latitude": 48.7333,
+            "longitude": 22.4667,
+            "elevation": 198
+        },
+        "timezone": "Europe/Uzhgorod",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1966-01-01",
+                "end": "2009-06-17"
+            },
+            "monthly": {
+                "start": 1966,
+                "end": 2008
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33524",
+        "name": {
+            "en": "Kalush"
+        },
+        "country": "UA",
+        "region": "IF",
+        "identifiers": {
+            "national": null,
+            "wmo": "33524",
+            "icao": null
+        },
+        "location": {
+            "latitude": 49.0167,
+            "longitude": 24.3667,
+            "elevation": 285
+        },
+        "timezone": "Europe/Uzhgorod",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-07-01",
+                "end": "2009-06-17"
+            },
+            "monthly": {
+                "start": 1959,
+                "end": 2008
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33526",
+        "name": {
+            "en": "Ivano-Frankivs'K"
+        },
+        "country": "UA",
+        "region": "IF",
+        "identifiers": {
+            "national": null,
+            "wmo": "33526",
+            "icao": null
+        },
+        "location": {
+            "latitude": 48.9667,
+            "longitude": 24.4,
+            "elevation": 275
+        },
+        "timezone": "Europe/Uzhgorod",
+        "inventory": {
+            "model": {
+                "start": "2018-01-28",
+                "end": "2024-05-16"
+            },
+            "hourly": {
+                "start": "2018-01-27",
+                "end": "2024-05-06"
+            },
+            "daily": {
+                "start": "1941-01-02",
+                "end": "2009-06-17"
+            },
+            "monthly": {
+                "start": 1941,
+                "end": 2021
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2020
+            }
+        }
+    },
+    {
+        "id": "33536",
+        "name": {
+            "en": "Chortkiv"
+        },
+        "country": "UA",
+        "region": "TP",
+        "identifiers": {
+            "national": null,
+            "wmo": "33536",
+            "icao": null
+        },
+        "location": {
+            "latitude": 49.0167,
+            "longitude": 25.8,
+            "elevation": 320
+        },
+        "timezone": "Europe/Uzhgorod",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-01-01",
+                "end": "2016-06-14"
+            },
+            "monthly": {
+                "start": 1975,
+                "end": 2016
+            },
+            "normals": {
+                "start": 1961,
+                "end": 1990
+            }
+        }
+    },
+    {
+        "id": "33548",
+        "name": {
+            "en": "Kamianets'- Podil'Skyi"
+        },
+        "country": "UA",
+        "region": "KM",
+        "identifiers": {
+            "national": null,
+            "wmo": "33548",
+            "icao": null
+        },
+        "location": {
+            "latitude": 48.65,
+            "longitude": 26.6667,
+            "elevation": 217
+        },
+        "timezone": "Europe/Uzhgorod",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1936-01-01",
+                "end": "2016-06-14"
+            },
+            "monthly": {
+                "start": 1936,
+                "end": 2016
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33550",
+        "name": {
+            "en": "Zin’kovtsy"
+        },
+        "country": "UA",
+        "region": "KM",
+        "identifiers": {
+            "national": null,
+            "wmo": "33550",
+            "icao": null
+        },
+        "location": {
+            "latitude": 48.67,
+            "longitude": 26.57,
+            "elevation": 228
+        },
+        "timezone": "Europe/Uzhgorod",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": null,
+                "end": null
+            },
+            "monthly": {
+                "start": null,
+                "end": null
+            },
+            "normals": {
+                "start": null,
+                "end": null
+            }
+        }
+    },
+    {
+        "id": "33557",
+        "name": {
+            "en": "Nova Ushytsia"
+        },
+        "country": "UA",
+        "region": "KM",
+        "identifiers": {
+            "national": null,
+            "wmo": "33557",
+            "icao": null
+        },
+        "location": {
+            "latitude": 48.85,
+            "longitude": 27.2667,
+            "elevation": 292
+        },
+        "timezone": "Europe/Kiev",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-01-02",
+                "end": "2016-06-14"
+            },
+            "monthly": {
+                "start": 1969,
+                "end": 2016
+            },
+            "normals": {
+                "start": 1961,
+                "end": 1990
+            }
+        }
+    },
+    {
+        "id": "33562",
+        "name": {
+            "en": "Vinnytsia"
+        },
+        "country": "UA",
+        "region": "VI",
+        "identifiers": {
+            "national": null,
+            "wmo": "33562",
+            "icao": null
+        },
+        "location": {
+            "latitude": 49.2333,
+            "longitude": 28.6,
+            "elevation": 296
+        },
+        "timezone": "Europe/Kiev",
+        "inventory": {
+            "model": {
+                "start": "2019-11-04",
+                "end": "2024-05-15"
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1936-01-01",
+                "end": "2024-04-30"
+            },
+            "monthly": {
+                "start": 1936,
+                "end": 2021
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2020
+            }
+        }
+    },
+    {
+        "id": "33564",
+        "name": {
+            "en": "Zmerinka / Zhmerynka"
+        },
+        "country": "UA",
+        "region": "VI",
+        "identifiers": {
+            "national": null,
+            "wmo": "33564",
+            "icao": null
+        },
+        "location": {
+            "latitude": 49.05,
+            "longitude": 28.1,
+            "elevation": 304
+        },
+        "timezone": "Europe/Kiev",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-07-09",
+                "end": "2016-06-14"
+            },
+            "monthly": {
+                "start": 1959,
+                "end": 2016
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33571",
+        "name": {
+            "en": "Lipovec / Frontovka"
+        },
+        "country": "UA",
+        "region": "VI",
+        "identifiers": {
+            "national": null,
+            "wmo": "33571",
+            "icao": null
+        },
+        "location": {
+            "latitude": 49.25,
+            "longitude": 29.2333,
+            "elevation": 299
+        },
+        "timezone": "Europe/Kiev",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-01-02",
+                "end": "1989-09-26"
+            },
+            "monthly": {
+                "start": 1966,
+                "end": 1984
+            },
+            "normals": {
+                "start": 1961,
+                "end": 1990
+            }
+        }
+    },
+    {
+        "id": "33577",
+        "name": {
+            "en": "Haisyn"
+        },
+        "country": "UA",
+        "region": "VI",
+        "identifiers": {
+            "national": null,
+            "wmo": "33577",
+            "icao": null
+        },
+        "location": {
+            "latitude": 48.8,
+            "longitude": 29.4,
+            "elevation": 210
+        },
+        "timezone": "Europe/Kiev",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-01-03",
+                "end": "2016-06-14"
+            },
+            "monthly": {
+                "start": 1970,
+                "end": 2016
+            },
+            "normals": {
+                "start": 1961,
+                "end": 1990
+            }
+        }
+    },
+    {
+        "id": "33581",
+        "name": {
+            "en": "Zhashkov"
+        },
+        "country": "UA",
+        "region": "CK",
+        "identifiers": {
+            "national": null,
+            "wmo": "33581",
+            "icao": null
+        },
+        "location": {
+            "latitude": 49.25,
+            "longitude": 30.1,
+            "elevation": 224
+        },
+        "timezone": "Europe/Kiev",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-07-01",
+                "end": "2016-06-14"
+            },
+            "monthly": {
+                "start": 1959,
+                "end": 2016
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33583",
+        "name": {
+            "en": "Zhashkiv"
+        },
+        "country": "UA",
+        "region": "CK",
+        "identifiers": {
+            "national": null,
+            "wmo": "33583",
+            "icao": null
+        },
+        "location": {
+            "latitude": 49.25,
+            "longitude": 30.09,
+            "elevation": 224
+        },
+        "timezone": "Europe/Kiev",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": null,
+                "end": null
+            },
+            "monthly": {
+                "start": null,
+                "end": null
+            },
+            "normals": {
+                "start": null,
+                "end": null
+            }
+        }
+    },
+    {
+        "id": "33586",
+        "name": {
+            "en": "Zvenihorodka"
+        },
+        "country": "UA",
+        "region": "CK",
+        "identifiers": {
+            "national": null,
+            "wmo": "33586",
+            "icao": null
+        },
+        "location": {
+            "latitude": 49.0833,
+            "longitude": 30.9,
+            "elevation": 214
+        },
+        "timezone": "Europe/Kiev",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-07-01",
+                "end": "2009-06-17"
+            },
+            "monthly": {
+                "start": 1959,
+                "end": 2008
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33587",
+        "name": {
+            "en": "Uman"
+        },
+        "country": "UA",
+        "region": "CK",
+        "identifiers": {
+            "national": null,
+            "wmo": "33587",
+            "icao": null
+        },
+        "location": {
+            "latitude": 48.7667,
+            "longitude": 30.2333,
+            "elevation": 214
+        },
+        "timezone": "Europe/Kiev",
+        "inventory": {
+            "model": {
+                "start": "2021-01-01",
+                "end": "2024-05-15"
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1885-09-01",
+                "end": "2024-04-30"
+            },
+            "monthly": {
+                "start": 1885,
+                "end": 2021
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2020
+            }
+        }
+    },
+    {
+        "id": "33593",
+        "name": {
+            "en": "Rotmistrovka"
+        },
+        "country": "UA",
+        "region": "CK",
+        "identifiers": {
+            "national": null,
+            "wmo": "33593",
+            "icao": null
+        },
+        "location": {
+            "latitude": 49.1333,
+            "longitude": 31.7,
+            "elevation": 168
+        },
+        "timezone": "Europe/Kiev",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1936-01-01",
+                "end": "2009-06-17"
+            },
+            "monthly": {
+                "start": 1936,
+                "end": 2008
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33605",
+        "name": {
+            "en": "Chyhyryn"
+        },
+        "country": "UA",
+        "region": "CK",
+        "identifiers": {
+            "national": null,
+            "wmo": "33605",
+            "icao": null
+        },
+        "location": {
+            "latitude": 49.0833,
+            "longitude": 32.6667,
+            "elevation": 123
+        },
+        "timezone": "Europe/Kiev",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-07-01",
+                "end": "2016-06-14"
+            },
+            "monthly": {
+                "start": 1959,
+                "end": 2016
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33609",
+        "name": {
+            "en": "Znamianka"
+        },
+        "country": "UA",
+        "region": "KH",
+        "identifiers": {
+            "national": null,
+            "wmo": "33609",
+            "icao": null
+        },
+        "location": {
+            "latitude": 48.7167,
+            "longitude": 32.6667,
+            "elevation": 180
+        },
+        "timezone": "Europe/Zaporozhye",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-01-01",
+                "end": "2016-06-14"
+            },
+            "monthly": {
+                "start": 1973,
+                "end": 2016
+            },
+            "normals": {
+                "start": 1961,
+                "end": 1990
+            }
+        }
+    },
+    {
+        "id": "33614",
+        "name": {
+            "en": "Svitlovods'K"
+        },
+        "country": "UA",
+        "region": "KH",
+        "identifiers": {
+            "national": null,
+            "wmo": "33614",
+            "icao": null
+        },
+        "location": {
+            "latitude": 49.05,
+            "longitude": 33.25,
+            "elevation": 85
+        },
+        "timezone": "Europe/Zaporozhye",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "2000-01-01",
+                "end": "2009-06-17"
+            },
+            "monthly": {
+                "start": 2000,
+                "end": 2008
+            },
+            "normals": {
+                "start": 1961,
+                "end": 1990
+            }
+        }
+    },
+    {
+        "id": "33615",
+        "name": {
+            "en": "Kremencug"
+        },
+        "country": "UA",
+        "region": "MY",
+        "identifiers": {
+            "national": null,
+            "wmo": "33615",
+            "icao": null
+        },
+        "location": {
+            "latitude": 49.0333,
+            "longitude": 33.4333,
+            "elevation": 80
+        },
+        "timezone": "Europe/Zaporozhye",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-01-01",
+                "end": "1994-12-14"
+            },
+            "monthly": {
+                "start": 1969,
+                "end": 1994
+            },
+            "normals": {
+                "start": 1961,
+                "end": 1990
+            }
+        }
+    },
+    {
+        "id": "33621",
+        "name": {
+            "en": "Kobeliaky"
+        },
+        "country": "UA",
+        "region": "MY",
+        "identifiers": {
+            "national": null,
+            "wmo": "33621",
+            "icao": null
+        },
+        "location": {
+            "latitude": 49.15,
+            "longitude": 34.2,
+            "elevation": 115
+        },
+        "timezone": "Europe/Zaporozhye",
+        "inventory": {
+            "model": {
+                "start": "2021-05-10",
+                "end": "2024-05-15"
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-01-02",
+                "end": "2021-10-09"
+            },
+            "monthly": {
+                "start": 1970,
+                "end": 2016
+            },
+            "normals": {
+                "start": 1961,
+                "end": 1990
+            }
+        }
+    },
+    {
+        "id": "33631",
+        "name": {
+            "en": "Uzhhorod"
+        },
+        "country": "UA",
+        "region": "ZK",
+        "identifiers": {
+            "national": null,
+            "wmo": "33631",
+            "icao": "UKLU"
+        },
+        "location": {
+            "latitude": 48.6333,
+            "longitude": 22.2667,
+            "elevation": 115
+        },
+        "timezone": "Europe/Uzhgorod",
+        "inventory": {
+            "model": {
+                "start": "2019-11-04",
+                "end": "2024-05-15"
+            },
+            "hourly": {
+                "start": "2017-01-20",
+                "end": "2022-03-17"
+            },
+            "daily": {
+                "start": "1946-05-01",
+                "end": "2024-04-30"
+            },
+            "monthly": {
+                "start": 1946,
+                "end": 2022
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2020
+            }
+        }
+    },
+    {
+        "id": "33645",
+        "name": {
+            "en": "Yasnya"
+        },
+        "country": "UA",
+        "region": "ZK",
+        "identifiers": {
+            "national": null,
+            "wmo": "33645",
+            "icao": null
+        },
+        "location": {
+            "latitude": 48.2667,
+            "longitude": 24.3667,
+            "elevation": 731
+        },
+        "timezone": "Europe/Uzhgorod",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1946-05-01",
+                "end": "2009-06-17"
+            },
+            "monthly": {
+                "start": 1946,
+                "end": 2008
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33647",
+        "name": {
+            "en": "Rakhov / Vydrychka"
+        },
+        "country": "UA",
+        "region": "ZK",
+        "identifiers": {
+            "national": null,
+            "wmo": "33647",
+            "icao": null
+        },
+        "location": {
+            "latitude": 48.05,
+            "longitude": 24.3,
+            "elevation": 576
+        },
+        "timezone": "Europe/Uzhgorod",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-01-01",
+                "end": "2016-06-13"
+            },
+            "monthly": {
+                "start": 1970,
+                "end": 2016
+            },
+            "normals": {
+                "start": 1961,
+                "end": 1990
+            }
+        }
+    },
+    {
+        "id": "33651",
+        "name": {
+            "en": "Kolomyia"
+        },
+        "country": "UA",
+        "region": "IF",
+        "identifiers": {
+            "national": null,
+            "wmo": "33651",
+            "icao": null
+        },
+        "location": {
+            "latitude": 48.5333,
+            "longitude": 25.0333,
+            "elevation": 295
+        },
+        "timezone": "Europe/Uzhgorod",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1940-06-01",
+                "end": "2016-06-13"
+            },
+            "monthly": {
+                "start": 1940,
+                "end": 2016
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33657",
+        "name": {
+            "en": "Seliatyn"
+        },
+        "country": "UA",
+        "region": "SU",
+        "identifiers": {
+            "national": null,
+            "wmo": "33657",
+            "icao": null
+        },
+        "location": {
+            "latitude": 47.8667,
+            "longitude": 25.2167,
+            "elevation": 762
+        },
+        "timezone": "Europe/Uzhgorod",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1941-02-01",
+                "end": "2016-06-13"
+            },
+            "monthly": {
+                "start": 1941,
+                "end": 2016
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33658",
+        "name": {
+            "en": "Chernivtsi"
+        },
+        "country": "UA",
+        "region": "CV",
+        "identifiers": {
+            "national": null,
+            "wmo": "33658",
+            "icao": "UKLN"
+        },
+        "location": {
+            "latitude": 48.3667,
+            "longitude": 25.9,
+            "elevation": 242
+        },
+        "timezone": "Europe/Uzhgorod",
+        "inventory": {
+            "model": {
+                "start": "2019-11-04",
+                "end": "2024-05-15"
+            },
+            "hourly": {
+                "start": "2017-01-20",
+                "end": "2022-02-24"
+            },
+            "daily": {
+                "start": "1941-03-01",
+                "end": "2024-04-30"
+            },
+            "monthly": {
+                "start": 1941,
+                "end": 2021
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2020
+            }
+        }
+    },
+    {
+        "id": "33663",
+        "name": {
+            "en": "Mohyliv-Podil's'Kyi"
+        },
+        "country": "UA",
+        "region": "OC",
+        "identifiers": {
+            "national": null,
+            "wmo": "33663",
+            "icao": null
+        },
+        "location": {
+            "latitude": 48.45,
+            "longitude": 27.7833,
+            "elevation": 77
+        },
+        "timezone": "Europe/Chisinau",
+        "inventory": {
+            "model": {
+                "start": "2021-01-01",
+                "end": "2024-05-15"
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-01-01",
+                "end": "2024-04-30"
+            },
+            "monthly": {
+                "start": 1960,
+                "end": 2022
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33699",
+        "name": {
+            "en": "Pervomais'K"
+        },
+        "country": "UA",
+        "region": "LH",
+        "identifiers": {
+            "national": null,
+            "wmo": "33699",
+            "icao": null
+        },
+        "location": {
+            "latitude": 48.05,
+            "longitude": 30.85,
+            "elevation": 105
+        },
+        "timezone": "Europe/Kiev",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-01-01",
+                "end": "2016-06-01"
+            },
+            "monthly": {
+                "start": 1970,
+                "end": 2008
+            },
+            "normals": {
+                "start": 1961,
+                "end": 1990
+            }
+        }
+    },
+    {
+        "id": "33705",
+        "name": {
+            "en": "Pomichna"
+        },
+        "country": "UA",
+        "region": "KH",
+        "identifiers": {
+            "national": null,
+            "wmo": "33705",
+            "icao": null
+        },
+        "location": {
+            "latitude": 48.2333,
+            "longitude": 31.4,
+            "elevation": 211
+        },
+        "timezone": "Europe/Kiev",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-07-01",
+                "end": "2016-06-01"
+            },
+            "monthly": {
+                "start": 1959,
+                "end": 2008
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33711",
+        "name": {
+            "en": "Kirovohrad"
+        },
+        "country": "UA",
+        "region": "KH",
+        "identifiers": {
+            "national": null,
+            "wmo": "33711",
+            "icao": "UKKG"
+        },
+        "location": {
+            "latitude": 48.5167,
+            "longitude": 32.2,
+            "elevation": 170
+        },
+        "timezone": "Europe/Zaporozhye",
+        "inventory": {
+            "model": {
+                "start": "2021-01-01",
+                "end": "2024-05-15"
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1949-07-31",
+                "end": "2024-04-30"
+            },
+            "monthly": {
+                "start": 1950,
+                "end": 2022
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2020
+            }
+        }
+    },
+    {
+        "id": "33717",
+        "name": {
+            "en": "Bobrynets"
+        },
+        "country": "UA",
+        "region": "KH",
+        "identifiers": {
+            "national": null,
+            "wmo": "33717",
+            "icao": null
+        },
+        "location": {
+            "latitude": 48.0667,
+            "longitude": 32.15,
+            "elevation": 142
+        },
+        "timezone": "Europe/Zaporozhye",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-01-01",
+                "end": "2016-06-14"
+            },
+            "monthly": {
+                "start": 1969,
+                "end": 2016
+            },
+            "normals": {
+                "start": 1961,
+                "end": 1990
+            }
+        }
+    },
+    {
+        "id": "33723",
+        "name": {
+            "en": "Komisarivka"
+        },
+        "country": "UA",
+        "region": "DP",
+        "identifiers": {
+            "national": null,
+            "wmo": "33723",
+            "icao": null
+        },
+        "location": {
+            "latitude": 48.4333,
+            "longitude": 33.9,
+            "elevation": 118
+        },
+        "timezone": "Europe/Zaporozhye",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1936-01-01",
+                "end": "2016-06-14"
+            },
+            "monthly": {
+                "start": 1936,
+                "end": 2016
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33761",
+        "name": {
+            "en": "Liubashivka"
+        },
+        "country": "UA",
+        "region": "OD",
+        "identifiers": {
+            "national": null,
+            "wmo": "33761",
+            "icao": null
+        },
+        "location": {
+            "latitude": 47.85,
+            "longitude": 30.2667,
+            "elevation": 181
+        },
+        "timezone": "Europe/Kiev",
+        "inventory": {
+            "model": {
+                "start": "2019-11-04",
+                "end": "2024-05-15"
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1949-09-02",
+                "end": "2024-04-30"
+            },
+            "monthly": {
+                "start": 1951,
+                "end": 2022
+            },
+            "normals": {
+                "start": 1971,
+                "end": 2020
+            }
+        }
+    },
+    {
+        "id": "33777",
+        "name": {
+            "en": "Voznesens'K"
+        },
+        "country": "UA",
+        "region": "LH",
+        "identifiers": {
+            "national": null,
+            "wmo": "33777",
+            "icao": null
+        },
+        "location": {
+            "latitude": 47.5667,
+            "longitude": 31.3333,
+            "elevation": 26
+        },
+        "timezone": "Europe/Zaporozhye",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1936-01-01",
+                "end": "2016-06-14"
+            },
+            "monthly": {
+                "start": 1936,
+                "end": 2021
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2020
+            }
+        }
+    },
+    {
+        "id": "33788",
+        "name": {
+            "en": "Bastanka"
+        },
+        "country": "UA",
+        "region": "LH",
+        "identifiers": {
+            "national": null,
+            "wmo": "33788",
+            "icao": null
+        },
+        "location": {
+            "latitude": 47.4167,
+            "longitude": 32.4667,
+            "elevation": 84
+        },
+        "timezone": "Europe/Zaporozhye",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1936-01-01",
+                "end": "2009-06-17"
+            },
+            "monthly": {
+                "start": 1936,
+                "end": 2008
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33791",
+        "name": {
+            "en": "Kryvyi Rih"
+        },
+        "country": "UA",
+        "region": null,
+        "identifiers": {
+            "national": null,
+            "wmo": "33791",
+            "icao": "UKDR"
+        },
+        "location": {
+            "latitude": 43.0333,
+            "longitude": 33.2167,
+            "elevation": 123
+        },
+        "timezone": "Europe/Zaporozhye",
+        "inventory": {
+            "model": {
+                "start": "2018-01-28",
+                "end": "2024-05-16"
+            },
+            "hourly": {
+                "start": "2004-05-10",
+                "end": "2024-05-06"
+            },
+            "daily": {
+                "start": "1949-07-29",
+                "end": "2024-04-30"
+            },
+            "monthly": {
+                "start": 1950,
+                "end": 2022
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2020
+            }
+        }
+    },
+    {
+        "id": "33805",
+        "name": {
+            "en": "Nikopol"
+        },
+        "country": "UA",
+        "region": "DP",
+        "identifiers": {
+            "national": null,
+            "wmo": "33805",
+            "icao": null
+        },
+        "location": {
+            "latitude": 47.5833,
+            "longitude": 34.45,
+            "elevation": 53
+        },
+        "timezone": "Europe/Zaporozhye",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1936-01-01",
+                "end": "2016-05-31"
+            },
+            "monthly": {
+                "start": 1936,
+                "end": 2008
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33833",
+        "name": {
+            "en": "Serbka"
+        },
+        "country": "UA",
+        "region": "OD",
+        "identifiers": {
+            "national": null,
+            "wmo": "33833",
+            "icao": null
+        },
+        "location": {
+            "latitude": 47.0167,
+            "longitude": 30.75,
+            "elevation": 72
+        },
+        "timezone": "Europe/Zaporozhye",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-01-01",
+                "end": "2016-05-31"
+            },
+            "monthly": {
+                "start": 1976,
+                "end": 2008
+            },
+            "normals": {
+                "start": 1961,
+                "end": 1990
+            }
+        }
+    },
+    {
+        "id": "33834",
+        "name": {
+            "en": "Rozdil'Na"
+        },
+        "country": "UA",
+        "region": "OD",
+        "identifiers": {
+            "national": null,
+            "wmo": "33834",
+            "icao": null
+        },
+        "location": {
+            "latitude": 46.85,
+            "longitude": 30.0833,
+            "elevation": 146
+        },
+        "timezone": "Europe/Simferopol",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1936-01-01",
+                "end": "2016-05-30"
+            },
+            "monthly": {
+                "start": 1936,
+                "end": 2008
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33837",
+        "name": {
+            "en": "Odesa"
+        },
+        "country": "UA",
+        "region": "OD",
+        "identifiers": {
+            "national": null,
+            "wmo": "33837",
+            "icao": "UKOO"
+        },
+        "location": {
+            "latitude": 46.4333,
+            "longitude": 30.7667,
+            "elevation": 42
+        },
+        "timezone": "Europe/Simferopol",
+        "inventory": {
+            "model": {
+                "start": "2018-01-28",
+                "end": "2024-05-16"
+            },
+            "hourly": {
+                "start": "1932-01-01",
+                "end": "2024-05-06"
+            },
+            "daily": {
+                "start": "1894-01-01",
+                "end": "2024-04-30"
+            },
+            "monthly": {
+                "start": 1894,
+                "end": 2022
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2020
+            }
+        }
+    },
+    {
+        "id": "33845",
+        "name": {
+            "en": "Tiligulo-Berezanka / Krasnoye"
+        },
+        "country": "UA",
+        "region": "LH",
+        "identifiers": {
+            "national": null,
+            "wmo": "33845",
+            "icao": null
+        },
+        "location": {
+            "latitude": 46.8333,
+            "longitude": 31.4,
+            "elevation": 42
+        },
+        "timezone": "Europe/Simferopol",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-01-01",
+                "end": "1988-09-24"
+            },
+            "monthly": {
+                "start": 1976,
+                "end": 1984
+            },
+            "normals": {
+                "start": 1961,
+                "end": 1990
+            }
+        }
+    },
+    {
+        "id": "33846",
+        "name": {
+            "en": "Mikolaiv"
+        },
+        "country": "UA",
+        "region": "LH",
+        "identifiers": {
+            "national": null,
+            "wmo": "33846",
+            "icao": "UKON"
+        },
+        "location": {
+            "latitude": 47.0333,
+            "longitude": 31.95,
+            "elevation": 49
+        },
+        "timezone": "Europe/Zaporozhye",
+        "inventory": {
+            "model": {
+                "start": "2018-01-28",
+                "end": "2024-05-16"
+            },
+            "hourly": {
+                "start": "2017-01-20",
+                "end": "2022-02-24"
+            },
+            "daily": {
+                "start": "1881-01-01",
+                "end": "2022-02-23"
+            },
+            "monthly": {
+                "start": 1881,
+                "end": 2012
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2020
+            }
+        }
+    },
+    {
+        "id": "33862",
+        "name": {
+            "en": "Velyka Oleksandrivka"
+        },
+        "country": "UA",
+        "region": "KS",
+        "identifiers": {
+            "national": null,
+            "wmo": "33862",
+            "icao": null
+        },
+        "location": {
+            "latitude": 47.3167,
+            "longitude": 33.2833,
+            "elevation": 57
+        },
+        "timezone": "Europe/Zaporozhye",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1955-03-08",
+                "end": "2016-06-14"
+            },
+            "monthly": {
+                "start": 1975,
+                "end": 2016
+            },
+            "normals": {
+                "start": 1961,
+                "end": 1990
+            }
+        }
+    },
+    {
+        "id": "33868",
+        "name": {
+            "en": "Novaia Kakhovka / Beryslav"
+        },
+        "country": "UA",
+        "region": "KS",
+        "identifiers": {
+            "national": null,
+            "wmo": "33868",
+            "icao": null
+        },
+        "location": {
+            "latitude": 46.8333,
+            "longitude": 33.4167,
+            "elevation": 45
+        },
+        "timezone": "Europe/Zaporozhye",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": null,
+                "end": null
+            },
+            "monthly": {
+                "start": null,
+                "end": null
+            },
+            "normals": {
+                "start": null,
+                "end": null
+            }
+        }
+    },
+    {
+        "id": "33869",
+        "name": {
+            "en": "Nova Kakhovka"
+        },
+        "country": "UA",
+        "region": "KS",
+        "identifiers": {
+            "national": null,
+            "wmo": "33869",
+            "icao": null
+        },
+        "location": {
+            "latitude": 46.7833,
+            "longitude": 33.3667,
+            "elevation": 26
+        },
+        "timezone": "Europe/Zaporozhye",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-01-01",
+                "end": "2016-06-14"
+            },
+            "monthly": {
+                "start": 1960,
+                "end": 2016
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33877",
+        "name": {
+            "en": "Nizhni Sirohozy"
+        },
+        "country": "UA",
+        "region": "KS",
+        "identifiers": {
+            "national": null,
+            "wmo": "33877",
+            "icao": null
+        },
+        "location": {
+            "latitude": 46.85,
+            "longitude": 34.4,
+            "elevation": 54
+        },
+        "timezone": "Europe/Zaporozhye",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1936-01-01",
+                "end": "2016-05-27"
+            },
+            "monthly": {
+                "start": 1936,
+                "end": 2008
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33885",
+        "name": {
+            "en": "Kagul"
+        },
+        "country": "UA",
+        "region": "CA",
+        "identifiers": {
+            "national": null,
+            "wmo": "33885",
+            "icao": null
+        },
+        "location": {
+            "latitude": 45.9,
+            "longitude": 28.1833,
+            "elevation": 39
+        },
+        "timezone": "Europe/Chisinau",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1958-01-01",
+                "end": "1992-12-31"
+            },
+            "monthly": {
+                "start": 1958,
+                "end": 1992
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33889",
+        "name": {
+            "en": "Izmail"
+        },
+        "country": "UA",
+        "region": "OD",
+        "identifiers": {
+            "national": null,
+            "wmo": "33889",
+            "icao": null
+        },
+        "location": {
+            "latitude": 45.3667,
+            "longitude": 28.85,
+            "elevation": 28
+        },
+        "timezone": "Europe/Simferopol",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1886-10-01",
+                "end": "2016-06-13"
+            },
+            "monthly": {
+                "start": 1886,
+                "end": 2021
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2020
+            }
+        }
+    },
+    {
+        "id": "33896",
+        "name": {
+            "en": "Sarata"
+        },
+        "country": "UA",
+        "region": "OD",
+        "identifiers": {
+            "national": null,
+            "wmo": "33896",
+            "icao": null
+        },
+        "location": {
+            "latitude": 46.0167,
+            "longitude": 29.6667,
+            "elevation": 12
+        },
+        "timezone": "Europe/Simferopol",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-01-01",
+                "end": "2016-05-31"
+            },
+            "monthly": {
+                "start": 1976,
+                "end": 2008
+            },
+            "normals": {
+                "start": 1961,
+                "end": 1990
+            }
+        }
+    },
+    {
+        "id": "33902",
+        "name": {
+            "en": "Kherson"
+        },
+        "country": "UA",
+        "region": "KS",
+        "identifiers": {
+            "national": null,
+            "wmo": "33902",
+            "icao": "UKOH"
+        },
+        "location": {
+            "latitude": 46.6333,
+            "longitude": 32.5667,
+            "elevation": 47
+        },
+        "timezone": "Europe/Simferopol",
+        "inventory": {
+            "model": {
+                "start": "2019-11-04",
+                "end": "2024-05-15"
+            },
+            "hourly": {
+                "start": "2017-01-20",
+                "end": "2021-11-24"
+            },
+            "daily": {
+                "start": "1879-02-06",
+                "end": "2024-04-21"
+            },
+            "monthly": {
+                "start": 1885,
+                "end": 2021
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2020
+            }
+        }
+    },
+    {
+        "id": "33907",
+        "name": {
+            "en": "Bekhtery"
+        },
+        "country": "UA",
+        "region": "KS",
+        "identifiers": {
+            "national": null,
+            "wmo": "33907",
+            "icao": null
+        },
+        "location": {
+            "latitude": 46.25,
+            "longitude": 32.3,
+            "elevation": 6
+        },
+        "timezone": "Europe/Simferopol",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-07-01",
+                "end": "2009-06-17"
+            },
+            "monthly": {
+                "start": 1959,
+                "end": 2008
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33910",
+        "name": {
+            "en": "Heniches'K"
+        },
+        "country": "UA",
+        "region": "KS",
+        "identifiers": {
+            "national": null,
+            "wmo": "33910",
+            "icao": null
+        },
+        "location": {
+            "latitude": 46.1667,
+            "longitude": 34.8167,
+            "elevation": 14
+        },
+        "timezone": "Europe/Simferopol",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1883-01-01",
+                "end": "2016-06-14"
+            },
+            "monthly": {
+                "start": 1883,
+                "end": 2016
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2020
+            }
+        }
+    },
+    {
+        "id": "33915",
+        "name": {
+            "en": "Askaniia-Nova"
+        },
+        "country": "UA",
+        "region": "KS",
+        "identifiers": {
+            "national": null,
+            "wmo": "33915",
+            "icao": null
+        },
+        "location": {
+            "latitude": 46.45,
+            "longitude": 33.8833,
+            "elevation": 28
+        },
+        "timezone": "Europe/Simferopol",
+        "inventory": {
+            "model": {
+                "start": "2021-02-07",
+                "end": "2023-01-08"
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1910-01-14",
+                "end": "2019-12-31"
+            },
+            "monthly": {
+                "start": 1910,
+                "end": 2021
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2020
+            }
+        }
+    },
+    {
+        "id": "33917",
+        "name": {
+            "en": "Primorskiy"
+        },
+        "country": "UA",
+        "region": "KS",
+        "identifiers": {
+            "national": null,
+            "wmo": "33917",
+            "icao": null
+        },
+        "location": {
+            "latitude": 46.05,
+            "longitude": 33.45,
+            "elevation": 12
+        },
+        "timezone": "Europe/Simferopol",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-07-01",
+                "end": "2009-06-17"
+            },
+            "monthly": {
+                "start": 1959,
+                "end": 2008
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33921",
+        "name": {
+            "en": "Stereguscij / Sterehushche"
+        },
+        "country": "UA",
+        "region": "KR",
+        "identifiers": {
+            "national": null,
+            "wmo": "33921",
+            "icao": null
+        },
+        "location": {
+            "latitude": 45.75,
+            "longitude": 33.2167,
+            "elevation": 16
+        },
+        "timezone": "Europe/Simferopol",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1936-01-01",
+                "end": "1988-09-30"
+            },
+            "monthly": {
+                "start": 1936,
+                "end": 1988
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33922",
+        "name": {
+            "en": "Novo-Selovskoye"
+        },
+        "country": "UA",
+        "region": "KR",
+        "identifiers": {
+            "national": null,
+            "wmo": "33922",
+            "icao": null
+        },
+        "location": {
+            "latitude": 45.45,
+            "longitude": 33.6,
+            "elevation": 15
+        },
+        "timezone": "Europe/Simferopol",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1976-11-01",
+                "end": "2009-06-17"
+            },
+            "monthly": {
+                "start": 1976,
+                "end": 2008
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33924",
+        "name": {
+            "en": "Chornomors'Ke"
+        },
+        "country": "UA",
+        "region": "KR",
+        "identifiers": {
+            "national": null,
+            "wmo": "33924",
+            "icao": null
+        },
+        "location": {
+            "latitude": 45.5167,
+            "longitude": 32.7,
+            "elevation": 9
+        },
+        "timezone": "Europe/Simferopol",
+        "inventory": {
+            "model": {
+                "start": "2021-01-01",
+                "end": "2024-05-15"
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1936-01-01",
+                "end": "2024-04-30"
+            },
+            "monthly": {
+                "start": 1936,
+                "end": 2022
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33929",
+        "name": {
+            "en": "Yevpatoriia"
+        },
+        "country": "UA",
+        "region": "KR",
+        "identifiers": {
+            "national": null,
+            "wmo": "33929",
+            "icao": null
+        },
+        "location": {
+            "latitude": 45.1833,
+            "longitude": 33.3667,
+            "elevation": 1
+        },
+        "timezone": "Europe/Simferopol",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1936-01-01",
+                "end": "2009-06-17"
+            },
+            "monthly": {
+                "start": 1936,
+                "end": 2008
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33934",
+        "name": {
+            "en": "Dzankoj"
+        },
+        "country": "UA",
+        "region": "KR",
+        "identifiers": {
+            "national": null,
+            "wmo": "33934",
+            "icao": "UKFY"
+        },
+        "location": {
+            "latitude": 45.7167,
+            "longitude": 34.4,
+            "elevation": 8
+        },
+        "timezone": "Europe/Simferopol",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1944-09-17",
+                "end": "2009-06-17"
+            },
+            "monthly": {
+                "start": 1944,
+                "end": 2008
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33935",
+        "name": {
+            "en": "Voronki / Voronky"
+        },
+        "country": "UA",
+        "region": "KR",
+        "identifiers": {
+            "national": null,
+            "wmo": "33935",
+            "icao": null
+        },
+        "location": {
+            "latitude": 45.6,
+            "longitude": 33.55,
+            "elevation": 88
+        },
+        "timezone": "Europe/Simferopol",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": null,
+                "end": null
+            },
+            "monthly": {
+                "start": null,
+                "end": null
+            },
+            "normals": {
+                "start": null,
+                "end": null
+            }
+        }
+    },
+    {
+        "id": "33939",
+        "name": {
+            "en": "Klepynine"
+        },
+        "country": "UA",
+        "region": "KR",
+        "identifiers": {
+            "national": null,
+            "wmo": "33939",
+            "icao": null
+        },
+        "location": {
+            "latitude": 45.65,
+            "longitude": 34.2,
+            "elevation": 37
+        },
+        "timezone": "Europe/Simferopol",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1936-01-01",
+                "end": "2009-06-17"
+            },
+            "monthly": {
+                "start": 1936,
+                "end": 2008
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33945",
+        "name": {
+            "en": "Poshtove"
+        },
+        "country": "UA",
+        "region": "KR",
+        "identifiers": {
+            "national": null,
+            "wmo": "33945",
+            "icao": null
+        },
+        "location": {
+            "latitude": 44.8333,
+            "longitude": 33.95,
+            "elevation": 172
+        },
+        "timezone": "Europe/Simferopol",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-07-04",
+                "end": "2009-06-17"
+            },
+            "monthly": {
+                "start": 1959,
+                "end": 2008
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33946",
+        "name": {
+            "en": "Simferopol"
+        },
+        "country": "UA",
+        "region": "KR",
+        "identifiers": {
+            "national": null,
+            "wmo": "33946",
+            "icao": "UKFF"
+        },
+        "location": {
+            "latitude": 44.6833,
+            "longitude": 34.1333,
+            "elevation": 180
+        },
+        "timezone": "Europe/Simferopol",
+        "inventory": {
+            "model": {
+                "start": "2019-11-04",
+                "end": "2024-05-15"
+            },
+            "hourly": {
+                "start": "1936-01-01",
+                "end": "2024-04-29"
+            },
+            "daily": {
+                "start": "1886-06-01",
+                "end": "2024-04-28"
+            },
+            "monthly": {
+                "start": 1886,
+                "end": 2022
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2020
+            }
+        }
+    },
+    {
+        "id": "33959",
+        "name": {
+            "en": "Alushta"
+        },
+        "country": "UA",
+        "region": "KR",
+        "identifiers": {
+            "national": null,
+            "wmo": "33959",
+            "icao": null
+        },
+        "location": {
+            "latitude": 44.6833,
+            "longitude": 34.4333,
+            "elevation": 3
+        },
+        "timezone": "Europe/Simferopol",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-01-01",
+                "end": "2009-06-17"
+            },
+            "monthly": {
+                "start": 1975,
+                "end": 2008
+            },
+            "normals": {
+                "start": 1961,
+                "end": 1990
+            }
+        }
+    },
+    {
+        "id": "33960",
+        "name": {
+            "en": "Sovetskiy"
+        },
+        "country": "UA",
+        "region": "KR",
+        "identifiers": {
+            "national": null,
+            "wmo": "33960",
+            "icao": null
+        },
+        "location": {
+            "latitude": 45.35,
+            "longitude": 34.95,
+            "elevation": 18
+        },
+        "timezone": "Europe/Simferopol",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1936-01-01",
+                "end": "1990-12-31"
+            },
+            "monthly": {
+                "start": 1937,
+                "end": 1990
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33961",
+        "name": {
+            "en": "Azovskoye / Laryne"
+        },
+        "country": "UA",
+        "region": "KR",
+        "identifiers": {
+            "national": null,
+            "wmo": "33961",
+            "icao": null
+        },
+        "location": {
+            "latitude": 45.55,
+            "longitude": 34.55,
+            "elevation": 27
+        },
+        "timezone": "Europe/Simferopol",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1936-01-01",
+                "end": "2009-06-17"
+            },
+            "monthly": {
+                "start": 1936,
+                "end": 2008
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33962",
+        "name": {
+            "en": "Nyzhniohirs'K"
+        },
+        "country": "UA",
+        "region": "KR",
+        "identifiers": {
+            "national": null,
+            "wmo": "33962",
+            "icao": null
+        },
+        "location": {
+            "latitude": 45.45,
+            "longitude": 34.7333,
+            "elevation": 19
+        },
+        "timezone": "Europe/Simferopol",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1936-01-15",
+                "end": "2009-06-17"
+            },
+            "monthly": {
+                "start": 1936,
+                "end": 2008
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33966",
+        "name": {
+            "en": "Kryms'Ka"
+        },
+        "country": "UA",
+        "region": "KR",
+        "identifiers": {
+            "national": null,
+            "wmo": "33966",
+            "icao": null
+        },
+        "location": {
+            "latitude": 45.05,
+            "longitude": 34.6,
+            "elevation": 205
+        },
+        "timezone": "Europe/Simferopol",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "2000-01-01",
+                "end": "2009-06-17"
+            },
+            "monthly": {
+                "start": 2000,
+                "end": 2008
+            },
+            "normals": {
+                "start": 1961,
+                "end": 1990
+            }
+        }
+    },
+    {
+        "id": "33973",
+        "name": {
+            "en": "Vladislavovka"
+        },
+        "country": "UA",
+        "region": "KR",
+        "identifiers": {
+            "national": null,
+            "wmo": "33973",
+            "icao": null
+        },
+        "location": {
+            "latitude": 45.1667,
+            "longitude": 35.3833,
+            "elevation": 37
+        },
+        "timezone": "Europe/Simferopol",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-01-01",
+                "end": "2009-06-17"
+            },
+            "monthly": {
+                "start": 2000,
+                "end": 2008
+            },
+            "normals": {
+                "start": 1961,
+                "end": 1990
+            }
+        }
+    },
+    {
+        "id": "33976",
+        "name": {
+            "en": "Feodosiia"
+        },
+        "country": "UA",
+        "region": "KR",
+        "identifiers": {
+            "national": null,
+            "wmo": "33976",
+            "icao": null
+        },
+        "location": {
+            "latitude": 45.0333,
+            "longitude": 35.3833,
+            "elevation": 22
+        },
+        "timezone": "Europe/Simferopol",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1881-01-01",
+                "end": "2015-03-31"
+            },
+            "monthly": {
+                "start": 1881,
+                "end": 2015
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2020
+            }
+        }
+    },
+    {
+        "id": "33981",
+        "name": {
+            "en": "Cape Kazantip Lighthouse"
+        },
+        "country": "UA",
+        "region": null,
+        "identifiers": {
+            "national": null,
+            "wmo": "33981",
+            "icao": null
+        },
+        "location": {
+            "latitude": 45.4667,
+            "longitude": 35.8667,
+            "elevation": 101
+        },
+        "timezone": "Europe/Simferopol",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1936-01-01",
+                "end": "2009-06-17"
+            },
+            "monthly": {
+                "start": 1936,
+                "end": 2008
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33983",
+        "name": {
+            "en": "Kerch"
+        },
+        "country": "UA",
+        "region": "KR",
+        "identifiers": {
+            "national": null,
+            "wmo": "33983",
+            "icao": "UKFK"
+        },
+        "location": {
+            "latitude": 45.4,
+            "longitude": 36.4167,
+            "elevation": 46
+        },
+        "timezone": "Europe/Simferopol",
+        "inventory": {
+            "model": {
+                "start": "2018-01-28",
+                "end": "2024-05-16"
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1936-01-01",
+                "end": "2024-04-30"
+            },
+            "monthly": {
+                "start": 1936,
+                "end": 2021
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2020
+            }
+        }
+    },
+    {
+        "id": "33990",
+        "name": {
+            "en": "Yalta"
+        },
+        "country": "UA",
+        "region": "KR",
+        "identifiers": {
+            "national": null,
+            "wmo": "33990",
+            "icao": null
+        },
+        "location": {
+            "latitude": 45.4833,
+            "longitude": 34.1667,
+            "elevation": 66
+        },
+        "timezone": "Europe/Simferopol",
+        "inventory": {
+            "model": {
+                "start": "2018-01-28",
+                "end": "2024-05-16"
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1881-01-01",
+                "end": "2015-03-30"
+            },
+            "monthly": {
+                "start": 1881,
+                "end": 2015
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2020
+            }
+        }
+    },
+    {
+        "id": "33994",
+        "name": {
+            "en": "Sevastopol / Belbek"
+        },
+        "country": "UA",
+        "region": "KR",
+        "identifiers": {
+            "national": null,
+            "wmo": "33994",
+            "icao": "UKFB"
+        },
+        "location": {
+            "latitude": 44.6833,
+            "longitude": 33.5667,
+            "elevation": 85
+        },
+        "timezone": "Europe/Simferopol",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-07-01",
+                "end": "2009-06-17"
+            },
+            "monthly": {
+                "start": 1959,
+                "end": 2008
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "33998",
+        "name": {
+            "en": "Ai-Petri"
+        },
+        "country": "UA",
+        "region": "KR",
+        "identifiers": {
+            "national": null,
+            "wmo": "33998",
+            "icao": null
+        },
+        "location": {
+            "latitude": 44.4333,
+            "longitude": 34.0833,
+            "elevation": 1180
+        },
+        "timezone": "Europe/Simferopol",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": null,
+                "end": null
+            },
+            "monthly": {
+                "start": 1991,
+                "end": 2021
+            },
+            "normals": {
+                "start": 1981,
+                "end": 2020
+            }
+        }
+    },
+    {
+        "id": "33999",
+        "name": {
+            "en": "Aj-Petri Mountain / Tyuzler"
+        },
+        "country": "UA",
+        "region": "KR",
+        "identifiers": {
+            "national": null,
+            "wmo": "33999",
+            "icao": null
+        },
+        "location": {
+            "latitude": 44.4667,
+            "longitude": 34.0667,
+            "elevation": 1180
+        },
+        "timezone": "Europe/Simferopol",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1895-09-12",
+                "end": "2012-12-31"
+            },
+            "monthly": {
+                "start": 1895,
+                "end": 2012
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2020
+            }
+        }
+    },
+    {
+        "id": "34300",
+        "name": {
+            "en": "Kharkiv"
+        },
+        "country": "UA",
+        "region": "KK",
+        "identifiers": {
+            "national": null,
+            "wmo": "34300",
+            "icao": "UKHH"
+        },
+        "location": {
+            "latitude": 49.9667,
+            "longitude": 36.1333,
+            "elevation": 154
+        },
+        "timezone": "Europe/Zaporozhye",
+        "inventory": {
+            "model": {
+                "start": "2018-01-28",
+                "end": "2024-05-16"
+            },
+            "hourly": {
+                "start": "1932-01-01",
+                "end": "2024-04-30"
+            },
+            "daily": {
+                "start": "1936-01-01",
+                "end": "2024-04-30"
+            },
+            "monthly": {
+                "start": 1936,
+                "end": 2022
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2020
+            }
+        }
+    },
+    {
+        "id": "34302",
+        "name": {
+            "en": "Bohodukhiv"
+        },
+        "country": "UA",
+        "region": "KK",
+        "identifiers": {
+            "national": null,
+            "wmo": "34302",
+            "icao": null
+        },
+        "location": {
+            "latitude": 50.2,
+            "longitude": 35.5333,
+            "elevation": 202
+        },
+        "timezone": "Europe/Zaporozhye",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-01-02",
+                "end": "2016-06-14"
+            },
+            "monthly": {
+                "start": 1973,
+                "end": 2016
+            },
+            "normals": {
+                "start": 1961,
+                "end": 1990
+            }
+        }
+    },
+    {
+        "id": "34304",
+        "name": {
+            "en": "Kolomak"
+        },
+        "country": "UA",
+        "region": "KK",
+        "identifiers": {
+            "national": null,
+            "wmo": "34304",
+            "icao": null
+        },
+        "location": {
+            "latitude": 49.85,
+            "longitude": 35.2333,
+            "elevation": 178
+        },
+        "timezone": "Europe/Zaporozhye",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-01-02",
+                "end": "2016-06-13"
+            },
+            "monthly": {
+                "start": 1976,
+                "end": 2016
+            },
+            "normals": {
+                "start": 1961,
+                "end": 1990
+            }
+        }
+    },
+    {
+        "id": "34312",
+        "name": {
+            "en": "Velykyi Burluk"
+        },
+        "country": "UA",
+        "region": "KK",
+        "identifiers": {
+            "national": null,
+            "wmo": "34312",
+            "icao": null
+        },
+        "location": {
+            "latitude": 50.0667,
+            "longitude": 37.3833,
+            "elevation": 174
+        },
+        "timezone": "Europe/Zaporozhye",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1936-01-01",
+                "end": "2016-06-14"
+            },
+            "monthly": {
+                "start": 1936,
+                "end": 2016
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "34319",
+        "name": {
+            "en": "Kupians'K"
+        },
+        "country": "UA",
+        "region": "KK",
+        "identifiers": {
+            "national": null,
+            "wmo": "34319",
+            "icao": null
+        },
+        "location": {
+            "latitude": 49.6333,
+            "longitude": 37.7,
+            "elevation": 87
+        },
+        "timezone": "Europe/Zaporozhye",
+        "inventory": {
+            "model": {
+                "start": "2021-05-10",
+                "end": "2024-05-15"
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-01-01",
+                "end": "2021-10-26"
+            },
+            "monthly": {
+                "start": 1973,
+                "end": 2016
+            },
+            "normals": {
+                "start": 1961,
+                "end": 1990
+            }
+        }
+    },
+    {
+        "id": "34401",
+        "name": {
+            "en": "Krasnohrad"
+        },
+        "country": "UA",
+        "region": "KK",
+        "identifiers": {
+            "national": null,
+            "wmo": "34401",
+            "icao": null
+        },
+        "location": {
+            "latitude": 49.3833,
+            "longitude": 35.45,
+            "elevation": 158
+        },
+        "timezone": "Europe/Zaporozhye",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1936-01-01",
+                "end": "2016-06-14"
+            },
+            "monthly": {
+                "start": 1936,
+                "end": 2016
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "34407",
+        "name": {
+            "en": "Hubynykha"
+        },
+        "country": "UA",
+        "region": "DP",
+        "identifiers": {
+            "national": null,
+            "wmo": "34407",
+            "icao": null
+        },
+        "location": {
+            "latitude": 48.8,
+            "longitude": 35.25,
+            "elevation": 127
+        },
+        "timezone": "Europe/Zaporozhye",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-07-01",
+                "end": "2009-06-17"
+            },
+            "monthly": {
+                "start": 1959,
+                "end": 2008
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "34409",
+        "name": {
+            "en": "Lozova"
+        },
+        "country": "UA",
+        "region": "KK",
+        "identifiers": {
+            "national": null,
+            "wmo": "34409",
+            "icao": null
+        },
+        "location": {
+            "latitude": 48.9,
+            "longitude": 36.3167,
+            "elevation": 175
+        },
+        "timezone": "Europe/Zaporozhye",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1936-01-01",
+                "end": "2016-06-14"
+            },
+            "monthly": {
+                "start": 1936,
+                "end": 2016
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "34411",
+        "name": {
+            "en": "Balakliya"
+        },
+        "country": "UA",
+        "region": "KK",
+        "identifiers": {
+            "national": null,
+            "wmo": "34411",
+            "icao": null
+        },
+        "location": {
+            "latitude": 49.45,
+            "longitude": 36.85,
+            "elevation": 75
+        },
+        "timezone": "Europe/Zaporozhye",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": null,
+                "end": null
+            },
+            "monthly": {
+                "start": null,
+                "end": null
+            },
+            "normals": {
+                "start": null,
+                "end": null
+            }
+        }
+    },
+    {
+        "id": "34415",
+        "name": {
+            "en": "Izium"
+        },
+        "country": "UA",
+        "region": "KK",
+        "identifiers": {
+            "national": null,
+            "wmo": "34415",
+            "icao": null
+        },
+        "location": {
+            "latitude": 49.1833,
+            "longitude": 37.3,
+            "elevation": 77
+        },
+        "timezone": "Europe/Zaporozhye",
+        "inventory": {
+            "model": {
+                "start": "2019-11-04",
+                "end": "2024-05-15"
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1937-01-01",
+                "end": "2024-04-26"
+            },
+            "monthly": {
+                "start": 1937,
+                "end": 2021
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2020
+            }
+        }
+    },
+    {
+        "id": "34421",
+        "name": {
+            "en": "Svatove"
+        },
+        "country": "UA",
+        "region": "LH",
+        "identifiers": {
+            "national": null,
+            "wmo": "34421",
+            "icao": null
+        },
+        "location": {
+            "latitude": 49.4167,
+            "longitude": 38.1667,
+            "elevation": 86
+        },
+        "timezone": "Europe/Zaporozhye",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1936-04-01",
+                "end": "2016-06-01"
+            },
+            "monthly": {
+                "start": 1936,
+                "end": 2008
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "34422",
+        "name": {
+            "en": "Starobel'sk / Starobil's'k"
+        },
+        "country": "UA",
+        "region": "LH",
+        "identifiers": {
+            "national": null,
+            "wmo": "34422",
+            "icao": null
+        },
+        "location": {
+            "latitude": 49.2833,
+            "longitude": 38.9167,
+            "elevation": 64
+        },
+        "timezone": "Europe/Zaporozhye",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-01-05",
+                "end": "1989-09-30"
+            },
+            "monthly": {
+                "start": 1960,
+                "end": 1988
+            },
+            "normals": {
+                "start": 1961,
+                "end": 1990
+            }
+        }
+    },
+    {
+        "id": "34434",
+        "name": {
+            "en": "Bilovods'K"
+        },
+        "country": "UA",
+        "region": "LH",
+        "identifiers": {
+            "national": null,
+            "wmo": "34434",
+            "icao": null
+        },
+        "location": {
+            "latitude": 49.2167,
+            "longitude": 39.5833,
+            "elevation": 74
+        },
+        "timezone": "Europe/Zaporozhye",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1936-01-01",
+                "end": "2016-05-28"
+            },
+            "monthly": {
+                "start": 1936,
+                "end": 2008
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "34500",
+        "name": {
+            "en": "Ul’yanovka"
+        },
+        "country": "UA",
+        "region": "DP",
+        "identifiers": {
+            "national": null,
+            "wmo": "34500",
+            "icao": null
+        },
+        "location": {
+            "latitude": 48.55,
+            "longitude": 35.05,
+            "elevation": 61
+        },
+        "timezone": "Europe/Kiev",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": null,
+                "end": null
+            },
+            "monthly": {
+                "start": null,
+                "end": null
+            },
+            "normals": {
+                "start": null,
+                "end": null
+            }
+        }
+    },
+    {
+        "id": "34502",
+        "name": {
+            "en": "Pavlograd"
+        },
+        "country": "UA",
+        "region": "DP",
+        "identifiers": {
+            "national": null,
+            "wmo": "34502",
+            "icao": null
+        },
+        "location": {
+            "latitude": 48.5333,
+            "longitude": 35.8333,
+            "elevation": 91
+        },
+        "timezone": "Europe/Zaporozhye",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1936-01-02",
+                "end": "2009-06-17"
+            },
+            "monthly": {
+                "start": 1936,
+                "end": 2008
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "34504",
+        "name": {
+            "en": "Dnipropetrovs'K"
+        },
+        "country": "UA",
+        "region": "DP",
+        "identifiers": {
+            "national": null,
+            "wmo": "34504",
+            "icao": null
+        },
+        "location": {
+            "latitude": 48.6,
+            "longitude": 34.9667,
+            "elevation": 141
+        },
+        "timezone": "Europe/Zaporozhye",
+        "inventory": {
+            "model": {
+                "start": "2018-01-28",
+                "end": "2024-05-16"
+            },
+            "hourly": {
+                "start": "2018-01-27",
+                "end": "2024-05-06"
+            },
+            "daily": {
+                "start": "1936-12-31",
+                "end": "2024-04-30"
+            },
+            "monthly": {
+                "start": 1937,
+                "end": 2021
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2020
+            }
+        }
+    },
+    {
+        "id": "34509",
+        "name": {
+            "en": "Chaplyne"
+        },
+        "country": "UA",
+        "region": "DP",
+        "identifiers": {
+            "national": null,
+            "wmo": "34509",
+            "icao": null
+        },
+        "location": {
+            "latitude": 48.1333,
+            "longitude": 36.2333,
+            "elevation": 173
+        },
+        "timezone": "Europe/Zaporozhye",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1936-01-01",
+                "end": "2016-06-14"
+            },
+            "monthly": {
+                "start": 1936,
+                "end": 2016
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "34510",
+        "name": {
+            "en": "Artemivs'K"
+        },
+        "country": "UA",
+        "region": "DT",
+        "identifiers": {
+            "national": null,
+            "wmo": "34510",
+            "icao": null
+        },
+        "location": {
+            "latitude": 48.6,
+            "longitude": 37.9833,
+            "elevation": 123
+        },
+        "timezone": "Europe/Zaporozhye",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-01-03",
+                "end": "2016-06-14"
+            },
+            "monthly": {
+                "start": 1969,
+                "end": 2016
+            },
+            "normals": {
+                "start": 1961,
+                "end": 1990
+            }
+        }
+    },
+    {
+        "id": "34514",
+        "name": {
+            "en": "Aleksandropol"
+        },
+        "country": "UA",
+        "region": "DP",
+        "identifiers": {
+            "national": null,
+            "wmo": "34514",
+            "icao": null
+        },
+        "location": {
+            "latitude": 48.6,
+            "longitude": 36.55,
+            "elevation": 125
+        },
+        "timezone": "Europe/Zaporozhye",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-07-03",
+                "end": "2009-06-17"
+            },
+            "monthly": {
+                "start": 1959,
+                "end": 2008
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "34519",
+        "name": {
+            "en": "Donets'K"
+        },
+        "country": "UA",
+        "region": "DT",
+        "identifiers": {
+            "national": null,
+            "wmo": "34519",
+            "icao": "UKCC"
+        },
+        "location": {
+            "latitude": 48.0667,
+            "longitude": 37.7667,
+            "elevation": 224
+        },
+        "timezone": "Europe/Zaporozhye",
+        "inventory": {
+            "model": {
+                "start": "2018-01-28",
+                "end": "2024-05-16"
+            },
+            "hourly": {
+                "start": "2004-05-10",
+                "end": "2014-06-03"
+            },
+            "daily": {
+                "start": "1949-07-28",
+                "end": "2014-06-02"
+            },
+            "monthly": {
+                "start": 1949,
+                "end": 2014
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2020
+            }
+        }
+    },
+    {
+        "id": "34523",
+        "name": {
+            "en": "Luhans'K"
+        },
+        "country": "UA",
+        "region": "LH",
+        "identifiers": {
+            "national": null,
+            "wmo": "34523",
+            "icao": null
+        },
+        "location": {
+            "latitude": 48.5667,
+            "longitude": 39.25,
+            "elevation": 59
+        },
+        "timezone": "Europe/Zaporozhye",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1881-01-01",
+                "end": "2014-07-06"
+            },
+            "monthly": {
+                "start": 1881,
+                "end": 2014
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2020
+            }
+        }
+    },
+    {
+        "id": "34524",
+        "name": {
+            "en": "Debal'Tseve"
+        },
+        "country": "UA",
+        "region": "DT",
+        "identifiers": {
+            "national": null,
+            "wmo": "34524",
+            "icao": null
+        },
+        "location": {
+            "latitude": 48.35,
+            "longitude": 38.4333,
+            "elevation": 334
+        },
+        "timezone": "Europe/Zaporozhye",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1936-01-01",
+                "end": "2015-01-23"
+            },
+            "monthly": {
+                "start": 1936,
+                "end": 2014
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2020
+            }
+        }
+    },
+    {
+        "id": "34537",
+        "name": {
+            "en": "Dar'Ivka"
+        },
+        "country": "UA",
+        "region": "LH",
+        "identifiers": {
+            "national": null,
+            "wmo": "34537",
+            "icao": null
+        },
+        "location": {
+            "latitude": 48.0833,
+            "longitude": 39.5,
+            "elevation": 300
+        },
+        "timezone": "Europe/Zaporozhye",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-01-03",
+                "end": "2015-01-13"
+            },
+            "monthly": {
+                "start": 1975,
+                "end": 2014
+            },
+            "normals": {
+                "start": 1961,
+                "end": 1990
+            }
+        }
+    },
+    {
+        "id": "34601",
+        "name": {
+            "en": "Zaporizhzhia"
+        },
+        "country": "UA",
+        "region": "ZP",
+        "identifiers": {
+            "national": null,
+            "wmo": "34601",
+            "icao": "UKDE"
+        },
+        "location": {
+            "latitude": 47.8,
+            "longitude": 35.0167,
+            "elevation": 107
+        },
+        "timezone": "Europe/Zaporozhye",
+        "inventory": {
+            "model": {
+                "start": "2021-01-01",
+                "end": "2024-05-15"
+            },
+            "hourly": {
+                "start": "1958-12-30",
+                "end": "2023-09-08"
+            },
+            "daily": {
+                "start": "1936-01-01",
+                "end": "2022-02-23"
+            },
+            "monthly": {
+                "start": 1936,
+                "end": 2022
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "34606",
+        "name": {
+            "en": "Gulyaypole"
+        },
+        "country": "UA",
+        "region": "ZP",
+        "identifiers": {
+            "national": null,
+            "wmo": "34606",
+            "icao": null
+        },
+        "location": {
+            "latitude": 47.6667,
+            "longitude": 36.25,
+            "elevation": 135
+        },
+        "timezone": "Europe/Zaporozhye",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-01-05",
+                "end": "2009-06-17"
+            },
+            "monthly": {
+                "start": 1976,
+                "end": 2008
+            },
+            "normals": {
+                "start": 1961,
+                "end": 1990
+            }
+        }
+    },
+    {
+        "id": "34607",
+        "name": {
+            "en": "Pryshyb"
+        },
+        "country": "UA",
+        "region": "ZP",
+        "identifiers": {
+            "national": null,
+            "wmo": "34607",
+            "icao": null
+        },
+        "location": {
+            "latitude": 47.2667,
+            "longitude": 35.3333,
+            "elevation": 87
+        },
+        "timezone": "Europe/Zaporozhye",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-01-01",
+                "end": "2016-06-14"
+            },
+            "monthly": {
+                "start": 1973,
+                "end": 2021
+            },
+            "normals": {
+                "start": 1991,
+                "end": 2020
+            }
+        }
+    },
+    {
+        "id": "34609",
+        "name": {
+            "en": "Kyrylivka"
+        },
+        "country": "UA",
+        "region": "ZP",
+        "identifiers": {
+            "national": null,
+            "wmo": "34609",
+            "icao": null
+        },
+        "location": {
+            "latitude": 47.3333,
+            "longitude": 36.3333,
+            "elevation": 221
+        },
+        "timezone": "Europe/Zaporozhye",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1936-01-01",
+                "end": "2016-06-14"
+            },
+            "monthly": {
+                "start": 1936,
+                "end": 2016
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "34615",
+        "name": {
+            "en": "Volnovakha"
+        },
+        "country": "UA",
+        "region": "DT",
+        "identifiers": {
+            "national": null,
+            "wmo": "34615",
+            "icao": null
+        },
+        "location": {
+            "latitude": 47.6167,
+            "longitude": 37.35,
+            "elevation": 266
+        },
+        "timezone": "Europe/Zaporozhye",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1936-01-01",
+                "end": "2016-05-28"
+            },
+            "monthly": {
+                "start": 1936,
+                "end": 2008
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "34622",
+        "name": {
+            "en": "Amvrosiivka"
+        },
+        "country": "UA",
+        "region": "DT",
+        "identifiers": {
+            "national": null,
+            "wmo": "34622",
+            "icao": null
+        },
+        "location": {
+            "latitude": 47.8,
+            "longitude": 38.5167,
+            "elevation": 164
+        },
+        "timezone": "Europe/Zaporozhye",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1936-01-01",
+                "end": "2009-06-17"
+            },
+            "monthly": {
+                "start": 1936,
+                "end": 2008
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "34704",
+        "name": {
+            "en": "Melitopol"
+        },
+        "country": "UA",
+        "region": "ZP",
+        "identifiers": {
+            "national": null,
+            "wmo": "34704",
+            "icao": null
+        },
+        "location": {
+            "latitude": 46.8333,
+            "longitude": 35.3667,
+            "elevation": 33
+        },
+        "timezone": "Europe/Zaporozhye",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1936-01-01",
+                "end": "2016-05-31"
+            },
+            "monthly": {
+                "start": 1936,
+                "end": 2008
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2000
+            }
+        }
+    },
+    {
+        "id": "34708",
+        "name": {
+            "en": "Botieve"
+        },
+        "country": "UA",
+        "region": "ZP",
+        "identifiers": {
+            "national": null,
+            "wmo": "34708",
+            "icao": null
+        },
+        "location": {
+            "latitude": 46.6833,
+            "longitude": 35.85,
+            "elevation": 17
+        },
+        "timezone": "Europe/Zaporozhye",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1959-01-02",
+                "end": "2016-05-31"
+            },
+            "monthly": {
+                "start": 1976,
+                "end": 2008
+            },
+            "normals": {
+                "start": 1961,
+                "end": 1990
+            }
+        }
+    },
+    {
+        "id": "34712",
+        "name": {
+            "en": "Mariupol"
+        },
+        "country": "UA",
+        "region": null,
+        "identifiers": {
+            "national": null,
+            "wmo": "34712",
+            "icao": null
+        },
+        "location": {
+            "latitude": 47.0333,
+            "longitude": 37.5,
+            "elevation": 68
+        },
+        "timezone": "Europe/Zaporozhye",
+        "inventory": {
+            "model": {
+                "start": "2018-01-28",
+                "end": "2024-05-16"
+            },
+            "hourly": {
+                "start": null,
+                "end": null
+            },
+            "daily": {
+                "start": "1936-01-01",
+                "end": "2023-12-30"
+            },
+            "monthly": {
+                "start": 1936,
+                "end": 2021
+            },
+            "normals": {
+                "start": 1961,
+                "end": 2020
+            }
+        }
+    },
+    {
+        "id": "UKCM0",
+        "name": {
+            "en": "Mariupol / Berdyanskoye"
+        },
+        "country": "UA",
+        "region": "DT",
+        "identifiers": {
+            "national": null,
+            "wmo": null,
+            "icao": "UKCM"
+        },
+        "location": {
+            "latitude": 47.0761,
+            "longitude": 37.4496,
+            "elevation": 77
+        },
+        "timezone": "Europe/Zaporozhye",
+        "inventory": {
+            "model": {
+                "start": "2021-01-02",
+                "end": "2024-05-15"
+            },
+            "hourly": {
+                "start": "1936-12-31",
+                "end": "2022-04-17"
+            },
+            "daily": {
+                "start": "2007-09-11",
+                "end": "2013-11-10"
+            },
+            "monthly": {
+                "start": null,
+                "end": null
+            },
+            "normals": {
+                "start": 1961,
+                "end": 1990
+            }
+        }
+    },
+    {
+        "id": "UKCW0",
+        "name": {
+            "en": "Lugansk / Luhans'k / Shmidta"
+        },
+        "country": "UA",
+        "region": "LH",
+        "identifiers": {
+            "national": null,
+            "wmo": null,
+            "icao": "UKCW"
+        },
+        "location": {
+            "latitude": 48.4167,
+            "longitude": 39.3667,
+            "elevation": 194
+        },
+        "timezone": "Europe/Zaporozhye",
+        "inventory": {
+            "model": {
+                "start": null,
+                "end": null
+            },
+            "hourly": {
+                "start": "2004-05-10",
+                "end": "2014-06-08"
+            },
+            "daily": {
+                "start": "2004-05-11",
+                "end": "2014-06-07"
+            },
+            "monthly": {
+                "start": 2013,
+                "end": 2014
+            },
+            "normals": {
+                "start": 1961,
+                "end": 1990
+            }
+        }
+    },
+    {
+        "id": "UKDD0",
+        "name": {
+            "en": "Dnepropetrovsk / Dnipropetrovs'k / Kaydaki"
+        },
+        "country": "UA",
+        "region": "DP",
+        "identifiers": {
+            "national": null,
+            "wmo": null,
+            "icao": "UKDD"
+        },
+        "location": {
+            "latitude": 48.35,
+            "longitude": 35.1,
+            "elevation": 146
+        },
+        "timezone": "Europe/Zaporozhye",
+        "inventory": {
+            "model": {
+                "start": "2021-01-02",
+                "end": "2024-05-15"
+            },
+            "hourly": {
+                "start": "2004-05-10",
+                "end": "2022-02-24"
+            },
+            "daily": {
+                "start": "2004-05-11",
+                "end": "2022-02-23"
+            },
+            "monthly": {
+                "start": 2012,
+                "end": 2022
+            },
+            "normals": {
+                "start": 1961,
+                "end": 1990
+            }
+        }
+    },
+    {
+        "id": "UKKE0",
+        "name": {
+            "en": "Cherkassy / Cherkasy / Kirilovka"
+        },
+        "country": "UA",
+        "region": "CK",
+        "identifiers": {
+            "national": null,
+            "wmo": null,
+            "icao": "UKKE"
+        },
+        "location": {
+            "latitude": 49.4,
+            "longitude": 31.9833,
+            "elevation": 114
+        },
+        "timezone": "Europe/Kiev",
+        "inventory": {
+            "model": {
+                "start": "2021-01-05",
+                "end": "2024-05-15"
+            },
+            "hourly": {
+                "start": "2020-08-27",
+                "end": "2021-08-06"
+            },
+            "daily": {
+                "start": null,
+                "end": null
+            },
+            "monthly": {
+                "start": null,
+                "end": null
+            },
+            "normals": {
+                "start": 1961,
+                "end": 1990
+            }
+        }
+    },
+    {
+        "id": "UKKM0",
+        "name": {
+            "en": "Kiev / Kyiv / Yablon’ki"
+        },
+        "country": "UA",
+        "region": "KV",
+        "identifiers": {
+            "national": null,
+            "wmo": null,
+            "icao": "UKKM"
+        },
+        "location": {
+            "latitude": 50.6,
+            "longitude": 30.2,
+            "elevation": 161
+        },
+        "timezone": "Europe/Kiev",
+        "inventory": {
+            "model": {
+                "start": "2021-01-02",
+                "end": "2024-05-15"
+            },
+            "hourly": {
+                "start": "2004-07-13",
+                "end": "2022-02-24"
+            },
+            "daily": {
+                "start": "2004-07-15",
+                "end": "2022-02-24"
+            },
+            "monthly": {
+                "start": 2007,
+                "end": 2022
+            },
+            "normals": {
+                "start": 1961,
+                "end": 1990
+            }
+        }
+    },
+    {
+        "id": "UKLI0",
+        "name": {
+            "en": "Ivano-Frankovsk / Chukaluvka"
+        },
+        "country": "UA",
+        "region": "IF",
+        "identifiers": {
+            "national": null,
+            "wmo": null,
+            "icao": "UKLI"
+        },
+        "location": {
+            "latitude": 48.8833,
+            "longitude": 24.6833,
+            "elevation": 280
+        },
+        "timezone": "Europe/Uzhgorod",
+        "inventory": {
+            "model": {
+                "start": "2021-01-02",
+                "end": "2024-05-15"
+            },
+            "hourly": {
+                "start": "2020-01-14",
+                "end": "2024-02-23"
+            },
+            "daily": {
+                "start": "2020-01-15",
+                "end": "2022-02-23"
+            },
+            "monthly": {
+                "start": 2020,
+                "end": 2022
+            },
+            "normals": {
+                "start": 1961,
+                "end": 1990
+            }
+        }
+    },
+    {
+        "id": "UKWW0",
+        "name": {
+            "en": "Vinnitsa / Vinnytsia / Gavrishëvka"
+        },
+        "country": "UA",
+        "region": "VI",
+        "identifiers": {
+            "national": null,
+            "wmo": null,
+            "icao": "UKWW"
+        },
+        "location": {
+            "latitude": 49.2333,
+            "longitude": 28.6,
+            "elevation": 297
+        },
+        "timezone": "Europe/Kiev",
+        "inventory": {
+            "model": {
+                "start": "2021-01-02",
+                "end": "2024-05-15"
+            },
+            "hourly": {
+                "start": "2020-01-14",
+                "end": "2022-02-01"
+            },
+            "daily": {
+                "start": "2020-01-15",
+                "end": "2022-01-27"
+            },
+            "monthly": {
+                "start": 2020,
+                "end": 2021
+            },
+            "normals": {
+                "start": 1961,
+                "end": 1990
+            }
+        }
+    }
+]
