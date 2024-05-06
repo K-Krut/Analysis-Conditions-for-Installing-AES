@@ -7,3 +7,4 @@
 /area_analysis_api/data-train.py
 /vulture_report.txt
 /ai_models/weather-model/example/
+/ai_models/weather-model/weather_formulas.py
