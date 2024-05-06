@@ -231,7 +231,6 @@ def get_ee_classification(coordinates):
 
     print(suitable_territory)
 
-    # print('crop: ', suitable_territory[0])
     return land_types_stats, suitable_territory, polygon_area
 
 
