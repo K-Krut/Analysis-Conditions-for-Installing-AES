@@ -6,10 +6,10 @@ from ai_models.landscape_model.utils import predict_polygon, convert_polygon_sta
 from .constants import landscape_types, FILTERING_AREAS_SCALE, landscape_types_details, MIN_POLYGON_AREA, SUITABLE_TYPES
 from .ee_config import EE_CREDENTIALS
 
-scaler = joblib.load('landscape_scaler_v5.gz')
-model = keras.models.load_model('landscape_model_v5.keras')
-ee.Initialize(EE_CREDENTIALS)
-landcover = ee.Image("COPERNICUS/Landcover/100m/Proba-V-C3/Global/2019").select('discrete_classification')
+# scaler = joblib.load('landscape_scaler_v5.gz')
+# model = keras.models.load_model('landscape_model_v5.keras')
+# ee.Initialize(EE_CREDENTIALS)
+# landcover = ee.Image("COPERNICUS/Landcover/100m/Proba-V-C3/Global/2019").select('discrete_classification')
 
 
 def get_land_type_area_inside_polygon(polygon, class_mask):

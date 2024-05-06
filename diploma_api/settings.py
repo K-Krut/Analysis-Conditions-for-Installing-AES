@@ -19,6 +19,11 @@ EE_PRIVATE_KEY_FILE = os.getenv('EE_PRIVATE_KEY_FILE')
 
 ALLOWED_HOSTS = []
 
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+]
+
 
 INSTALLED_APPS = [
     "django.contrib.admin",
