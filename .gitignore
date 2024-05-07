@@ -8,3 +8,4 @@
 /vulture_report.txt
 /ai_models/weather-model/example/
 /ai_models/weather-model/weather_formulas.py
+/ai_models/weather-model/data_for_test.py
