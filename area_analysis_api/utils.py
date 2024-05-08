@@ -231,7 +231,6 @@ def get_ee_classification(coordinates):
         landscape_prediction, filtered_polygon_data, polygon, coordinates
     )
 
-    print(suitable_territory)
     if suitable_territory and suitable_territory != []:
         suitable_territory_polygon = ee.Geometry.Polygon(suitable_territory)
         suitable_territory_area_km = get_polygon_area(suitable_territory_polygon)

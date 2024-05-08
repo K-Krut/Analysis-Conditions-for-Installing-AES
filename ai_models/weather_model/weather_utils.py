@@ -103,9 +103,6 @@ def get_efficiency(num_panels, pr_adj, data_, panel_efficiency=PANEL_EFFICIENCY)
     :return:
     """
     solar = get_solar_radiation(data_['tsun'], data_['month'])
-    # print(data_['date'], num_panels, PANEL_SIZE, panel_efficiency, solar, pr_adj)
-    #     # print(num_panels * PANEL_SIZE * panel_efficiency * solar * pr_adj)
-    print(pr_adj)
     return num_panels * PANEL_SIZE * panel_efficiency * solar * pr_adj
 
 
@@ -121,7 +118,6 @@ def fill_data(df):
 
 
 def generate_stats_result(monthly_weather_data, panels_num):
-    print(monthly_weather_data)
     monthly_data = [
         {
             "date": month.get('date'),
@@ -139,7 +135,6 @@ def generate_stats_result(monthly_weather_data, panels_num):
 
 
 def get_energy_output_stats(coordinates, area):
-    print(area )
     today = datetime.now()
     weather_stats_data = get_last_year_weather_data(coordinates, [today.year - 1, today.month])
     filled_data = fill_data(weather_stats_data)
