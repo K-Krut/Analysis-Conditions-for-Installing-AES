@@ -15,6 +15,7 @@ DEBUG = os.getenv('DEBUG')
 GOOGLE_MAPS_API_KEY = os.getenv('GOOGLE_MAPS_API_KEY')
 EE_ACCOUNT = os.getenv('EE_ACCOUNT')
 EE_PRIVATE_KEY_FILE = os.getenv('EE_PRIVATE_KEY_FILE')
+RapidAPI_KEY = os.getenv('RapidAPI_KEY')
 
 
 ALLOWED_HOSTS = [

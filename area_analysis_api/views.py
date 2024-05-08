@@ -14,13 +14,16 @@ class AnalyzeArea(APIView):
             if not coordinates:
                 return JsonResponse({'error': 'Error getting polygon data from request'}, status=500)
             if len(coordinates) < 3:
-                return JsonResponse({'error': 'Error - polygon must consist of at least 3 interconnected points'}, status=500)
+                return JsonResponse({'error': 'Error - polygon must consist of at least 3 interconnected points'}, status=400)
             res = get_ee_classification(coordinates)
             return JsonResponse(
                 {
                     'coordinates': coordinates,
-                    'area': res[0], 'crop': res[1],
-                    'initial_polygon_area': res[2]
+                    'area': res[0],
+                    'crop': res[1],
+                    'initial_polygon_area': res[2],
+                    'suitable_polygon_area': res[3],
+                    'energy_output_stats': res[4],
                 },
                 status=200
             )
