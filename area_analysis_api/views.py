@@ -19,8 +19,11 @@ class AnalyzeArea(APIView):
             return JsonResponse(
                 {
                     'coordinates': coordinates,
-                    'area': res[0], 'crop': res[1],
-                    'initial_polygon_area': res[2]
+                    'area': res[0],
+                    'crop': res[1],
+                    'initial_polygon_area': res[2],
+                    'suitable_polygon_area': res[3],
+                    'energy_output_stats': res[4],
                 },
                 status=200
             )

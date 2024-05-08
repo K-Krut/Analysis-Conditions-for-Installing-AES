@@ -3,6 +3,7 @@ import joblib
 
 import keras
 from ai_models.landscape_model.utils import predict_polygon, convert_polygon_stats
+from ai_models.weather_model.weather_utils import get_energy_output_stats
 from .constants import landscape_types, FILTERING_AREAS_SCALE, landscape_types_details, MIN_POLYGON_AREA, SUITABLE_TYPES
 from .ee_config import EE_CREDENTIALS
 
@@ -166,7 +167,7 @@ def get_classification_of_filtered_area(filtered_polygon):
     return get_area_classification_details(landcover, filtered_polygon, filtered_polygon_area)
 
 
-def define_suitable_polygon_coordinates(prediction, polygon_area, filtered_polygon_data, polygon, coordinates):
+def define_suitable_polygon_coordinates(prediction, filtered_polygon_data, polygon, coordinates):
     filtered_polygon = ee.Geometry.Polygon(filtered_polygon_data)
 
     if prediction < -0.5:
@@ -227,11 +228,15 @@ def get_ee_classification(coordinates):
     filtered_polygon_data = get_filtered_area_coordinates(polygon, landcover)
 
     suitable_territory = define_suitable_polygon_coordinates(
-        landscape_prediction, polygon_area, filtered_polygon_data, polygon, coordinates
+        landscape_prediction, filtered_polygon_data, polygon, coordinates
     )
 
     print(suitable_territory)
-
-    return land_types_stats, suitable_territory, polygon_area
-
+    if suitable_territory and suitable_territory != []:
+        suitable_territory_polygon = ee.Geometry.Polygon(suitable_territory)
+        suitable_territory_area_km = get_polygon_area(suitable_territory_polygon)
+        energy_output = get_energy_output_stats(coordinates[0],  get_polygon_area_m2(suitable_territory_polygon))
+        print(energy_output)
+        return land_types_stats, suitable_territory, polygon_area, suitable_territory_area_km, energy_output
+    return land_types_stats, suitable_territory, polygon_area, 0, {}
 

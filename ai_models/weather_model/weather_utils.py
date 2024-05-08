@@ -1,9 +1,16 @@
+import json
+import random
+
 from meteostat import Point, Monthly
 from diploma_api.settings import RapidAPI_KEY
 from datetime import datetime, timedelta
 import requests
 import math
-from weather_constants import *
+
+
+PANEL_SIZE = 1.6  # м²
+PANEL_EFFICIENCY = 0.156  # 15.6%
+
 
 
 def get_date_start(date_end):
@@ -43,20 +50,37 @@ def get_last_year_weather_data(coordinates, de, ds=[2000, 1]):
 def get_pr_adj(data):
     PR = 0.75
     TC = 1 - 0.005 * (data.get("tavg") - 25) if data.get("tavg") is not None else 1
-    WC = 1 + 0.01 * math.sqrt(data.get("wspd", 0)) if data.get("wspd", 0) is not None else 1
-    PC = math.exp(-data.get("prcp") / 100) if data.get("prcp") is not None else math.exp(-0 / 100)
-    return PR * TC * WC * PC
+    WC = 1 + 0.01 * math.sqrt(data.get("wspd")) if data.get("wspd") is not None else 1
+    PC = math.exp(-data.get("prcp") / 100) if data.get("prcp") is not None else 1
+    index = PR * TC * WC * PC
+    return index if index >= 0.5 else 0.5
 
 
 # TODO typical_solar_radiation_for_region
-def get_solar_radiation(tsun):
+def get_solar_radiation(tsun, month):
     """
     типичная мощность солнечного излучения в ясный день в полдень составляет 1000 Вт/м²
+    :param month:
     :param tsun:
     :param days_in_month:
     :return: kWh/m²/месяц
     """
-    return tsun / 60 if tsun is not None else 1000 / 60
+    solar_radiation_ukraine = {
+        1: 200,
+        2: 220,
+        3: 303,
+        4: 316,
+        5: 350,
+        6: 345,
+        7: 350,
+        8: 335,
+        9: 250,
+        10: 300,
+        11: 250,
+        12: 170
+    }
+    hours = solar_radiation_ukraine[month]
+    return tsun / 60 if tsun not in [None, 0] else random.randint(hours, hours + 5)
 
 
 def get_panels_num(polygon_area_m2, panel_area=PANEL_SIZE):
@@ -78,7 +102,11 @@ def get_efficiency(num_panels, pr_adj, data_, panel_efficiency=PANEL_EFFICIENCY)
     :param pr_adj:
     :return:
     """
-    return num_panels * PANEL_SIZE * panel_efficiency * get_solar_radiation(data_['tsun']) * pr_adj
+    solar = get_solar_radiation(data_['tsun'], data_['month'])
+    # print(data_['date'], num_panels, PANEL_SIZE, panel_efficiency, solar, pr_adj)
+    #     # print(num_panels * PANEL_SIZE * panel_efficiency * solar * pr_adj)
+    print(pr_adj)
+    return num_panels * PANEL_SIZE * panel_efficiency * solar * pr_adj
 
 
 def fill_data(df):
@@ -88,12 +116,12 @@ def fill_data(df):
     for column in df.columns:
         if column not in ['month']:
             df[column] = df[column].fillna(monthly_means[column]).fillna(0)
-    df = df.drop(columns=['month'])
     df['date'] = [str(x[0])[0:10] for x in df.to_records()]
     return df.to_dict('records')
 
 
 def generate_stats_result(monthly_weather_data, panels_num):
+    print(monthly_weather_data)
     monthly_data = [
         {
             "date": month.get('date'),
@@ -102,6 +130,7 @@ def generate_stats_result(monthly_weather_data, panels_num):
         for month in monthly_weather_data
     ]
     return {
+        "panels": panels_num,
         "panels_area": panels_num * PANEL_SIZE,
         "panels_efficiency": PANEL_EFFICIENCY,
         "month_energy_stats": monthly_data,
@@ -110,25 +139,10 @@ def generate_stats_result(monthly_weather_data, panels_num):
 
 
 def get_energy_output_stats(coordinates, area):
+    print(area )
     today = datetime.now()
     weather_stats_data = get_last_year_weather_data(coordinates, [today.year - 1, today.month])
     filled_data = fill_data(weather_stats_data)
     return generate_stats_result(filled_data[-12:], get_panels_num(area))
 
 
-# data = get_last_year_weather_data([27.10460180195585, 50.32614931455628], [2023, 5])
-# print(data)
-# area = 20  # м²
-# panels_num = get_panels_num(area)
-# filled_data = fill_data(data)
-# annualy = 0
-# print(panels_num * PANEL_SIZE)
-# for month in filled_data[-12:]:
-#     monthly_production = get_efficiency(panels_num, get_pr_adj(month), month)
-#     annualy += monthly_production
-#     print(f'{month["date"]} : {round(monthly_production, 2)} kWh')
-#
-# E = 20 * 15 * 1250 * 0.75
-#
-# print(E / 100)
-# print(annualy)
