@@ -200,7 +200,7 @@ def get_suitable_types_ids():
     return results
 
 
-def analyze_land_types_stats(land_types_stats):
+def check_suitable_types(land_types_stats):
     results = []
 
     for i in land_types_stats:
@@ -220,16 +220,18 @@ def get_ee_classification(coordinates):
     land_types_stats = get_area_classification_details(landcover, polygon, polygon_area)
 
     print(land_types_stats)
+    if len(check_suitable_types(land_types_stats)) == len(land_types_stats):
+        suitable_territory = coordinates
+    else:
+        landscape_prediction = predict_polygon(convert_polygon_stats(land_types_stats), model, scaler)
 
-    landscape_prediction = predict_polygon(convert_polygon_stats(land_types_stats), model, scaler)
+        print('PREDICTION: ', landscape_prediction)
 
-    print('PREDICTION: ', landscape_prediction)
+        filtered_polygon_data = get_filtered_area_coordinates(polygon, landcover)
 
-    filtered_polygon_data = get_filtered_area_coordinates(polygon, landcover)
-
-    suitable_territory = define_suitable_polygon_coordinates(
-        landscape_prediction, filtered_polygon_data, polygon, coordinates
-    )
+        suitable_territory = define_suitable_polygon_coordinates(
+            landscape_prediction, filtered_polygon_data, polygon, coordinates
+        )
 
     if suitable_territory and suitable_territory != []:
         suitable_territory_polygon = ee.Geometry.Polygon(suitable_territory)

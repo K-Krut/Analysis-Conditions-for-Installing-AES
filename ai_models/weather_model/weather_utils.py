@@ -95,7 +95,7 @@ def get_panels_num(polygon_area_m2, panel_area=PANEL_SIZE):
 def get_efficiency(num_panels, pr_adj, data_, panel_efficiency=PANEL_EFFICIENCY):
     """
     в kWh
-    радиация в kWh/m²/день
+    радиация в kWh/m²/месяц
     :param data_:
     :param panel_efficiency:
     :param num_panels:
@@ -103,6 +103,7 @@ def get_efficiency(num_panels, pr_adj, data_, panel_efficiency=PANEL_EFFICIENCY)
     :return:
     """
     solar = get_solar_radiation(data_['tsun'], data_['month'])
+    print(data_['month'], '  -  ', num_panels, PANEL_SIZE, panel_efficiency, solar, pr_adj)
     return num_panels * PANEL_SIZE * panel_efficiency * solar * pr_adj
 
 
@@ -125,6 +126,7 @@ def generate_stats_result(monthly_weather_data, panels_num):
         }
         for month in monthly_weather_data
     ]
+    monthly_data = sorted(monthly_data, key=lambda x: int(x['date'][5:7]))
     return {
         "panels": panels_num,
         "panels_area": panels_num * PANEL_SIZE,
@@ -139,5 +141,4 @@ def get_energy_output_stats(coordinates, area):
     weather_stats_data = get_last_year_weather_data(coordinates, [today.year - 1, today.month])
     filled_data = fill_data(weather_stats_data)
     return generate_stats_result(filled_data[-12:], get_panels_num(area))
-
 
