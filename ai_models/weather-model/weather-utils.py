@@ -94,21 +94,21 @@ def fill_data(df):
     return df.to_dict('records')
 
 
-data = get_last_year_weather_data([27.10460180195585, 50.32614931455628], [2023, 5])
-print(data)
-area = 20  # м²
-panels_num = get_panels_num(area)
-filled_data = fill_data(data)
-annualy = 0
-print(panels_num * 1.6)
-for month in filled_data[-12:]:
-    monthly_production = get_efficiency(panels_num, get_pr_adj(month), month)
-    annualy += monthly_production
-    print(f'{month["date"]} : {round(monthly_production, 2)} kWh')
-
-E = 20 * 15 * 1250 * 0.75
-
-print(E / 100)
-print(annualy)
+# data = get_last_year_weather_data([27.10460180195585, 50.32614931455628], [2023, 5])
+# print(data)
+# area = 20  # м²
+# panels_num = get_panels_num(area)
+# filled_data = fill_data(data)
+# annualy = 0
+# print(panels_num * 1.6)
+# for month in filled_data[-12:]:
+#     monthly_production = get_efficiency(panels_num, get_pr_adj(month), month)
+#     annualy += monthly_production
+#     print(f'{month["date"]} : {round(monthly_production, 2)} kWh')
+#
+# E = 20 * 15 * 1250 * 0.75
+#
+# print(E / 100)
+# print(annualy)
 
 
