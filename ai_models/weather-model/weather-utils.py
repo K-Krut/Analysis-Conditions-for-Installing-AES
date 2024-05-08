@@ -61,7 +61,6 @@ def get_solar_radiation(tsun):
 
 def get_panels_num(polygon_area_m2, panel_area=1.6):
     """
-
     :param polygon_area_m2:
     :param panel_area: panel_area=1.6 м²
     :return:
@@ -93,6 +92,30 @@ def fill_data(df):
     df['date'] = [str(x[0])[0:10] for x in df.to_records()]
     return df.to_dict('records')
 
+
+def generate_stats_result(monthly_weather_data, panels_num):
+    monthly_data = [
+        {
+            "date": month.get('date'),
+            "energy": round(get_efficiency(panels_num, get_pr_adj(month), month))  # kWh
+        }
+        for month in monthly_weather_data
+    ]
+    return {
+        "panels_area": panels_num * 1.6,
+        "panels_efficiency": 0.156,
+        "month_energy_stats": monthly_data,
+        "yearly_energy": sum([x.get("energy") for x in monthly_data])
+    }
+
+def get_energy_output_stats():
+    weather_stats_data = get_last_year_weather_data([27.10460180195585, 50.32614931455628], [2023, 5])
+    area = 20
+    filled_data = fill_data(weather_stats_data)
+    return generate_stats_result(filled_data[-12:], get_panels_num(area))
+
+
+get_energy_output_stats()
 
 # data = get_last_year_weather_data([27.10460180195585, 50.32614931455628], [2023, 5])
 # print(data)

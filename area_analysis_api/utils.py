@@ -226,8 +226,9 @@ def get_ee_classification(coordinates):
 
     filtered_polygon_data = get_filtered_area_coordinates(polygon, landcover)
 
-    suitable_territory = define_suitable_polygon_coordinates(landscape_prediction, polygon_area, filtered_polygon_data,
-                                                             polygon, coordinates)
+    suitable_territory = define_suitable_polygon_coordinates(
+        landscape_prediction, polygon_area, filtered_polygon_data, polygon, coordinates
+    )
 
     print(suitable_territory)
 
