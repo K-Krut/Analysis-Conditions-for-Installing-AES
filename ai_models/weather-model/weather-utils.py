@@ -1,9 +1,9 @@
-import pandas as pd
 from meteostat import Point, Monthly
 from diploma_api.settings import RapidAPI_KEY
 from datetime import datetime, timedelta
 import requests
 import math
+from weather_constants import *
 
 
 def get_date_start(date_end):
@@ -59,7 +59,7 @@ def get_solar_radiation(tsun):
     return tsun / 60 if tsun is not None else 1000 / 60
 
 
-def get_panels_num(polygon_area_m2, panel_area=1.6):
+def get_panels_num(polygon_area_m2, panel_area=PANEL_SIZE):
     """
     :param polygon_area_m2:
     :param panel_area: panel_area=1.6 м²
@@ -68,7 +68,7 @@ def get_panels_num(polygon_area_m2, panel_area=1.6):
     return round(polygon_area_m2 / panel_area)
 
 
-def get_efficiency(num_panels, pr_adj, data_, panel_efficiency=0.156):
+def get_efficiency(num_panels, pr_adj, data_, panel_efficiency=PANEL_EFFICIENCY):
     """
     в kWh
     радиация в kWh/m²/день
@@ -78,7 +78,7 @@ def get_efficiency(num_panels, pr_adj, data_, panel_efficiency=0.156):
     :param pr_adj:
     :return:
     """
-    return num_panels * 1.6 * panel_efficiency * get_solar_radiation(data_['tsun']) * pr_adj
+    return num_panels * PANEL_SIZE * panel_efficiency * get_solar_radiation(data_['tsun']) * pr_adj
 
 
 def fill_data(df):
@@ -102,20 +102,19 @@ def generate_stats_result(monthly_weather_data, panels_num):
         for month in monthly_weather_data
     ]
     return {
-        "panels_area": panels_num * 1.6,
-        "panels_efficiency": 0.156,
+        "panels_area": panels_num * PANEL_SIZE,
+        "panels_efficiency": PANEL_EFFICIENCY,
         "month_energy_stats": monthly_data,
         "yearly_energy": sum([x.get("energy") for x in monthly_data])
     }
 
-def get_energy_output_stats():
-    weather_stats_data = get_last_year_weather_data([27.10460180195585, 50.32614931455628], [2023, 5])
-    area = 20
+
+def get_energy_output_stats(coordinates, area):
+    today = datetime.now()
+    weather_stats_data = get_last_year_weather_data(coordinates, [today.year - 1, today.month])
     filled_data = fill_data(weather_stats_data)
     return generate_stats_result(filled_data[-12:], get_panels_num(area))
 
-
-get_energy_output_stats()
 
 # data = get_last_year_weather_data([27.10460180195585, 50.32614931455628], [2023, 5])
 # print(data)
@@ -123,7 +122,7 @@ get_energy_output_stats()
 # panels_num = get_panels_num(area)
 # filled_data = fill_data(data)
 # annualy = 0
-# print(panels_num * 1.6)
+# print(panels_num * PANEL_SIZE)
 # for month in filled_data[-12:]:
 #     monthly_production = get_efficiency(panels_num, get_pr_adj(month), month)
 #     annualy += monthly_production
@@ -133,5 +132,3 @@ get_energy_output_stats()
 #
 # print(E / 100)
 # print(annualy)
-
-

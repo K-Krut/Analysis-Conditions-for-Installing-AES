@@ -1,1 +1,2 @@
 PANEL_SIZE = 1.6  # м²
+PANEL_EFFICIENCY = 0.156  # 15.6%
