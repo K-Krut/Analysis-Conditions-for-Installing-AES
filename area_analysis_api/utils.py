@@ -7,8 +7,8 @@ from ai_models.weather_model.weather_utils import get_energy_output_stats
 from .constants import landscape_types, FILTERING_AREAS_SCALE, landscape_types_details, MIN_POLYGON_AREA, SUITABLE_TYPES
 from .ee_config import EE_CREDENTIALS
 
-scaler = joblib.load('landscape_scaler_v15.gz')
-model = keras.models.load_model('landscape_model_v15.keras')
+scaler = joblib.load('landscape_scaler_v20.gz')
+model = keras.models.load_model('landscape_model_v20.keras')
 ee.Initialize(EE_CREDENTIALS)
 landcover = ee.Image("COPERNICUS/Landcover/100m/Proba-V-C3/Global/2019").select('discrete_classification')
 
@@ -175,7 +175,7 @@ def check_suitability_with_ai(prediction, filtered_polygon_data, polygon, coordi
         print('     filtered_polygon_classification: ', filtered_polygon_classification)
         landscape_prediction = predict_polygon(convert_polygon_stats(filtered_polygon_classification), model, scaler)
 
-        print('     PREDICTION: ', landscape_prediction)
+        print('     PREDICTION  landscape_prediction: ', landscape_prediction)
         if landscape_prediction > 0.5:
             return filtered_polygon.coordinates().getInfo()[0]
         elif landscape_prediction < -0.5:
@@ -184,7 +184,7 @@ def check_suitability_with_ai(prediction, filtered_polygon_data, polygon, coordi
             return max_polygon[0]
         else:
             return []
-    elif prediction > 0.5:
+    elif prediction > 0.3:
         return coordinates
     else:
         print('     !!! ', prediction)
@@ -201,11 +201,12 @@ def define_suitable_polygon_coordinates(prediction, filtered_polygon_data, polyg
     # все отфильтрованные территории состоят из подходящих типов, полностью подходящая территория
     if len(check_of_suitable_types_filtered_result) == len(filtered_polygon_classification):
         return filtered_polygon.coordinates().getInfo()[0]
+
     # отфильтрованные территории состоят полностью из неподходящих типов
-    elif len(check_of_suitable_types_filtered_result) == 0:
-        eligible_polygons = calculate_polygons_difference(polygon, filtered_polygon)
-        max_polygon = get_polygon_with_max_area(eligible_polygons)
-        return max_polygon[0]
+    # elif len(check_of_suitable_types_filtered_result) == 0:
+    #     eligible_polygons = calculate_polygons_difference(polygon, filtered_polygon)
+    #     max_polygon = get_polygon_with_max_area(eligible_polygons)
+    #     return max_polygon[0]
     # elif prediction < -0.5:
     #     print('     eligible_polygons')
     #     filtered_polygon_classification = get_classification_of_filtered_area(filtered_polygon)
@@ -227,7 +228,7 @@ def define_suitable_polygon_coordinates(prediction, filtered_polygon_data, polyg
     #     return coordinates
     else:
         print('     !!! ', prediction)
-        # return []
+        print(len(check_of_suitable_types_filtered_result), len(filtered_polygon_classification))
         return check_suitability_with_ai(prediction, filtered_polygon_data, polygon, coordinates,
                                          filtered_polygon_classification)
 
