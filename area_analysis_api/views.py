@@ -4,8 +4,6 @@ from rest_framework.views import APIView
 from .utils import get_ee_classification
 
 
-
-
 class AnalyzeArea(APIView):
     def post(self, request):
         try:

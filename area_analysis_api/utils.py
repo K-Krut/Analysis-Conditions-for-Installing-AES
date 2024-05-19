@@ -168,14 +168,19 @@ def get_classification_of_filtered_area(filtered_polygon):
 
 
 def check_suitability_with_ai(prediction, filtered_polygon_data, polygon, coordinates, filtered_polygon_classification):
+    """
+
+    :param prediction:
+    :param filtered_polygon_data:
+    :param polygon:
+    :param coordinates:
+    :param filtered_polygon_classification:
+    :return:
+    """
     filtered_polygon = ee.Geometry.Polygon(filtered_polygon_data)
 
     if prediction < -0.5:
-        print('     eligible_polygons')
-        print('     filtered_polygon_classification: ', filtered_polygon_classification)
         landscape_prediction = predict_polygon(convert_polygon_stats(filtered_polygon_classification), model, scaler)
-
-        print('     PREDICTION  landscape_prediction: ', landscape_prediction)
         if landscape_prediction > 0.5:
             return filtered_polygon.coordinates().getInfo()[0]
         elif landscape_prediction < -0.5:
@@ -192,6 +197,14 @@ def check_suitability_with_ai(prediction, filtered_polygon_data, polygon, coordi
 
 
 def define_suitable_polygon_coordinates(prediction, filtered_polygon_data, polygon, coordinates):
+    """
+
+    :param prediction:
+    :param filtered_polygon_data:
+    :param polygon:
+    :param coordinates:
+    :return:
+    """
     filtered_polygon = ee.Geometry.Polygon(filtered_polygon_data)
     filtered_polygon_classification = get_classification_of_filtered_area(filtered_polygon)
     check_of_suitable_types_filtered_result = check_suitable_types(filtered_polygon_classification)
@@ -204,6 +217,11 @@ def define_suitable_polygon_coordinates(prediction, filtered_polygon_data, polyg
 
 
 def check_suitable_types(land_types_stats):
+    """
+
+    :param land_types_stats:
+    :return:
+    """
     results = []
 
     for i in land_types_stats:
@@ -212,24 +230,14 @@ def check_suitable_types(land_types_stats):
     return results
 
 
-def get_ee_classification(coordinates):
-    polygon = ee.Geometry.Polygon(coordinates)
-
-    polygon_area = get_polygon_area(polygon)
-
-    if polygon_area < MIN_POLYGON_AREA:
-        return [], [], polygon_area, 0, {}
-
-    land_types_stats = get_area_classification_details(landcover, polygon, polygon_area)
-
-    print(land_types_stats)
+def get_suitable_territory(coordinates, land_types_stats, polygon):
     check_of_suitable_types_result = check_suitable_types(land_types_stats)
     if len(check_of_suitable_types_result) == len(land_types_stats):
         print('ALL LANDTYPES ARE SUITABLE')
-        suitable_territory = coordinates
+        return coordinates
     elif len(check_of_suitable_types_result) == 0:
         print('THERE ISNT ANY SUITABLE LANDTYPE')
-        suitable_territory = []
+        return []
     else:
         print('FINDING DIFFERENCE')
         landscape_prediction = predict_polygon(convert_polygon_stats(land_types_stats), model, scaler)
@@ -238,9 +246,25 @@ def get_ee_classification(coordinates):
 
         filtered_polygon_data = get_filtered_area_coordinates(polygon, landcover)
 
-        suitable_territory = define_suitable_polygon_coordinates(
-            landscape_prediction, filtered_polygon_data, polygon, coordinates
-        )
+        return define_suitable_polygon_coordinates(landscape_prediction, filtered_polygon_data, polygon, coordinates)
+
+
+def get_ee_classification(coordinates):
+    """
+
+    :param coordinates:
+    :return:
+    """
+    polygon = ee.Geometry.Polygon(coordinates)
+
+    polygon_area = get_polygon_area(polygon)
+
+    if polygon_area < MIN_POLYGON_AREA:
+        raise Exception(f'Minimal polygon area must be - {MIN_POLYGON_AREA} km^2, area of your polygon - {polygon_area} km^2')
+
+    land_types_stats = get_area_classification_details(landcover, polygon, polygon_area)
+
+    suitable_territory = get_suitable_territory(coordinates, land_types_stats, polygon)
 
     if suitable_territory and suitable_territory != []:
         suitable_territory_polygon = ee.Geometry.Polygon(suitable_territory)
