@@ -10,10 +10,12 @@ class AnalyzeArea(APIView):
         try:
             data = JSONParser().parse(request)
             coordinates = data.get('coordinates')
+
             if not coordinates:
                 return JsonResponse({'error': 'Error getting polygon data from request'}, status=500)
             if len(coordinates) < 3:
                 return JsonResponse({'error': 'Error - polygon must consist of at least 3 interconnected points'}, status=400)
+
             landscape_res = get_ee_classification(coordinates)
             energy_output = get_solar_energy_output_prediction(coordinates[0], landscape_res['crop']) if landscape_res['crop'] else {}
             return JsonResponse(

@@ -1,7 +1,8 @@
 import random
 from builtins import print
 
-from meteostat import Point, Monthly
+import numpy as np
+from meteostat import Point, Monthly, Normals, Daily
 from diploma_api.settings import RapidAPI_KEY
 from datetime import datetime, timedelta
 import requests
@@ -90,7 +91,7 @@ def get_panels_num(polygon_area_m2, panel_area=PANEL_SIZE):
     return round(polygon_area_m2 / panel_area)
 
 
-def get_efficiency(num_panels, pr_adj, data_, panel_efficiency=PANEL_EFFICIENCY):
+def get_solar_station_efficiency(num_panels, pr_adj, data_, panel_efficiency=PANEL_EFFICIENCY):
     """
     в kWh
     радиация в kWh/m²/месяц
@@ -101,11 +102,10 @@ def get_efficiency(num_panels, pr_adj, data_, panel_efficiency=PANEL_EFFICIENCY)
     :return:
     """
     solar = get_solar_radiation(data_['tsun'], data_['month'])
-    print(data_['month'], '  -  ', num_panels, PANEL_SIZE, panel_efficiency, solar, pr_adj)
     return num_panels * PANEL_SIZE * panel_efficiency * solar * pr_adj
 
 
-def fill_data(df):
+def fill_solar_data(df):
     df['month'] = df.index.month
     df = df.drop(columns=['tmin', 'tmax', 'pres'])
     monthly_means = df.groupby('month').transform(lambda x: x.fillna(x.mean()))
@@ -120,7 +120,7 @@ def generate_solar_stats_result(monthly_weather_data, panels_num):
     monthly_data = [
         {
             "date": month.get('date'),
-            "energy": round(get_efficiency(panels_num, get_pr_adj(month), month))  # kWh
+            "energy": round(get_solar_station_efficiency(panels_num, get_pr_adj(month), month))  # kWh
         }
         for month in monthly_weather_data
     ]
@@ -137,8 +137,17 @@ def generate_solar_stats_result(monthly_weather_data, panels_num):
 def get_solar_energy_output_stats(coordinates, area):
     today = datetime.now()
     weather_stats_data = get_last_year_weather_data(coordinates, [today.year - 1, today.month])
-    filled_data = fill_data(weather_stats_data)
+    filled_data = fill_solar_data(weather_stats_data)
     return generate_solar_stats_result(filled_data[-12:], get_panels_num(area))
 
 
+def get_daily_weather_stats(coordinates, end, st=[2020, 1, 1]):
+    data_fetch = Daily(
+        Point(coordinates[1], coordinates[0]),
+        start=datetime(st[0], st[1], st[2]),
+        end=datetime(end[0], end[1], end[2]) if end else datetime(2024, 1, 1)
+    )
+    return data_fetch.fetch()
+
+# coordinates = [26.245628498478002, 50.340760265673204]
 
