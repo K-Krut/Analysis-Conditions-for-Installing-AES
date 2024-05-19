@@ -180,30 +180,23 @@ def check_suitability_with_ai(prediction, filtered_polygon, polygon, coordinates
     # анализ отфильтрованного полигона
     # если стремттся к -1, то значит надо искать разницу, если другие типы ландшафта внутри после фильтрации
     if prediction < -0.5:
-        print("prediction")
         landscape_prediction = predict_polygon(convert_polygon_stats(filtered_polygon_classification), model, scaler)
-        print("")
         #
         if landscape_prediction > 0.5:
-            print("")
             return filtered_polygon.coordinates().getInfo()[0]
         #
         elif landscape_prediction < -0.5:
-            print("")
             eligible_polygons = calculate_polygons_difference(polygon, filtered_polygon)
             max_polygon = get_polygon_with_max_area(eligible_polygons)
             return max_polygon[0]
         #
         else:
-            print("")
             return []
     #
     elif prediction > 0.3:
-        print("")
         return coordinates
     #
     else:
-        print("")
         print('     !!! ', prediction)
         return []
 
@@ -282,6 +275,6 @@ def get_ee_classification(coordinates):
         suitable_territory_polygon = ee.Geometry.Polygon(suitable_territory)
         suitable_territory_area_km = get_polygon_area(suitable_territory_polygon)
         energy_output = get_energy_output_stats(coordinates[0], get_polygon_area_m2(suitable_territory_polygon))
-        print(energy_output)
+        # print(energy_output)
         return land_types_stats, suitable_territory, polygon_area, suitable_territory_area_km, energy_output
     return land_types_stats, suitable_territory, polygon_area, 0, {}
