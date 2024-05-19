@@ -274,7 +274,12 @@ def get_ee_classification(coordinates):
     if suitable_territory and suitable_territory != []:
         suitable_territory_polygon = ee.Geometry.Polygon(suitable_territory)
         suitable_territory_area_km = get_polygon_area(suitable_territory_polygon)
-        energy_output = get_energy_output_stats(coordinates[0], get_polygon_area_m2(suitable_territory_polygon))
-        # print(energy_output)
-        return land_types_stats, suitable_territory, polygon_area, suitable_territory_area_km, energy_output
-    return land_types_stats, suitable_territory, polygon_area, 0, {}
+        return land_types_stats, suitable_territory, polygon_area, suitable_territory_area_km
+    return land_types_stats, suitable_territory, polygon_area, 0
+
+    # if suitable_territory and suitable_territory != []:
+    #     suitable_territory_polygon = ee.Geometry.Polygon(suitable_territory)
+    #     suitable_territory_area_km = get_polygon_area(suitable_territory_polygon)
+    #     energy_output = get_energy_output_stats(coordinates[0], get_polygon_area_m2(suitable_territory_polygon))
+    #     return land_types_stats, suitable_territory, polygon_area, suitable_territory_area_km, energy_output
+    # return land_types_stats, suitable_territory, polygon_area, 0, {}

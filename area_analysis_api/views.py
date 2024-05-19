@@ -21,7 +21,7 @@ class AnalyzeArea(APIView):
                     'crop': res[1],
                     'initial_polygon_area': res[2],
                     'suitable_polygon_area': res[3],
-                    'energy_output_stats': res[4],
+                    'energy_output_stats': {},
                 },
                 status=200
             )
