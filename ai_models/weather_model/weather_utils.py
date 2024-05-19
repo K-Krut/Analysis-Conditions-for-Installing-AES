@@ -116,7 +116,7 @@ def fill_data(df):
     return df.to_dict('records')
 
 
-def generate_stats_result(monthly_weather_data, panels_num):
+def generate_solar_stats_result(monthly_weather_data, panels_num):
     monthly_data = [
         {
             "date": month.get('date'),
@@ -134,11 +134,11 @@ def generate_stats_result(monthly_weather_data, panels_num):
     }
 
 
-def get_energy_output_stats(coordinates, area):
+def get_solar_energy_output_stats(coordinates, area):
     today = datetime.now()
     weather_stats_data = get_last_year_weather_data(coordinates, [today.year - 1, today.month])
     filled_data = fill_data(weather_stats_data)
-    return generate_stats_result(filled_data[-12:], get_panels_num(area))
+    return generate_solar_stats_result(filled_data[-12:], get_panels_num(area))
 
 
 
