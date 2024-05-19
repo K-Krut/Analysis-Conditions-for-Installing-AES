@@ -194,51 +194,13 @@ def check_suitability_with_ai(prediction, filtered_polygon_data, polygon, coordi
 def define_suitable_polygon_coordinates(prediction, filtered_polygon_data, polygon, coordinates):
     filtered_polygon = ee.Geometry.Polygon(filtered_polygon_data)
     filtered_polygon_classification = get_classification_of_filtered_area(filtered_polygon)
-    print('     filtered_polygon_classification: ', filtered_polygon_classification)
-
     check_of_suitable_types_filtered_result = check_suitable_types(filtered_polygon_classification)
-    print(check_of_suitable_types_filtered_result)
-    # все отфильтрованные территории состоят из подходящих типов, полностью подходящая территория
+
     if len(check_of_suitable_types_filtered_result) == len(filtered_polygon_classification):
         return filtered_polygon.coordinates().getInfo()[0]
-
-    # отфильтрованные территории состоят полностью из неподходящих типов
-    # elif len(check_of_suitable_types_filtered_result) == 0:
-    #     eligible_polygons = calculate_polygons_difference(polygon, filtered_polygon)
-    #     max_polygon = get_polygon_with_max_area(eligible_polygons)
-    #     return max_polygon[0]
-    # elif prediction < -0.5:
-    #     print('     eligible_polygons')
-    #     filtered_polygon_classification = get_classification_of_filtered_area(filtered_polygon)
-    #     print('     filtered_polygon_classification: ', filtered_polygon_classification)
-    #     landscape_prediction = predict_polygon(convert_polygon_stats(filtered_polygon_classification), model, scaler)
-    #
-    #     print('     PREDICTION: ', landscape_prediction)
-    #     check_of_suitable_types_filtered_result = check_suitable_types(filtered_polygon_classification)
-    #     print(check_of_suitable_types_filtered_result)
-    #     if landscape_prediction > 0.2:
-    #         return filtered_polygon.coordinates().getInfo()[0]
-    #     elif landscape_prediction < -0.5:
-    #         eligible_polygons = calculate_polygons_difference(polygon, filtered_polygon)
-    #         max_polygon = get_polygon_with_max_area(eligible_polygons)
-    #         return max_polygon[0]
-    #     else:
-    #         return []
-    # elif prediction > 0.5:
-    #     return coordinates
     else:
-        print('     !!! ', prediction)
-        print(len(check_of_suitable_types_filtered_result), len(filtered_polygon_classification))
         return check_suitability_with_ai(prediction, filtered_polygon_data, polygon, coordinates,
                                          filtered_polygon_classification)
-
-
-def get_suitable_types_ids():
-    results = []
-    for i in landscape_types_details:
-        if i['suitable']:
-            results.append(i['id'])
-    return results
 
 
 def check_suitable_types(land_types_stats):
@@ -256,7 +218,7 @@ def get_ee_classification(coordinates):
     polygon_area = get_polygon_area(polygon)
 
     if polygon_area < MIN_POLYGON_AREA:
-        return None
+        return [], [], polygon_area, 0, {}
 
     land_types_stats = get_area_classification_details(landcover, polygon, polygon_area)
 

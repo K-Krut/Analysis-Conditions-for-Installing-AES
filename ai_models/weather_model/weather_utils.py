@@ -1,5 +1,5 @@
-import json
 import random
+from builtins import print
 
 from meteostat import Point, Monthly
 from diploma_api.settings import RapidAPI_KEY
@@ -7,10 +7,8 @@ from datetime import datetime, timedelta
 import requests
 import math
 
-
 PANEL_SIZE = 1.6  # м²
 PANEL_EFFICIENCY = 0.156  # 15.6%
-
 
 
 def get_date_start(date_end):
@@ -141,4 +139,6 @@ def get_energy_output_stats(coordinates, area):
     weather_stats_data = get_last_year_weather_data(coordinates, [today.year - 1, today.month])
     filled_data = fill_data(weather_stats_data)
     return generate_stats_result(filled_data[-12:], get_panels_num(area))
+
+
 
