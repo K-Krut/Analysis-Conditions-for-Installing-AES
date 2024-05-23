@@ -167,22 +167,6 @@ def get_powers(wind_speeds, r=50):
     return 0.5 * rho * A * (wind_speeds ** 3) * Cp * n
 
 
-# def get_wind_power():
-#     # Данные о скорости ветра (представлены здесь как массив numpy для примера)
-#     wind_speeds = np.array([...])  # массив скоростей ветра за месяц
-#
-#     # Расчёт мощности для каждого интервала
-#     powers = get_powers(wind_speeds)
-#
-#     # Общая выработка энергии в ватт-часах
-#     power = np.sum(powers) * 1  # суммирование мощности всех интервалов
-#
-#     # Коррекция на потери
-#     loose_coefficient = 0.95  # примерное значение
-#     # финальное значение общей выработанной энергии с учётом потерь
-#
-#     # Вывод
-#     print(f'Общая выработанная энергия за месяц составила: {power * loose_coefficient} Вт*ч')
 
 coord = [26.245628498478002, 50.340760265673204]
 
@@ -199,8 +183,11 @@ def get_hourly_weather_data(coordinates, ds, de):
 def weather_for_wind_calculation(coords, ds, de):
     df = get_hourly_weather_data(coords, ds, de)
     df = df.drop(columns=['temp', 'dwpt', 'rhum', 'prcp', 'snow', 'pres', 'tsun', 'coco', 'wpgt'])
+    df['month'] = df.index.month
     df['hour'] = [str(x[0])[11:16] for x in df.to_records()]
-    return df.to_records()  # ['wdir', 'wspd', 'hour']
+    return df.groupby('month')
+    # print(df)
+    # return df.to_records()  # ['wdir', 'wspd', 'month', 'hour']
 
 
 def draw_wind_rose(records):
@@ -218,6 +205,13 @@ def draw_wind_rose(records):
     ax.bar(np.radians(data['wdir']), data['wspd'], width=0.1, bottom=0.1)
 
     plt.show()
+
+
+def get_wind_rose_for_year(yearly_weather_data):
+    for name, group in yearly_weather_data:
+        group = group.drop(columns=['month'])
+        draw_wind_rose(group.to_records(index=False))
+
 
 
 data_weather = weather_for_wind_calculation(coord, [2023, 5], [2024, 4])
