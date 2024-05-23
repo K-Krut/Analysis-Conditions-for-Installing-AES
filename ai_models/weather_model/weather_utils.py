@@ -2,7 +2,8 @@ import random
 from builtins import print, ChildProcessError
 
 import numpy as np
-from meteostat import Point, Monthly, Normals, Daily
+from matplotlib import pyplot as plt
+from meteostat import Point, Monthly, Normals, Daily, Hourly
 from diploma_api.settings import RapidAPI_KEY
 from datetime import datetime, timedelta
 import requests
@@ -61,7 +62,6 @@ def get_solar_radiation(tsun, month):
     типичная мощность солнечного излучения в ясный день в полдень составляет 1000 Вт/м²
     :param month:
     :param tsun:
-    :param days_in_month:
     :return: kWh/m²/месяц
     """
     solar_radiation_ukraine = {
@@ -149,33 +149,6 @@ def get_daily_weather_stats(coordinates, end, st=[2020, 1, 1]):
     )
     return data_fetch.fetch()
 
-# coordinates = [26.245628498478002, 50.340760265673204]
-
-# def get_wind_power():
-#     r = 50
-#     # Параметры турбины и окружающей среды
-#     rho = 1.225  # плотность воздуха в кг/м^3
-#     A = np.pi * (r ** 2)  # площадь охватываемая лопастями
-#     C_p = 0.45  # коэффициент мощности
-#     n = 0.9  # коэффициент полезного действия
-#     t = 1  # длительность временного интервала в часах
-#
-#     # Данные о скорости ветра (представлены здесь как массив numpy для примера)
-#     wind_speed = np.array([...])  # массив скоростей ветра за месяц
-#
-#     # Расчёт мощности для каждого интервала
-#     powers = 0.5 * rho * A * (wind_speed ** 3) * C_p * n
-#
-#     # Общая выработка энергии в ватт-часах
-#     power = np.sum(powers) * t  # суммирование мощности всех интервалов
-#
-#     # Коррекция на потери
-#     loose_coeff = 0.95  # примерное значение
-#     # финальное значение общей выработанной энергии с учётом потерь
-#
-#     # Вывод
-#     print(f'Общая выработанная энергия за месяц составила: {power * loose_coeff} Вт*ч')
-
 
 def get_powers(wind_speeds, r=50):
     """
@@ -192,4 +165,60 @@ def get_powers(wind_speeds, r=50):
     Cp = 0.45
     n = 0.9
     return 0.5 * rho * A * (wind_speeds ** 3) * Cp * n
+
+
+# def get_wind_power():
+#     # Данные о скорости ветра (представлены здесь как массив numpy для примера)
+#     wind_speeds = np.array([...])  # массив скоростей ветра за месяц
+#
+#     # Расчёт мощности для каждого интервала
+#     powers = get_powers(wind_speeds)
+#
+#     # Общая выработка энергии в ватт-часах
+#     power = np.sum(powers) * 1  # суммирование мощности всех интервалов
+#
+#     # Коррекция на потери
+#     loose_coefficient = 0.95  # примерное значение
+#     # финальное значение общей выработанной энергии с учётом потерь
+#
+#     # Вывод
+#     print(f'Общая выработанная энергия за месяц составила: {power * loose_coefficient} Вт*ч')
+
+coord = [26.245628498478002, 50.340760265673204]
+
+
+def get_hourly_weather_data(coordinates, ds, de):
+    data_fetch = Hourly(
+        Point(coordinates[1], coordinates[0]),
+        start=datetime(ds[0], ds[1], 1),
+        end=datetime(de[0], de[1], 1)
+    )
+    return data_fetch.fetch()
+
+
+def weather_for_wind_calculation(coords, ds, de):
+    df = get_hourly_weather_data(coords, ds, de)
+    df = df.drop(columns=['temp', 'dwpt', 'rhum', 'prcp', 'snow', 'pres', 'tsun', 'coco', 'wpgt'])
+    df['hour'] = [str(x[0])[11:16] for x in df.to_records()]
+    return df.to_records()  # ['wdir', 'wspd', 'hour']
+
+
+def draw_wind_rose(records):
+    """
+    directions - data['wdir']
+    speeds - data['wspd']
+    angles - np.radians(data['wdir'])
+    :param records:
+    :return:
+    """
+    data = np.array(records)
+    data = np.array(data, dtype=[('wdir', float), ('wspd', float), ('time', 'U5')])
+
+    fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})
+    ax.bar(np.radians(data['wdir']), data['wspd'], width=0.1, bottom=0.1)
+
+    plt.show()
+
+
+data_weather = weather_for_wind_calculation(coord, [2023, 5], [2024, 4])
 
