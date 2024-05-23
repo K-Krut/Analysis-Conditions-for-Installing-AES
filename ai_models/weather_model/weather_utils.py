@@ -1,5 +1,5 @@
 import random
-from builtins import print
+from builtins import print, ChildProcessError
 
 import numpy as np
 from meteostat import Point, Monthly, Normals, Daily
@@ -150,4 +150,46 @@ def get_daily_weather_stats(coordinates, end, st=[2020, 1, 1]):
     return data_fetch.fetch()
 
 # coordinates = [26.245628498478002, 50.340760265673204]
+
+# def get_wind_power():
+#     r = 50
+#     # Параметры турбины и окружающей среды
+#     rho = 1.225  # плотность воздуха в кг/м^3
+#     A = np.pi * (r ** 2)  # площадь охватываемая лопастями
+#     C_p = 0.45  # коэффициент мощности
+#     n = 0.9  # коэффициент полезного действия
+#     t = 1  # длительность временного интервала в часах
+#
+#     # Данные о скорости ветра (представлены здесь как массив numpy для примера)
+#     wind_speed = np.array([...])  # массив скоростей ветра за месяц
+#
+#     # Расчёт мощности для каждого интервала
+#     powers = 0.5 * rho * A * (wind_speed ** 3) * C_p * n
+#
+#     # Общая выработка энергии в ватт-часах
+#     power = np.sum(powers) * t  # суммирование мощности всех интервалов
+#
+#     # Коррекция на потери
+#     loose_coeff = 0.95  # примерное значение
+#     # финальное значение общей выработанной энергии с учётом потерь
+#
+#     # Вывод
+#     print(f'Общая выработанная энергия за месяц составила: {power * loose_coeff} Вт*ч')
+
+
+def get_powers(wind_speeds, r=50):
+    """
+    :param wind_speeds:
+    :param r: R is the radius of the rotor (in meters, m)
+    rho - denotes the air density (in kilograms per cubic meter, kg/m³).
+    A - is the swept area (in square meters, m²)
+    Cp stands for the power coefficient, represents the efficiency of the wind turbine in capturing the wind’s energy
+    n = 0.9 - коэффициент полезного действия
+    :return:
+    """
+    rho = 1.225
+    A = np.pi * (r ** 2)
+    Cp = 0.45
+    n = 0.9
+    return 0.5 * rho * A * (wind_speeds ** 3) * Cp * n
 
