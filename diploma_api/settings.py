@@ -1,5 +1,7 @@
 from pathlib import Path
 import os
+
+import boto3
 from dotenv import load_dotenv
 from django.contrib import staticfiles
 
@@ -138,3 +140,4 @@ MEDIA_URL = f'https://{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com/'
 
 
 STATIC_URL = f'https://{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com/static/'
+

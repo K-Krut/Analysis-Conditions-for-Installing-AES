@@ -1,12 +1,15 @@
+import base64
 import random
 import uuid
 from builtins import print, ChildProcessError
 from io import BytesIO
 
+import boto3
 import numpy as np
 from matplotlib import pyplot as plt
 from meteostat import Point, Monthly, Normals, Daily, Hourly
-from diploma_api.settings import RapidAPI_KEY
+from diploma_api.settings import RapidAPI_KEY, AWS_STORAGE_BUCKET_NAME, AWS_ACCESS_KEY_ID, \
+    AWS_SECRET_ACCESS_KEY, AWS_S3_REGION_NAME
 from datetime import datetime, timedelta
 import requests
 import math
@@ -172,34 +175,54 @@ def weather_for_wind_calculation(coords, ds, de):
     return df.groupby('month')  # return df.to_records()  # ['wdir', 'wspd', 'month', 'hour']
 
 
+# def draw_wind_rose(records, month):
+#     """
+#     directions - data['wdir']
+#     speeds - data['wspd']
+#     angles - np.radians(data['wdir'])
+#     :param month:
+#     :param records:
+#     :return:
+#     """
+#     data = np.array(records)
+#     data = np.array(data, dtype=[('wdir', float), ('wspd', float), ('time', 'U5')])
+#
+#     fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})
+#     ax.bar(np.radians(data['wdir']), data['wspd'], width=0.1, bottom=0.1)
+#
+#     s3_client = boto3.resource(
+#         's3',
+#         aws_access_key_id=AWS_ACCESS_KEY_ID,
+#         aws_secret_access_key=AWS_SECRET_ACCESS_KEY
+#     )
+#     name = f"wind-rose-{month}-{uuid.uuid4()}.png"
+#     plt.savefig(name)
+#     img_data = open(name, "rb")
+#     bucket_path = f"wind-roses/wind-rose-{month}-{uuid.uuid4()}.png"
+#     s3_client.Bucket(AWS_STORAGE_BUCKET_NAME).put_object(Key=bucket_path, Body=img_data,
+#                                                          ContentType="image/png")
 def draw_wind_rose(records, month):
-    """
-    directions - data['wdir']
-    speeds - data['wspd']
-    angles - np.radians(data['wdir'])
-    :param month:
-    :param records:
-    :return:
-    """
-    data = np.array(records)
-    data = np.array(data, dtype=[('wdir', float), ('wspd', float), ('time', 'U5')])
+    data = np.array(records, dtype=[('wdir', float), ('wspd', float), ('time', 'U5')])
 
     fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})
     ax.bar(np.radians(data['wdir']), data['wspd'], width=0.1, bottom=0.1)
 
-    plt.show()  # plt.savefig(f'wind-roses/wind-rose-{month}-{uuid.uuid4()}', format='png')
-    img_data = BytesIO()
-    plt.savefig(img_data, format='png')
-    img_data.seek(0)
+    buf = BytesIO()
+    plt.savefig(buf, format='png')
+    buf.seek(0)
 
-    full_file_path = f"wind-roses/wind-rose-{month}-{uuid.uuid4()}"
+    s3_client = boto3.client(
+        's3',
+        aws_access_key_id=AWS_ACCESS_KEY_ID,
+        aws_secret_access_key=AWS_SECRET_ACCESS_KEY,
+        region_name=AWS_S3_REGION_NAME
+    )
 
-    default_storage.save(full_file_path, ContentFile(img_data.read()))
+    bucket_path = f"wind-roses/wind-rose-{month}-{uuid.uuid4()}.png"
+    s3_client.put_object(Bucket=AWS_STORAGE_BUCKET_NAME, Key=bucket_path, Body=buf, ContentType='image/png')
+    buf.close()
     plt.close(fig)
 
-    image_url = default_storage.url(full_file_path)
-    print(image_url)
-    return image_url
 
 def get_wind_rose_for_year(yearly_weather_data):
     for name, group in yearly_weather_data:
@@ -237,13 +260,13 @@ def get_wind_energy_output(wind_speeds):
 # coord = [26.245628498478002, 50.340760265673204]
 coord = [35.2577876585286, 47.74093953469412]
 
-# data_weather = weather_for_wind_calculation(coord, [2023, 1], [2024, 1])
+data_weather = weather_for_wind_calculation(coord, [2023, 11], [2024, 1])
 # for i, j in data_weather:
 #     print(i)
     # for k in j.to_records():
     #     print(str(k[0])[0:16], k[2])
 
-# get_wind_rose_for_year(data_weather)
+get_wind_rose_for_year(data_weather)
 
 # winds = get_wind_speeds(data_weather)
 # res = 0
