@@ -99,7 +99,7 @@ def get_num_of_wind_turbines(area):
 
 
 def get_wind_energy_output(coords, area):
-    yearly_data_weather = weather_for_wind_calculation(coords, [2022, 3], [2022, 3, 31])
+    yearly_data_weather = weather_for_wind_calculation(coords, [2022, 1], [2022, 12, 31])
     turbines_num = get_num_of_wind_turbines(area)
     monthly_data = []
     for month, data in yearly_data_weather:
