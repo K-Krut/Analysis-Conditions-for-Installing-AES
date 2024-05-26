@@ -3,7 +3,7 @@ import joblib
 
 import keras
 from ai_models.landscape_model.utils import predict_polygon, convert_polygon_stats
-from ai_models.weather_model.weather_utils import get_energy_output_stats
+from ai_models.weather_model.solar_utils import get_solar_energy_output_stats
 from .constants import landscape_types, FILTERING_AREAS_SCALE, landscape_types_details, MIN_POLYGON_AREA, SUITABLE_TYPES
 from .ee_config import EE_CREDENTIALS
 
@@ -167,78 +167,60 @@ def get_classification_of_filtered_area(filtered_polygon):
     return get_area_classification_details(landcover, filtered_polygon, filtered_polygon_area)
 
 
-def check_suitability_with_ai(prediction, filtered_polygon_data, polygon, coordinates, filtered_polygon_classification):
-    filtered_polygon = ee.Geometry.Polygon(filtered_polygon_data)
+def check_suitability_with_ai(prediction, filtered_polygon, polygon, coordinates, filtered_polygon_classification):
+    """
 
+    :param filtered_polygon:
+    :param prediction:
+    :param polygon:
+    :param coordinates:
+    :param filtered_polygon_classification:
+    :return:
+    """
+    # анализ отфильтрованного полигона
+    # если стремттся к -1, то значит надо искать разницу, если другие типы ландшафта внутри после фильтрации
     if prediction < -0.5:
-        print('     eligible_polygons')
-        print('     filtered_polygon_classification: ', filtered_polygon_classification)
         landscape_prediction = predict_polygon(convert_polygon_stats(filtered_polygon_classification), model, scaler)
-
-        print('     PREDICTION  landscape_prediction: ', landscape_prediction)
+        #
         if landscape_prediction > 0.5:
             return filtered_polygon.coordinates().getInfo()[0]
+        #
         elif landscape_prediction < -0.5:
             eligible_polygons = calculate_polygons_difference(polygon, filtered_polygon)
             max_polygon = get_polygon_with_max_area(eligible_polygons)
             return max_polygon[0]
+        #
         else:
             return []
+    #
     elif prediction > 0.3:
         return coordinates
+    #
     else:
         print('     !!! ', prediction)
         return []
 
 
 def define_suitable_polygon_coordinates(prediction, filtered_polygon_data, polygon, coordinates):
-    filtered_polygon = ee.Geometry.Polygon(filtered_polygon_data)
-    filtered_polygon_classification = get_classification_of_filtered_area(filtered_polygon)
-    print('     filtered_polygon_classification: ', filtered_polygon_classification)
+    """
 
+    :param prediction: аутпут модели по инишиал полигону
+    :param filtered_polygon_data: координаты всех полигонов, полученных в результате фильтрации
+    :param polygon: изначальный полигон
+    :param coordinates: координаты изначального полигона
+    :return:
+    """
+    filtered_polygon = ee.Geometry.Polygon(filtered_polygon_data)
+    # получаем классификацию ландшафта внутри отфильтрованного полигона
+    filtered_polygon_classification = get_classification_of_filtered_area(filtered_polygon)
     check_of_suitable_types_filtered_result = check_suitable_types(filtered_polygon_classification)
-    print(check_of_suitable_types_filtered_result)
-    # все отфильтрованные территории состоят из подходящих типов, полностью подходящая территория
+
+    # если полигон отфильтровался корректно и внутри остались только подходящие типы ландшафта
     if len(check_of_suitable_types_filtered_result) == len(filtered_polygon_classification):
         return filtered_polygon.coordinates().getInfo()[0]
-
-    # отфильтрованные территории состоят полностью из неподходящих типов
-    # elif len(check_of_suitable_types_filtered_result) == 0:
-    #     eligible_polygons = calculate_polygons_difference(polygon, filtered_polygon)
-    #     max_polygon = get_polygon_with_max_area(eligible_polygons)
-    #     return max_polygon[0]
-    # elif prediction < -0.5:
-    #     print('     eligible_polygons')
-    #     filtered_polygon_classification = get_classification_of_filtered_area(filtered_polygon)
-    #     print('     filtered_polygon_classification: ', filtered_polygon_classification)
-    #     landscape_prediction = predict_polygon(convert_polygon_stats(filtered_polygon_classification), model, scaler)
-    #
-    #     print('     PREDICTION: ', landscape_prediction)
-    #     check_of_suitable_types_filtered_result = check_suitable_types(filtered_polygon_classification)
-    #     print(check_of_suitable_types_filtered_result)
-    #     if landscape_prediction > 0.2:
-    #         return filtered_polygon.coordinates().getInfo()[0]
-    #     elif landscape_prediction < -0.5:
-    #         eligible_polygons = calculate_polygons_difference(polygon, filtered_polygon)
-    #         max_polygon = get_polygon_with_max_area(eligible_polygons)
-    #         return max_polygon[0]
-    #     else:
-    #         return []
-    # elif prediction > 0.5:
-    #     return coordinates
     else:
-        print('     !!! ', prediction)
-        print(len(check_of_suitable_types_filtered_result), len(filtered_polygon_classification))
-        return check_suitability_with_ai(prediction, filtered_polygon_data, polygon, coordinates,
-                                         filtered_polygon_classification)
-
-
-def get_suitable_types_ids():
-    results = []
-    for i in landscape_types_details:
-        if i['suitable']:
-            results.append(i['id'])
-    return results
+        # если фильтрация прошла некоректно и остались другие типы ландшафта внтури, проганяем через аишку
+        return check_suitability_with_ai(prediction, filtered_polygon, polygon, coordinates, filtered_polygon_classification)
 
 
 def check_suitable_types(land_types_stats):
@@ -250,40 +232,55 @@ def check_suitable_types(land_types_stats):
     return results
 
 
+def get_suitable_territory(coordinates, land_types_stats, polygon):
+    check_of_suitable_types_result = check_suitable_types(land_types_stats)
+    if len(check_of_suitable_types_result) == len(land_types_stats):
+        # all types of landscape within the polygon are suitable, i.e. the whole polygon is suitable for power plants
+        return coordinates
+    elif len(check_of_suitable_types_result) == 0:
+        # all types of landscape within the landfill are not suitable, i.e. it is not possible to install power plants in this area
+        return []
+    else:
+        # complex case of a landfill, within it there are areas with a suitable landscape type and not suitable. it is necessary to filter it out.
+        # прогонка инишиал полигона через модель
+        landscape_prediction = predict_polygon(convert_polygon_stats(land_types_stats), model, scaler)
+
+        # фильтруем территорию плигона по подходящим типам и получаем самый большой полигон из отфильтрвоанных
+        filtered_polygon_data = get_filtered_area_coordinates(polygon, landcover)
+
+        # определяем самый большой подходящий полигон из всех внутри инишиал полигона
+        return define_suitable_polygon_coordinates(landscape_prediction, filtered_polygon_data, polygon, coordinates)
+
+
 def get_ee_classification(coordinates):
+    """
+
+    :param coordinates:
+    :return:
+    """
     polygon = ee.Geometry.Polygon(coordinates)
 
     polygon_area = get_polygon_area(polygon)
 
     if polygon_area < MIN_POLYGON_AREA:
-        return None
+        raise Exception(
+            f'Minimal polygon area must be - {MIN_POLYGON_AREA} km^2, area of your polygon - {polygon_area} km^2')
 
+    # получаем классификацию типов ландшафта внутри полигона
     land_types_stats = get_area_classification_details(landcover, polygon, polygon_area)
 
-    print(land_types_stats)
-    check_of_suitable_types_result = check_suitable_types(land_types_stats)
-    if len(check_of_suitable_types_result) == len(land_types_stats):
-        print('ALL LANDTYPES ARE SUITABLE')
-        suitable_territory = coordinates
-    elif len(check_of_suitable_types_result) == 0:
-        print('THERE ISNT ANY SUITABLE LANDTYPE')
-        suitable_territory = []
-    else:
-        print('FINDING DIFFERENCE')
-        landscape_prediction = predict_polygon(convert_polygon_stats(land_types_stats), model, scaler)
+    # подходящие территории
+    suitable_territory = get_suitable_territory(coordinates, land_types_stats, polygon)
 
-        print('PREDICTION: ', landscape_prediction)
+    return {
+        'area': land_types_stats,
+        'crop': suitable_territory,
+        'initial_polygon_area': polygon_area,
+        'suitable_polygon_area': get_polygon_area(
+            ee.Geometry.Polygon(suitable_territory)) if suitable_territory and suitable_territory != [] else 0
+    }
 
-        filtered_polygon_data = get_filtered_area_coordinates(polygon, landcover)
 
-        suitable_territory = define_suitable_polygon_coordinates(
-            landscape_prediction, filtered_polygon_data, polygon, coordinates
-        )
-
-    if suitable_territory and suitable_territory != []:
-        suitable_territory_polygon = ee.Geometry.Polygon(suitable_territory)
-        suitable_territory_area_km = get_polygon_area(suitable_territory_polygon)
-        energy_output = get_energy_output_stats(coordinates[0], get_polygon_area_m2(suitable_territory_polygon))
-        print(energy_output)
-        return land_types_stats, suitable_territory, polygon_area, suitable_territory_area_km, energy_output
-    return land_types_stats, suitable_territory, polygon_area, 0, {}
+def get_solar_energy_output_prediction(point, suitable_territory):
+    suitable_territory_polygon = ee.Geometry.Polygon(suitable_territory)
+    return get_solar_energy_output_stats(point, get_polygon_area_m2(suitable_territory_polygon))

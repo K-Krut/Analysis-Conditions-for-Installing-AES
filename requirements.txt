@@ -78,3 +78,6 @@ Werkzeug==3.0.2
 whitenoise==6.6.0
 wrapt==1.16.0
 zipp==3.18.1
+
+matplotlib~=3.8.4
+meteostat~=1.6.7
