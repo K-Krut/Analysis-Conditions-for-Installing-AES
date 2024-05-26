@@ -27,7 +27,7 @@ class AnalyzeArea(APIView):
 
             energy_output = {}
             if landscape_res['crop']:
-                energy_output = get_wind_energy_output(coordinates[0], landscape_res['initial_polygon_area']) if aes_type == 'wind' \
+                energy_output = get_wind_energy_output(coordinates[0], landscape_res['suitable_polygon_area']) if aes_type == 'wind' \
                     else get_solar_energy_output_prediction(coordinates[0], landscape_res['crop'])
 
             return JsonResponse(
