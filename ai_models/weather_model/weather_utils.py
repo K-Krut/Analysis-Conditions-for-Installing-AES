@@ -1,24 +1,26 @@
-import base64
 import random
 import uuid
-from builtins import print, ChildProcessError
 from io import BytesIO
 
 import boto3
 import numpy as np
 from matplotlib import pyplot as plt
-from meteostat import Point, Monthly, Normals, Daily, Hourly
+from meteostat import Point, Monthly, Daily, Hourly
 from diploma_api.settings import RapidAPI_KEY, AWS_STORAGE_BUCKET_NAME, AWS_ACCESS_KEY_ID, \
     AWS_SECRET_ACCESS_KEY, AWS_S3_REGION_NAME
 from datetime import datetime, timedelta
 import requests
 import math
-from django.core.files.storage import default_storage
-from django.core.files.base import ContentFile
-
 
 PANEL_SIZE = 1.6  # м²
 PANEL_EFFICIENCY = 0.156  # 15.6%
+WIND_TURBINE_AREA = 0.0144  # км², для турбины с лопастями 50м
+s3_client = boto3.client(
+    's3',
+    aws_access_key_id=AWS_ACCESS_KEY_ID,
+    aws_secret_access_key=AWS_SECRET_ACCESS_KEY,
+    region_name=AWS_S3_REGION_NAME
+)
 
 
 def get_date_start(date_end):
@@ -175,32 +177,16 @@ def weather_for_wind_calculation(coords, ds, de):
     return df.groupby('month')  # return df.to_records()  # ['wdir', 'wspd', 'month', 'hour']
 
 
-# def draw_wind_rose(records, month):
-#     """
-#     directions - data['wdir']
-#     speeds - data['wspd']
-#     angles - np.radians(data['wdir'])
-#     :param month:
-#     :param records:
-#     :return:
-#     """
-#     data = np.array(records)
-#     data = np.array(data, dtype=[('wdir', float), ('wspd', float), ('time', 'U5')])
-#
-#     fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})
-#     ax.bar(np.radians(data['wdir']), data['wspd'], width=0.1, bottom=0.1)
-#
-#     s3_client = boto3.resource(
-#         's3',
-#         aws_access_key_id=AWS_ACCESS_KEY_ID,
-#         aws_secret_access_key=AWS_SECRET_ACCESS_KEY
-#     )
-#     name = f"wind-rose-{month}-{uuid.uuid4()}.png"
-#     plt.savefig(name)
-#     img_data = open(name, "rb")
-#     bucket_path = f"wind-roses/wind-rose-{month}-{uuid.uuid4()}.png"
-#     s3_client.Bucket(AWS_STORAGE_BUCKET_NAME).put_object(Key=bucket_path, Body=img_data,
-#                                                          ContentType="image/png")
+def generate_presigned_url(object_key, expiration=3600):
+    return s3_client.generate_presigned_url(
+        'get_object',
+        Params={
+            'Bucket': AWS_STORAGE_BUCKET_NAME,
+            'Key': object_key},
+        ExpiresIn=expiration
+    )
+
+
 def draw_wind_rose(records, month):
     data = np.array(records, dtype=[('wdir', float), ('wspd', float), ('time', 'U5')])
 
@@ -211,17 +197,11 @@ def draw_wind_rose(records, month):
     plt.savefig(buf, format='png')
     buf.seek(0)
 
-    s3_client = boto3.client(
-        's3',
-        aws_access_key_id=AWS_ACCESS_KEY_ID,
-        aws_secret_access_key=AWS_SECRET_ACCESS_KEY,
-        region_name=AWS_S3_REGION_NAME
-    )
-
     bucket_path = f"wind-roses/wind-rose-{month}-{uuid.uuid4()}.png"
     s3_client.put_object(Bucket=AWS_STORAGE_BUCKET_NAME, Key=bucket_path, Body=buf, ContentType='image/png')
     buf.close()
     plt.close(fig)
+    return generate_presigned_url(bucket_path)
 
 
 def get_wind_rose_for_year(yearly_weather_data):
@@ -252,21 +232,27 @@ def get_power(wind_speeds, r=50):  # Vestas V112-3.45 MW - 54,6 m
     return (0.5 * rho * A * ((wind_speeds / 3.6) ** 3) * Cp * 0.9) / 1000
 
 
-def get_wind_energy_output(wind_speeds):
-    powers = get_power(wind_speeds)
-    return sum(powers)
+def get_num_of_wind_turbins(area):
+    return area / WIND_TURBINE_AREA
 
 
-# coord = [26.245628498478002, 50.340760265673204]
-coord = [35.2577876585286, 47.74093953469412]
+def get_wind_energy_output(wind_speeds, turbines_num):
+    p = sum(get_power(wind_speeds))
 
-data_weather = weather_for_wind_calculation(coord, [2023, 11], [2024, 1])
-# for i, j in data_weather:
-#     print(i)
-    # for k in j.to_records():
-    #     print(str(k[0])[0:16], k[2])
+#
+# # coord = [26.245628498478002, 50.340760265673204]
+# coord = [35.2577876585286, 47.74093953469412]
+#
+# data_weather = weather_for_wind_calculation(coord, [2023, 11], [2024, 1])
+# # for i, j in data_weather:
+# #     print(i)
+# # for k in j.to_records():
+# #     print(str(k[0])[0:16], k[2])
+#
+# get_wind_rose_for_year(data_weather)
+#
 
-get_wind_rose_for_year(data_weather)
+
 
 # winds = get_wind_speeds(data_weather)
 # res = 0
@@ -279,3 +265,7 @@ get_wind_rose_for_year(data_weather)
 #     res += e
 #
 # print(res)
+
+def get_wind_analysis():
+    pass
+
