@@ -77,7 +77,14 @@ def fill_solar_data(df):
     return df.to_dict('records')
 
 
-def generate_solar_stats_result(monthly_weather_data, panels_num):
+def get_solar_energy_output_stats(coordinates, area):
+    today = datetime.now()
+    weather_stats_data = get_last_year_weather_data(coordinates, [today.year - 1, today.month])
+    filled_data = fill_solar_data(weather_stats_data)
+
+    monthly_weather_data = filled_data[-12:]
+    panels_num = get_panels_num(area)
+
     monthly_data = [
         {
             "date": month.get('date'),
@@ -86,6 +93,7 @@ def generate_solar_stats_result(monthly_weather_data, panels_num):
         for month in monthly_weather_data
     ]
     monthly_data = sorted(monthly_data, key=lambda x: int(x['date'][5:7]))
+
     return {
         "panels": panels_num,
         "panels_area": panels_num * PANEL_SIZE,
@@ -93,10 +101,3 @@ def generate_solar_stats_result(monthly_weather_data, panels_num):
         "month_energy_stats": monthly_data,
         "yearly_energy": sum([x.get("energy") for x in monthly_data])
     }
-
-
-def get_solar_energy_output_stats(coordinates, area):
-    today = datetime.now()
-    weather_stats_data = get_last_year_weather_data(coordinates, [today.year - 1, today.month])
-    filled_data = fill_solar_data(weather_stats_data)
-    return generate_solar_stats_result(filled_data[-12:], get_panels_num(area))
