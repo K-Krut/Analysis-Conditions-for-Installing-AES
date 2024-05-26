@@ -51,7 +51,7 @@ def get_hourly_weather_data(coordinates, ds, de):
     data_fetch = Hourly(
         Point(coordinates[1], coordinates[0]),
         start=datetime(ds[0], ds[1], 1),
-        end=datetime(de[0], de[1], 1)
+        end=datetime(de[0], de[1], de[2] if len(de) == 3 else 1)
     )
     return data_fetch.fetch()
 
