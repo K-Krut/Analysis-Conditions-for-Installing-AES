@@ -3,7 +3,7 @@ import joblib
 
 import keras
 from ai_models.landscape_model.utils import predict_polygon, convert_polygon_stats
-from ai_models.weather_model.weather_utils import get_solar_energy_output_stats
+from ai_models.weather_model.solar_utils import get_solar_energy_output_stats
 from .constants import landscape_types, FILTERING_AREAS_SCALE, landscape_types_details, MIN_POLYGON_AREA, SUITABLE_TYPES
 from .ee_config import EE_CREDENTIALS
 
