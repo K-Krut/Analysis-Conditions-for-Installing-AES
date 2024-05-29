@@ -42,7 +42,7 @@ def weather_for_wind_calculation(coords, ds, de):
     df['wdir'] = df['wdir'].fillna(0)
     df['wspd'] = df['wspd'].fillna(0)
     df['wspd'] = df['wspd'] / 3.6
-    return df.groupby('month')  # return df.to_records()  # ['wdir', 'wspd', 'month', 'hour']
+    return df  # return df.to_records()  # ['wdir', 'wspd', 'month', 'hour']
 
 
 def draw_wind_rose(records, month):
@@ -110,9 +110,11 @@ def get_num_of_wind_turbines(area):
 def get_wind_energy_output(coords, area):
     print("get_wind_energy_output")
     yearly_data_weather = weather_for_wind_calculation(coords, [2022, 1], [2022, 12, 31])
+    yearly_data_weather_grouped = yearly_data_weather.groupby('month')
     turbines_num = get_num_of_wind_turbines(area)
+    yearly_wind_rose = draw_wind_rose_for_month_data(yearly_data_weather, "yearly_wind_rose")
     monthly_data = []
-    for month, data in yearly_data_weather:
+    for month, data in yearly_data_weather_grouped:
         one_turbine_energy_out = round(sum(get_power(data['wspd'].to_numpy())))
         wind_rose_img = draw_wind_rose_for_month_data(data, month)
         monthly_data.append(
@@ -126,12 +128,18 @@ def get_wind_energy_output(coords, area):
                 "average_wind_speed": round(data['wspd'].mean()),  # м/c
             }
         )
-
     return {
         "turbines": turbines_num,
         "wind_turbine_area": WIND_TURBINE_AREA,
         "wind_blade_length": WIND_BLADE_LEN,
         "month_energy_stats": monthly_data,
+        "yearly_energy_one_turbine": sum([x.get("energy_one_turbine") for x in monthly_data]),
+        "yearly_wind_rose": {
+            "url": yearly_wind_rose[0],
+            "base_64_data": yearly_wind_rose[1]
+        },
+        "max_wind_speed": round(yearly_data_weather['wspd'].max()),  # м/c
+        "average_wind_speed": round(yearly_data_weather['wspd'].mean()),  # м/c
+        "average_wind_angle": round(yearly_data_weather['wdir'].mean()),  # в градусах
         "yearly_energy": sum([x.get("energy") for x in monthly_data]),
-        "yearly_energy_one_turbine": sum([x.get("energy_one_turbine") for x in monthly_data])
     }
