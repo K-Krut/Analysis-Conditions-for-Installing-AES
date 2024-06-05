@@ -63,7 +63,7 @@ def prepare_and_predict(data):
 # test_data_scaled = scaler.transform(test_data)
 # prediction = model.predict(test_data_scaled)
 # print(f"Prediction: {prediction[0][0]}")
-#
+
 
 def test_model():
     data_for_test = [

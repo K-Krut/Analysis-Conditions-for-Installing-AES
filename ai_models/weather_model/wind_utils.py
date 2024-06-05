@@ -1,7 +1,7 @@
 import uuid
 import boto3
 import base64
-import numpy as np
+import ≈ as np
 from io import BytesIO
 from ai_models.weather_model.weather_utils import get_hourly_weather_data
 from diploma_api.settings import AWS_STORAGE_BUCKET_NAME, AWS_ACCESS_KEY_ID, \
